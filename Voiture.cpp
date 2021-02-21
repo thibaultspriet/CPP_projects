@@ -15,6 +15,4 @@ void Voiture::setColor(string color){
     this->color = color;
 };
 
-Voiture::~Voiture(){
-    cout << "destructeur voiture" << endl;
-}
+Voiture::~Voiture(){};

@@ -1,0 +1,114 @@
+\hypertarget{class_voiture_factory}{}\doxysection{Référence de la classe Voiture\+Factory}
+\label{class_voiture_factory}\index{VoitureFactory@{VoitureFactory}}
+
+
+{\ttfamily \#include $<$Voiture\+Factory.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de Voiture\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_voiture_factory}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_voiture}{Voiture}} $\ast$ \mbox{\hyperlink{class_voiture_factory_a0c6be2d9096c900ecdb90fae411a7e13}{get\+Voiture}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_voiture_factory_a7fc753a29235e6a8c49c439a719f2c27}{$\sim$\+Voiture\+Factory}} ()
+\item 
+string \mbox{\hyperlink{class_voiture_factory_afd9e16e2f094b9081c58ad7f5b79f7b3}{get\+Color}} ()
+\item 
+void \mbox{\hyperlink{class_voiture_factory_a55dc9da9677f605073b97bb402a36070}{set\+Color}} (string color)
+\item 
+int \mbox{\hyperlink{class_voiture_factory_ad666c471254008b1e0d753eccf501fd8}{get\+Number}} ()
+\item 
+void \mbox{\hyperlink{class_voiture_factory_a3b4772056da174327f1c9705adf5fde8}{set\+Number}} (int number)
+\item 
+void \mbox{\hyperlink{class_voiture_factory_a2ac76ad9b217bc4fd6df791a01902a41}{fill\+Up}} ()
+\item 
+void \mbox{\hyperlink{class_voiture_factory_a5206fa8499d110692f29b8e13b28e844}{get\+Info}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Interface qui permet au \char`\"{}client\char`\"{} de créer des objets abstraits de type \mbox{\hyperlink{class_voiture}{Voiture}}. Cette interface délègue la création d\textquotesingle{}un certain type de voiture à ses classes filles. Cette interface met à disposition les méthodes qu\textquotesingle{}on peut appeler sur un objet de type voiture. 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_voiture_factory_a7fc753a29235e6a8c49c439a719f2c27}\label{class_voiture_factory_a7fc753a29235e6a8c49c439a719f2c27}} 
+\index{VoitureFactory@{VoitureFactory}!````~VoitureFactory@{$\sim$VoitureFactory}}
+\index{````~VoitureFactory@{$\sim$VoitureFactory}!VoitureFactory@{VoitureFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$VoitureFactory()}{~VoitureFactory()}}
+{\footnotesize\ttfamily Voiture\+Factory\+::$\sim$\+Voiture\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructeur par défaut. 
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_voiture_factory_a2ac76ad9b217bc4fd6df791a01902a41}\label{class_voiture_factory_a2ac76ad9b217bc4fd6df791a01902a41}} 
+\index{VoitureFactory@{VoitureFactory}!fillUp@{fillUp}}
+\index{fillUp@{fillUp}!VoitureFactory@{VoitureFactory}}
+\doxysubsubsection{\texorpdfstring{fillUp()}{fillUp()}}
+{\footnotesize\ttfamily void Voiture\+Factory\+::fill\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Méthode qui invoque la méthode fill\+Up des objets \mbox{\hyperlink{class_voiture}{Voiture}} \mbox{\Hypertarget{class_voiture_factory_afd9e16e2f094b9081c58ad7f5b79f7b3}\label{class_voiture_factory_afd9e16e2f094b9081c58ad7f5b79f7b3}} 
+\index{VoitureFactory@{VoitureFactory}!getColor@{getColor}}
+\index{getColor@{getColor}!VoitureFactory@{VoitureFactory}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily string Voiture\+Factory\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter pour la couleur \begin{DoxyReturn}{Renvoie}
+string couleur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_voiture_factory_a5206fa8499d110692f29b8e13b28e844}\label{class_voiture_factory_a5206fa8499d110692f29b8e13b28e844}} 
+\index{VoitureFactory@{VoitureFactory}!getInfo@{getInfo}}
+\index{getInfo@{getInfo}!VoitureFactory@{VoitureFactory}}
+\doxysubsubsection{\texorpdfstring{getInfo()}{getInfo()}}
+{\footnotesize\ttfamily void Voiture\+Factory\+::get\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Méthode qui invoque la méthode to\+String des objets \mbox{\hyperlink{class_voiture}{Voiture}} \mbox{\Hypertarget{class_voiture_factory_ad666c471254008b1e0d753eccf501fd8}\label{class_voiture_factory_ad666c471254008b1e0d753eccf501fd8}} 
+\index{VoitureFactory@{VoitureFactory}!getNumber@{getNumber}}
+\index{getNumber@{getNumber}!VoitureFactory@{VoitureFactory}}
+\doxysubsubsection{\texorpdfstring{getNumber()}{getNumber()}}
+{\footnotesize\ttfamily int Voiture\+Factory\+::get\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter pour le numéro \begin{DoxyReturn}{Renvoie}
+int numéro 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_voiture_factory_a0c6be2d9096c900ecdb90fae411a7e13}\label{class_voiture_factory_a0c6be2d9096c900ecdb90fae411a7e13}} 
+\index{VoitureFactory@{VoitureFactory}!getVoiture@{getVoiture}}
+\index{getVoiture@{getVoiture}!VoitureFactory@{VoitureFactory}}
+\doxysubsubsection{\texorpdfstring{getVoiture()}{getVoiture()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_voiture}{Voiture}}$\ast$ Voiture\+Factory\+::get\+Voiture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Méthode virtuelle pure. Méthode qui permet de créer un objet voiture 
+
+Implémenté dans \mbox{\hyperlink{class_concrete_creator_essence_a209963b0db59098d1ef4e9964b9e48b2}{Concrete\+Creator\+Essence}}, et \mbox{\hyperlink{class_concrete_creator_diesel_ac1cc7f0fcc5c0345b32e0cd2be15c6a7}{Concrete\+Creator\+Diesel}}.
+
+\mbox{\Hypertarget{class_voiture_factory_a55dc9da9677f605073b97bb402a36070}\label{class_voiture_factory_a55dc9da9677f605073b97bb402a36070}} 
+\index{VoitureFactory@{VoitureFactory}!setColor@{setColor}}
+\index{setColor@{setColor}!VoitureFactory@{VoitureFactory}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Voiture\+Factory\+::set\+Color (\begin{DoxyParamCaption}\item[{string}]{color }\end{DoxyParamCaption})}
+
+setter pour la couleur 
+\begin{DoxyParams}{Paramètres}
+{\em color} & string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_voiture_factory_a3b4772056da174327f1c9705adf5fde8}\label{class_voiture_factory_a3b4772056da174327f1c9705adf5fde8}} 
+\index{VoitureFactory@{VoitureFactory}!setNumber@{setNumber}}
+\index{setNumber@{setNumber}!VoitureFactory@{VoitureFactory}}
+\doxysubsubsection{\texorpdfstring{setNumber()}{setNumber()}}
+{\footnotesize\ttfamily void Voiture\+Factory\+::set\+Number (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})}
+
+setter pour le numéro 
+\begin{DoxyParams}{Paramètres}
+{\em number} & int \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Voiture\+Factory.\+h\item 
+Voiture\+Factory.\+cpp\end{DoxyCompactItemize}

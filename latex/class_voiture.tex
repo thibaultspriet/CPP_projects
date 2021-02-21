@@ -1,0 +1,110 @@
+\hypertarget{class_voiture}{}\doxysection{Référence de la classe Voiture}
+\label{class_voiture}\index{Voiture@{Voiture}}
+
+
+{\ttfamily \#include $<$Voiture.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de Voiture\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_voiture}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_voiture_a5e2a2a98cb2cd070450f89e5848caf5a}{get\+Color}} ()
+\item 
+int \mbox{\hyperlink{class_voiture_aa982ea56319b998e17e29abb9aa93255}{get\+Number}} ()
+\item 
+void \mbox{\hyperlink{class_voiture_abf7409345866af306f2ae5ae22566791}{set\+Color}} (string color)
+\item 
+void \mbox{\hyperlink{class_voiture_aa53e55a50af77a4bce611c804e60fad9}{set\+Number}} (int number)
+\item 
+virtual void \mbox{\hyperlink{class_voiture_aa8fb5bf2424e57ac604c59ec9028a599}{fill\+Up}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_voiture_a89ed192f0c2f0ced2c176cfe0a1db589}{to\+String}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_voiture_afe85820a993b6908d0fdb524245e5133}{$\sim$\+Voiture}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Interface \mbox{\hyperlink{class_voiture}{Voiture}}. Caractérisée par une couleur et un numéro d\textquotesingle{}identification. Cette classe implémente les getter et setter de ses attributs. Deux méthodes virtuelles pures sont déclarées et doivent être implémentées dans les classes fille. Ces méthodes correspondent aux \char`\"{}actions\char`\"{} que tout type de voiture ; quelle soit à essence ou diesel ; doit pouvoir faire. 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_voiture_afe85820a993b6908d0fdb524245e5133}\label{class_voiture_afe85820a993b6908d0fdb524245e5133}} 
+\index{Voiture@{Voiture}!````~Voiture@{$\sim$Voiture}}
+\index{````~Voiture@{$\sim$Voiture}!Voiture@{Voiture}}
+\doxysubsubsection{\texorpdfstring{$\sim$Voiture()}{~Voiture()}}
+{\footnotesize\ttfamily Voiture\+::$\sim$\+Voiture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructeur par défaut. 
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_voiture_aa8fb5bf2424e57ac604c59ec9028a599}\label{class_voiture_aa8fb5bf2424e57ac604c59ec9028a599}} 
+\index{Voiture@{Voiture}!fillUp@{fillUp}}
+\index{fillUp@{fillUp}!Voiture@{Voiture}}
+\doxysubsubsection{\texorpdfstring{fillUp()}{fillUp()}}
+{\footnotesize\ttfamily virtual void Voiture\+::fill\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Méthode virtuelle pure, doit être implémentée par chaque classe fille. Simule une voiture qui fait le plein de carburant 
+
+Implémenté dans \mbox{\hyperlink{class_voiture_essence_a7437ad19912bc5f864d5f6d190555a0d}{Voiture\+Essence}}, et \mbox{\hyperlink{class_voiture_diesel_a5893580250b18b9781d0fb06430f968b}{Voiture\+Diesel}}.
+
+\mbox{\Hypertarget{class_voiture_a5e2a2a98cb2cd070450f89e5848caf5a}\label{class_voiture_a5e2a2a98cb2cd070450f89e5848caf5a}} 
+\index{Voiture@{Voiture}!getColor@{getColor}}
+\index{getColor@{getColor}!Voiture@{Voiture}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily string Voiture\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter pour la couleur \begin{DoxyReturn}{Renvoie}
+string couleur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_voiture_aa982ea56319b998e17e29abb9aa93255}\label{class_voiture_aa982ea56319b998e17e29abb9aa93255}} 
+\index{Voiture@{Voiture}!getNumber@{getNumber}}
+\index{getNumber@{getNumber}!Voiture@{Voiture}}
+\doxysubsubsection{\texorpdfstring{getNumber()}{getNumber()}}
+{\footnotesize\ttfamily int Voiture\+::get\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter pour le numéro \begin{DoxyReturn}{Renvoie}
+int numéro 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_voiture_abf7409345866af306f2ae5ae22566791}\label{class_voiture_abf7409345866af306f2ae5ae22566791}} 
+\index{Voiture@{Voiture}!setColor@{setColor}}
+\index{setColor@{setColor}!Voiture@{Voiture}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Voiture\+::set\+Color (\begin{DoxyParamCaption}\item[{string}]{color }\end{DoxyParamCaption})}
+
+setter pour la couleur 
+\begin{DoxyParams}{Paramètres}
+{\em color} & un string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_voiture_aa53e55a50af77a4bce611c804e60fad9}\label{class_voiture_aa53e55a50af77a4bce611c804e60fad9}} 
+\index{Voiture@{Voiture}!setNumber@{setNumber}}
+\index{setNumber@{setNumber}!Voiture@{Voiture}}
+\doxysubsubsection{\texorpdfstring{setNumber()}{setNumber()}}
+{\footnotesize\ttfamily void Voiture\+::set\+Number (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})}
+
+setter pour le numéro 
+\begin{DoxyParams}{Paramètres}
+{\em number} & un entier \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_voiture_a89ed192f0c2f0ced2c176cfe0a1db589}\label{class_voiture_a89ed192f0c2f0ced2c176cfe0a1db589}} 
+\index{Voiture@{Voiture}!toString@{toString}}
+\index{toString@{toString}!Voiture@{Voiture}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily virtual void Voiture\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Méthode virtuelle pure, doit être implémentée par chaque classe fille. Print les informations relatives à la voiure 
+
+Implémenté dans \mbox{\hyperlink{class_voiture_essence_aaa2de5d775b29e1fbe1a1626fd6db825}{Voiture\+Essence}}, et \mbox{\hyperlink{class_voiture_diesel_a0b13b0c6f2165206cc25c9789f425282}{Voiture\+Diesel}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Voiture.\+h\item 
+Voiture.\+cpp\end{DoxyCompactItemize}
