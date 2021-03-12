@@ -5,6 +5,7 @@
 #include "UImg.h"
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -26,8 +27,7 @@ private :
    int               identite;
    int               x, y;
    double            cumulX, cumulY;
-   double            orientation;
-   double            vitesse;
+   vector<double> vitesse ; // vx,vy
 
    T               * couleur;
 

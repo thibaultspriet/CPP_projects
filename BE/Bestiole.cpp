@@ -6,6 +6,7 @@
 #include <cmath>
 
 
+
 const double      Bestiole::AFF_SIZE = 8.;
 const double      Bestiole::MAX_VITESSE = 10.;
 const double      Bestiole::LIMITE_VUE = 30.;
@@ -22,8 +23,10 @@ Bestiole::Bestiole( void )
 
    x = y = 0;
    cumulX = cumulY = 0.;
-   orientation = static_cast<double>( rand() )/RAND_MAX*2.*M_PI;
-   vitesse = static_cast<double>( rand() )/RAND_MAX*MAX_VITESSE;
+   //orientation = static_cast<double>( rand() )/RAND_MAX*2.*M_PI;
+   //vitesse = static_cast<double>( rand() )/RAND_MAX*MAX_VITESSE
+   vitesse.push_back(static_cast<double>( rand() )/RAND_MAX*MAX_VITESSE);
+   vitesse.push_back(static_cast<double>( rand() )/RAND_MAX*MAX_VITESSE);
 
    couleur = new T[ 3 ];
    couleur[ 0 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
@@ -43,7 +46,7 @@ Bestiole::Bestiole( const Bestiole & b )
    x = b.x;
    y = b.y;
    cumulX = cumulY = 0.;
-   orientation = b.orientation;
+   //orientation = b.orientation;
    vitesse = b.vitesse;
    couleur = new T[ 3 ];
    memcpy( couleur, b.couleur, 3*sizeof(T) );
@@ -74,19 +77,17 @@ void Bestiole::bouge( int xLim, int yLim )
 {
 
    double         nx, ny;
-   double         dx = cos( orientation )*vitesse;
-   double         dy = -sin( orientation )*vitesse;
    int            cx, cy;
 
 
    cx = static_cast<int>( cumulX ); cumulX -= cx;
    cy = static_cast<int>( cumulY ); cumulY -= cy;
 
-   nx = x + dx + cx;
-   ny = y + dy + cy;
+   nx = x + vitesse.at(0) + cx;
+   ny = y + vitesse.at(1) + cy;
 
    if ( (nx < 0) || (nx > xLim - 1) ) {
-      orientation = M_PI - orientation;
+      vitesse.at(0) = -vitesse.at(0);
       cumulX = 0.;
    }
    else {
@@ -95,7 +96,7 @@ void Bestiole::bouge( int xLim, int yLim )
    }
 
    if ( (ny < 0) || (ny > yLim - 1) ) {
-      orientation = -orientation;
+      vitesse.at(1) = -vitesse.at(1);
       cumulY = 0.;
    }
    else {
@@ -117,8 +118,13 @@ void Bestiole::action( Milieu & monMilieu )
 void Bestiole::draw( UImg & support )
 {
 
-   double         xt = x + cos( orientation )*AFF_SIZE/2.1;
-   double         yt = y - sin( orientation )*AFF_SIZE/2.1;
+   double orientation = -atan(vitesse.at(1)/vitesse.at(0));
+
+   double dx = cos( orientation )*AFF_SIZE/2.1;
+   double dy = -sin( orientation )*AFF_SIZE/2.1;
+
+   double         xt = vitesse.at(0) > 0 ? x + dx : x - dx;
+   double         yt = vitesse.at(0) > 0 ? y + dy : y - dy;
 
 
    support.draw_ellipse( x, y, AFF_SIZE, AFF_SIZE/5., -orientation/M_PI*180., couleur );

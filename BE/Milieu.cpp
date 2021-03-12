@@ -35,7 +35,7 @@ void Milieu::step( void )
 
       it->action( *this );
       it->draw( *this );
-
+   
    } // for
 
 }
