@@ -19,6 +19,7 @@ class ConcreteCreatorEssence : public VoitureFactory
 
         /*!
         Méthode qui crée l'objet voiture essence
+        Retourne un pointeur sur une voiture. Allocation dynamique
         */
         Voiture* getVoiture();
 };

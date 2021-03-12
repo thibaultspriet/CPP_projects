@@ -17,6 +17,7 @@ class VoitureFactory
     public:
         /*!
         Méthode virtuelle pure. Méthode qui permet de créer un objet voiture
+        Retourne un pointeur afin de pouvoir faire une allocation dynamique.
         */
         virtual Voiture* getVoiture() = 0;
 

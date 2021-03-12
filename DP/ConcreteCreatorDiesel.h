@@ -19,6 +19,7 @@ class ConcreteCreatorDiesel : public VoitureFactory
 
         /*!
         Méthode qui crée l'objet voiture diesel
+        Retourne un pointeur sur une voiture. Allocation dynamique
         */
         Voiture* getVoiture();
 };
