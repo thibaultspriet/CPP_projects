@@ -33,6 +33,7 @@ private :
 
 private :
    void bouge( int xLim, int yLim );
+   void collide(vector<Bestiole> bestioles); // Méthode appelée après bouge, parcourt les bestioles, si collision inverse le sens du vecteur vitesse
 
 public :                                           // Forme canonique :
    Bestiole( void );                               // Constructeur par defaut

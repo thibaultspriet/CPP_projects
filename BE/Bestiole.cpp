@@ -23,8 +23,6 @@ Bestiole::Bestiole( void )
 
    x = y = 0;
    cumulX = cumulY = 0.;
-   //orientation = static_cast<double>( rand() )/RAND_MAX*2.*M_PI;
-   //vitesse = static_cast<double>( rand() )/RAND_MAX*MAX_VITESSE
    vitesse.push_back(static_cast<double>( rand() )/RAND_MAX*MAX_VITESSE);
    vitesse.push_back(static_cast<double>( rand() )/RAND_MAX*MAX_VITESSE);
 
@@ -46,7 +44,6 @@ Bestiole::Bestiole( const Bestiole & b )
    x = b.x;
    y = b.y;
    cumulX = cumulY = 0.;
-   //orientation = b.orientation;
    vitesse = b.vitesse;
    couleur = new T[ 3 ];
    memcpy( couleur, b.couleur, 3*sizeof(T) );
@@ -59,7 +56,7 @@ Bestiole::~Bestiole( void )
 
    delete[] couleur;
 
-   cout << "dest Bestiole" << endl;
+   cout << "dest Bestiole" << identite << endl;
 
 }
 
@@ -106,11 +103,31 @@ void Bestiole::bouge( int xLim, int yLim )
 
 }
 
+void Bestiole::collide(vector<Bestiole> bestioles){
+   for ( auto it = bestioles.begin() ; it != bestioles.end() ; ++it ){
+      if((it->x != x) & (it->y != y)){ // pour l'instant comme ca parce que itérateur fait une copie et une meme bestiole n'a pas la meme identité            
+         double         dist,overlap;
+         dist = std::sqrt( (x-it->x)*(x-it->x) + (y-it->y)*(y-it->y) );
+         overlap = .5*(dist - Bestiole::AFF_SIZE);
+         if(dist <= Bestiole::AFF_SIZE){
+
+            vitesse.at(0) *= -1;
+            vitesse.at(1) *= -1;
+            
+            break;
+         }
+      }
+   }
+}
+
+
+
 
 void Bestiole::action( Milieu & monMilieu )
 {
 
    bouge( monMilieu.getWidth(), monMilieu.getHeight() );
+   collide(monMilieu.getBestioles());
 
 }
 

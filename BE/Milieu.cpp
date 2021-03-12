@@ -35,7 +35,7 @@ void Milieu::step( void )
 
       it->action( *this );
       it->draw( *this );
-   
+
    } // for
 
 }
@@ -53,4 +53,8 @@ int Milieu::nbVoisins( const Bestiole & b )
 
    return nb;
 
+}
+
+vector<Bestiole> Milieu::getBestioles(){
+   return listeBestioles;
 }
