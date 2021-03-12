@@ -27,13 +27,14 @@ private :
    int               identite;
    int               x, y;
    double            cumulX, cumulY;
-   vector<double> vitesse ; // vx,vy
-
+   //double probDeath;
+   vector<double> vitesse;
    T               * couleur;
 
 private :
    void bouge( int xLim, int yLim );
-   void collide(vector<Bestiole> bestioles); // Méthode appelée après bouge, parcourt les bestioles, si collision inverse le sens du vecteur vitesse
+   // void collide(vector<Bestiole> bestioles); // Méthode appelée après bouge, parcourt les bestioles, si collision inverse le sens du vecteur vitesse
+   void collide(vector<Bestiole*> bestioles); // Méthode appelée après bouge, parcourt les bestioles, si collision inverse le sens du vecteur vitesse
 
 public :                                           // Forme canonique :
    Bestiole( void );                               // Constructeur par defaut
@@ -45,9 +46,12 @@ public :                                           // Forme canonique :
 
    bool jeTeVois( const Bestiole & b ) const;
 
+   //double getProbDeath(void) const;
+   
    void initCoords( int xLim, int yLim );
 
    friend bool operator==( const Bestiole & b1, const Bestiole & b2 );
+
 
 };
 

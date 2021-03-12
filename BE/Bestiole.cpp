@@ -31,6 +31,8 @@ Bestiole::Bestiole( void )
    couleur[ 1 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
    couleur[ 2 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
 
+   //probDeath = (rand() % 101)/100.0 ;// valeur entre 0 et 100
+
 }
 
 
@@ -103,17 +105,19 @@ void Bestiole::bouge( int xLim, int yLim )
 
 }
 
-void Bestiole::collide(vector<Bestiole> bestioles){
+void Bestiole::collide(vector<Bestiole*> bestioles){
    for ( auto it = bestioles.begin() ; it != bestioles.end() ; ++it ){
-      if((it->x != x) & (it->y != y)){ // pour l'instant comme ca parce que itérateur fait une copie et une meme bestiole n'a pas la meme identité            
-         double         dist,overlap;
-         dist = std::sqrt( (x-it->x)*(x-it->x) + (y-it->y)*(y-it->y) );
-         overlap = .5*(dist - Bestiole::AFF_SIZE);
+      if(!((**it) == *this)){ // pour l'instant comme ca parce que itérateur fait une copie et une meme bestiole n'a pas la meme identité            
+         double         dist;
+         dist = std::sqrt( (x-(**it).x)*(x-(**it).x) + (y-(**it).y)*(y-(**it).y) );
          if(dist <= Bestiole::AFF_SIZE){
-
+            // if((rand() % 101)/100.0 < this->getProbDeath() ){
+            //    //cout << "bestiole " << identite << "dead after collision" << endl;
+            //    //delete this;
+            //    break;
+            // }
             vitesse.at(0) *= -1;
             vitesse.at(1) *= -1;
-            
             break;
          }
       }
@@ -168,3 +172,7 @@ bool Bestiole::jeTeVois( const Bestiole & b ) const
    return ( dist <= LIMITE_VUE );
 
 }
+
+// double Bestiole::getProbDeath() const{
+//    return this->probDeath;
+// }
