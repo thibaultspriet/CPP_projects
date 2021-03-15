@@ -1,0 +1,189 @@
+\hypertarget{class_bestiole}{}\doxysection{Bestiole Class Reference}
+\label{class_bestiole}\index{Bestiole@{Bestiole}}
+
+
+Classe bestiole.  
+
+
+
+
+{\ttfamily \#include $<$Bestiole.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_bestiole_ab280b9a9e4b65c8b34e3ff22974f1f41}\label{class_bestiole_ab280b9a9e4b65c8b34e3ff22974f1f41}} 
+\mbox{\hyperlink{class_bestiole_ab280b9a9e4b65c8b34e3ff22974f1f41}{Bestiole}} (void)
+\begin{DoxyCompactList}\small\item\em Constructeur d\textquotesingle{}un objet bestiole. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bestiole_a1ae0ff4096b8147185be6015b91cf83d}{Bestiole}} (const \mbox{\hyperlink{class_bestiole}{Bestiole}} \&b)
+\begin{DoxyCompactList}\small\item\em Constructeur par copie d\textquotesingle{}une bestiole. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_bestiole_a1a6c2200f1330950d61d140c06e048f7}\label{class_bestiole_a1a6c2200f1330950d61d140c06e048f7}} 
+\mbox{\hyperlink{class_bestiole_a1a6c2200f1330950d61d140c06e048f7}{$\sim$\+Bestiole}} (void)
+\begin{DoxyCompactList}\small\item\em Destructeur d\textquotesingle{}un objet bestiole. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bestiole_a8c9563cde4c952230b47f8f147dc4e2d}{action}} (\mbox{\hyperlink{class_milieu}{Milieu}} \&mon\+Milieu, std\+::vector$<$ \mbox{\hyperlink{class_bestiole}{Bestiole}} $\ast$ $>$ \&to\+Remove\+Bestioles)
+\begin{DoxyCompactList}\small\item\em méthode appelée sur la bestiole à chaque pas de simulation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bestiole_a1e8dbb345e40d3b186b3a857ba2eeb45}{draw}} (UImg \&support)
+\begin{DoxyCompactList}\small\item\em Affichage d\textquotesingle{}une bestiole. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bestiole_a4303716c385703c96759865d6f13d70b}{je\+Te\+Vois}} (const \mbox{\hyperlink{class_bestiole}{Bestiole}} \&b) const
+\begin{DoxyCompactList}\small\item\em détermine si la bestiole détecte la bestiole passée en argument \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_bestiole_a1800c284a9a0c14c25de431b70a84c3f}{get\+Prob\+Death}} (void) const
+\begin{DoxyCompactList}\small\item\em retourne l\textquotesingle{}attribut prob\+Death \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bestiole_a9edeec107a8ca4f123427c229874b7fc}{init\+Coords}} (int x\+Lim, int y\+Lim)
+\begin{DoxyCompactList}\small\item\em Place la bestiole de manière aléatoire à sa naissance. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_bestiole_a3ff301da3397c2a5b0acc2b93e2f4dc0}{get\+Identite}} (void)
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}identifiant de la bestiole. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_bestiole_a35185469e558795a388b6733e3445272}{operator==}} (const \mbox{\hyperlink{class_bestiole}{Bestiole}} \&b1, const \mbox{\hyperlink{class_bestiole}{Bestiole}} \&b2)
+\begin{DoxyCompactList}\small\item\em Redéfinition de l\textquotesingle{}opérateur ==. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe bestiole. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_bestiole_a1ae0ff4096b8147185be6015b91cf83d}\label{class_bestiole_a1ae0ff4096b8147185be6015b91cf83d}} 
+\index{Bestiole@{Bestiole}!Bestiole@{Bestiole}}
+\index{Bestiole@{Bestiole}!Bestiole@{Bestiole}}
+\doxysubsubsection{\texorpdfstring{Bestiole()}{Bestiole()}}
+{\footnotesize\ttfamily Bestiole\+::\+Bestiole (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_bestiole}{Bestiole}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Constructeur par copie d\textquotesingle{}une bestiole. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_bestiole_a8c9563cde4c952230b47f8f147dc4e2d}\label{class_bestiole_a8c9563cde4c952230b47f8f147dc4e2d}} 
+\index{Bestiole@{Bestiole}!action@{action}}
+\index{action@{action}!Bestiole@{Bestiole}}
+\doxysubsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily void Bestiole\+::action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_milieu}{Milieu}} \&}]{mon\+Milieu,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_bestiole}{Bestiole}} $\ast$ $>$ \&}]{to\+Remove\+Bestioles }\end{DoxyParamCaption})}
+
+
+
+méthode appelée sur la bestiole à chaque pas de simulation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mon\+Milieu} & référence du milieu \\
+\hline
+{\em to\+Remove\+Bestioles} & paramètre intermédiaire qui permet de stocker les bestioles à supprimer à la fin d\textquotesingle{}une \char`\"{}step\char`\"{} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_bestiole_a1e8dbb345e40d3b186b3a857ba2eeb45}\label{class_bestiole_a1e8dbb345e40d3b186b3a857ba2eeb45}} 
+\index{Bestiole@{Bestiole}!draw@{draw}}
+\index{draw@{draw}!Bestiole@{Bestiole}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Bestiole\+::draw (\begin{DoxyParamCaption}\item[{UImg \&}]{support }\end{DoxyParamCaption})}
+
+
+
+Affichage d\textquotesingle{}une bestiole. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em support} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_bestiole_a3ff301da3397c2a5b0acc2b93e2f4dc0}\label{class_bestiole_a3ff301da3397c2a5b0acc2b93e2f4dc0}} 
+\index{Bestiole@{Bestiole}!getIdentite@{getIdentite}}
+\index{getIdentite@{getIdentite}!Bestiole@{Bestiole}}
+\doxysubsubsection{\texorpdfstring{getIdentite()}{getIdentite()}}
+{\footnotesize\ttfamily int Bestiole\+::get\+Identite (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoie l\textquotesingle{}identifiant de la bestiole. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_bestiole_a1800c284a9a0c14c25de431b70a84c3f}\label{class_bestiole_a1800c284a9a0c14c25de431b70a84c3f}} 
+\index{Bestiole@{Bestiole}!getProbDeath@{getProbDeath}}
+\index{getProbDeath@{getProbDeath}!Bestiole@{Bestiole}}
+\doxysubsubsection{\texorpdfstring{getProbDeath()}{getProbDeath()}}
+{\footnotesize\ttfamily double Bestiole\+::get\+Prob\+Death (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+retourne l\textquotesingle{}attribut prob\+Death 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_bestiole_a9edeec107a8ca4f123427c229874b7fc}\label{class_bestiole_a9edeec107a8ca4f123427c229874b7fc}} 
+\index{Bestiole@{Bestiole}!initCoords@{initCoords}}
+\index{initCoords@{initCoords}!Bestiole@{Bestiole}}
+\doxysubsubsection{\texorpdfstring{initCoords()}{initCoords()}}
+{\footnotesize\ttfamily void Bestiole\+::init\+Coords (\begin{DoxyParamCaption}\item[{int}]{x\+Lim,  }\item[{int}]{y\+Lim }\end{DoxyParamCaption})}
+
+
+
+Place la bestiole de manière aléatoire à sa naissance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Lim} & limite horizontale \\
+\hline
+{\em y\+Lim} & limite verticale \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_bestiole_a4303716c385703c96759865d6f13d70b}\label{class_bestiole_a4303716c385703c96759865d6f13d70b}} 
+\index{Bestiole@{Bestiole}!jeTeVois@{jeTeVois}}
+\index{jeTeVois@{jeTeVois}!Bestiole@{Bestiole}}
+\doxysubsubsection{\texorpdfstring{jeTeVois()}{jeTeVois()}}
+{\footnotesize\ttfamily bool Bestiole\+::je\+Te\+Vois (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_bestiole}{Bestiole}} \&}]{b }\end{DoxyParamCaption}) const}
+
+
+
+détermine si la bestiole détecte la bestiole passée en argument 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & référence constante d\textquotesingle{}une bestiole \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_bestiole_a35185469e558795a388b6733e3445272}\label{class_bestiole_a35185469e558795a388b6733e3445272}} 
+\index{Bestiole@{Bestiole}!operator==@{operator==}}
+\index{operator==@{operator==}!Bestiole@{Bestiole}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_bestiole}{Bestiole}} \&}]{b1,  }\item[{const \mbox{\hyperlink{class_bestiole}{Bestiole}} \&}]{b2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Redéfinition de l\textquotesingle{}opérateur ==. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b1} & première bestiole \\
+\hline
+{\em b2} & seconde bestiole \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Bestiole.\+h\item 
+Bestiole.\+cpp\end{DoxyCompactItemize}

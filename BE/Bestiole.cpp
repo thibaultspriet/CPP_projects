@@ -23,9 +23,12 @@ Bestiole::Bestiole( void )
 
    x = y = 0;
    cumulX = cumulY = 0.;
+
+   // vitesse initiale aléatoire
    vitesse.push_back(static_cast<double>( rand() )/RAND_MAX*MAX_VITESSE);
    vitesse.push_back(static_cast<double>( rand() )/RAND_MAX*MAX_VITESSE);
 
+   // définit la couleur de la bestiole
    couleur = new T[ 3 ];
    couleur[ 0 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
    couleur[ 1 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
@@ -104,27 +107,22 @@ void Bestiole::bouge( int xLim, int yLim )
 
 }
 
-void Bestiole::collide(Milieu & monMilieu){
+void Bestiole::collide(Milieu & monMilieu, std::vector<Bestiole*> & toRemoveBestioles){
 
    std::vector<Bestiole*> & bestioles = monMilieu.getBestioles();
    bool alreadyCollide = false;
-   std::vector<Bestiole*> removeBestioles;
 
    for ( auto it = bestioles.begin() ; it != bestioles.end() ; ++it ){
       if(!((**it) == *this)){            
          double         dist;
          dist = std::sqrt( (x-(**it).x)*(x-(**it).x) + (y-(**it).y)*(y-(**it).y) );
-         if(dist <= Bestiole::AFF_SIZE){
+         if(dist <= Bestiole::AFF_SIZE){ // si collision, tirage aléatoire pour savoir si la bestiole doit mourir
             double death = (rand() % 101)/100.0;
             if(death < this->getProbDeath() && !alreadyCollide){
                cout << "Bestiole " << identite << " va mourir" << endl;
-               removeBestioles.push_back(this);
+               toRemoveBestioles.push_back(this);
             }
-            if(death < (*it)->getProbDeath()){
-               cout << "Bestiole " << (*it)->getIdentite() << " va mourir" << endl;
-               removeBestioles.push_back(*it);
-            }
-            if(!alreadyCollide){
+            if(!alreadyCollide){ // inversr le sens du vecteur vitesse à la première collision
                vitesse.at(0) *= -1;
                vitesse.at(1) *= -1;
                alreadyCollide = !alreadyCollide;
@@ -132,25 +130,15 @@ void Bestiole::collide(Milieu & monMilieu){
          }
       }
    }
-
-   if(!removeBestioles.empty()){
-      cout << "Before remove : ";
-      for(auto it = bestioles.begin() ; it != bestioles.end() ; ++it){
-         cout << (*it)->getIdentite() << " " ;
-      }
-      cout << endl;
-   }
-   //monMilieu.removeMember(removeBestioles);
 }
 
 
 
 
-void Bestiole::action( Milieu & monMilieu )
+void Bestiole::action( Milieu & monMilieu, std::vector<Bestiole*> & toRemoveBestioles )
 {
-
    bouge( monMilieu.getWidth(), monMilieu.getHeight() );
-   collide(monMilieu);
+   collide(monMilieu, toRemoveBestioles);
 
 }
 
