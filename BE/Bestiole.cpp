@@ -31,7 +31,7 @@ Bestiole::Bestiole( void )
    couleur[ 1 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
    couleur[ 2 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
 
-   //probDeath = (rand() % 101)/100.0 ;// valeur entre 0 et 100
+   probDeath = (rand() % 101)/100.0 ;// valeur entre 0 et 100
 
 }
 
@@ -58,7 +58,7 @@ Bestiole::~Bestiole( void )
 
    delete[] couleur;
 
-   cout << "dest Bestiole" << identite << endl;
+   cout << "dest Bestiole " << identite << endl;
 
 }
 
@@ -74,7 +74,6 @@ void Bestiole::initCoords( int xLim, int yLim )
 
 void Bestiole::bouge( int xLim, int yLim )
 {
-
    double         nx, ny;
    int            cx, cy;
 
@@ -105,23 +104,43 @@ void Bestiole::bouge( int xLim, int yLim )
 
 }
 
-void Bestiole::collide(vector<Bestiole*> bestioles){
+void Bestiole::collide(Milieu & monMilieu){
+
+   std::vector<Bestiole*> & bestioles = monMilieu.getBestioles();
+   bool alreadyCollide = false;
+   std::vector<Bestiole*> removeBestioles;
+
    for ( auto it = bestioles.begin() ; it != bestioles.end() ; ++it ){
-      if(!((**it) == *this)){ // pour l'instant comme ca parce que itérateur fait une copie et une meme bestiole n'a pas la meme identité            
+      if(!((**it) == *this)){            
          double         dist;
          dist = std::sqrt( (x-(**it).x)*(x-(**it).x) + (y-(**it).y)*(y-(**it).y) );
          if(dist <= Bestiole::AFF_SIZE){
-            // if((rand() % 101)/100.0 < this->getProbDeath() ){
-            //    //cout << "bestiole " << identite << "dead after collision" << endl;
-            //    //delete this;
-            //    break;
-            // }
-            vitesse.at(0) *= -1;
-            vitesse.at(1) *= -1;
-            break;
+            double death = (rand() % 101)/100.0;
+            if(death < this->getProbDeath() && !alreadyCollide){
+               cout << "Bestiole " << identite << " va mourir" << endl;
+               removeBestioles.push_back(this);
+            }
+            if(death < (*it)->getProbDeath()){
+               cout << "Bestiole " << (*it)->getIdentite() << " va mourir" << endl;
+               removeBestioles.push_back(*it);
+            }
+            if(!alreadyCollide){
+               vitesse.at(0) *= -1;
+               vitesse.at(1) *= -1;
+               alreadyCollide = !alreadyCollide;
+            }
          }
       }
    }
+
+   if(!removeBestioles.empty()){
+      cout << "Before remove : ";
+      for(auto it = bestioles.begin() ; it != bestioles.end() ; ++it){
+         cout << (*it)->getIdentite() << " " ;
+      }
+      cout << endl;
+   }
+   //monMilieu.removeMember(removeBestioles);
 }
 
 
@@ -131,9 +150,10 @@ void Bestiole::action( Milieu & monMilieu )
 {
 
    bouge( monMilieu.getWidth(), monMilieu.getHeight() );
-   collide(monMilieu.getBestioles());
+   collide(monMilieu);
 
 }
+
 
 
 void Bestiole::draw( UImg & support )
@@ -173,6 +193,6 @@ bool Bestiole::jeTeVois( const Bestiole & b ) const
 
 }
 
-// double Bestiole::getProbDeath() const{
-//    return this->probDeath;
-// }
+double Bestiole::getProbDeath() const{
+   return this->probDeath;
+}
