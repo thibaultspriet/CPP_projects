@@ -136,6 +136,26 @@ public :
     */
    int getIdentite(void){return identite;};
 
+   /**
+    * @brief Renvoie la position x de la bestiole
+    *
+    * @return int
+    */
+   int getX(void);
+
+   /**
+    * @brief Renvoie la position y de la bestiole
+    *
+    * @return int
+    */
+   int getY(void);
+
+   /**
+    * @brief Renvoie le vecteur directeur de déplacement de la bestiole
+    *
+    * @return vector<double>
+    */
+    vector<double> getDirection(void);
 
 };
 

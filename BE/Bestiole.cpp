@@ -184,3 +184,20 @@ bool Bestiole::jeTeVois( const Bestiole & b ) const
 double Bestiole::getProbDeath() const{
    return this->probDeath;
 }
+
+int Bestiole::getX() {
+    return this->x;
+}
+
+int Bestiole::getY() {
+    return this->y;
+}
+
+vector<double> Bestiole::getDirection() {
+    vector<double> vit = this->vitesse;
+    vector<double> vitUnit(2);
+    double norme = sqrt(vitesse[0] * vitesse[0] + vitesse[1] * vitesse[1]);
+    vitUnit[0] = vit[0] / norme;
+    vitUnit[1] = vit[1] / norme;
+    return vitUnit;
+}
