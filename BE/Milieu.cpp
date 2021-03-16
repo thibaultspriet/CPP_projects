@@ -1,4 +1,6 @@
 #include "Milieu.h"
+#include "ICreature.h"
+#include "Bestiole.h"
 
 #include <cstdlib>
 #include <ctime>
@@ -29,48 +31,48 @@ Milieu::~Milieu( void )
 void Milieu::step( void )
 {
 
-   std::vector<Bestiole*> toRemoveBestioles; // objet temporaire qui stocke les bestioles à supprimer à la fin du pas de simulation
+   std::vector<ICreature*> toRemoveCreatures; // objet temporaire qui stocke les bestioles à supprimer à la fin du pas de simulation
    cimg_forXY( *this, x, y ) fillC( x, y, 0, white[0], white[1], white[2] );
-   for ( std::vector<Bestiole*>::iterator it = listeBestioles.begin() ; it != listeBestioles.end() ; ++it ) // appelle l'action et désinne chaque bestiole
+   for ( std::vector<ICreature*>::iterator it = listeCreatures.begin() ; it != listeCreatures.end() ; ++it ) // appelle l'action et désinne chaque bestiole
    {
-      (*it)->action( *this, toRemoveBestioles);
+      (*it)->action( *this, toRemoveCreatures);
       (*it)->draw( *this );
 
    } // for
-   if(!toRemoveBestioles.empty()){ // supprime les bestioles qui sont mortes pendant le pas de simulation
-      removeMember(toRemoveBestioles);
+   if(!toRemoveCreatures.empty()){ // supprime les bestioles qui sont mortes pendant le pas de simulation
+      removeMember(toRemoveCreatures);
    }
 
 }
 
-void Milieu::removeMember(Bestiole* b){
-   std::vector<Bestiole*>::iterator itr = std::find(listeBestioles.begin(),listeBestioles.end(),b); 
-   int idxRemove = std::distance(listeBestioles.begin(),itr); // index de la bestiole à supprimer
-   listeBestioles.erase(listeBestioles.begin() + idxRemove);
-   delete b;
+void Milieu::removeMember(ICreature* ic){
+   std::vector<ICreature*>::iterator itr = std::find(listeCreatures.begin(),listeCreatures.end(),ic); 
+   int idxRemove = std::distance(listeCreatures.begin(),itr); // index de la bestiole à supprimer
+   listeCreatures.erase(listeCreatures.begin() + idxRemove);
+   delete ic;
 
 }
 
-void Milieu::removeMember(std::vector<Bestiole*> bestioles){
-   for(auto it = bestioles.begin() ; it != bestioles.end() ; ++it){
+void Milieu::removeMember(std::vector<ICreature*> creatures){
+   for(auto it = creatures.begin() ; it != creatures.end() ; ++it){
       removeMember(*it);
    }
 }
 
-int Milieu::nbVoisins( const Bestiole & b )
+int Milieu::nbVoisins( const ICreature & ic )
 {
 
    int         nb = 0;
 
-
-   for ( std::vector<Bestiole*>::iterator it = listeBestioles.begin() ; it != listeBestioles.end() ; ++it )
-      if ( !(b == **it) && b.jeTeVois(**it) )
+   for ( std::vector<ICreature*>::iterator itc = listeCreatures.begin() ; itc != listeCreatures.end() ; ++itc )
+      if(!((**itc) == ic ) && ic.jeTeVois((**itc)) ){
          ++nb;
+      }
 
    return nb;
 
 }
 
-vector<Bestiole*> & Milieu::getBestioles(){
-   return listeBestioles;
+vector<ICreature*> & Milieu::getCreatures(){
+   return listeCreatures;
 }

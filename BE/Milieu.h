@@ -11,6 +11,7 @@
 using namespace std;
 
 
+
 /**
  * @brief Classe milieu qui contient les bestioles.
  * 
@@ -22,7 +23,8 @@ private :
    static const T          white[]; /*!< couleur blanche */
 
    int                     width, height; /*!< largeur et hauteur du milieu */
-   std::vector<Bestiole*> listeBestioles; /*!< vecteur de pointeurs vers les bestioles de l'environnement */
+   //std::vector<Bestiole*> listeBestioles; /*!< vecteur de pointeurs vers les bestioles de l'environnement */
+   std::vector<ICreature*> listeCreatures; /*!< vecteur de pointeurs vers les bestioles de l'environnement */
    
 
 public :
@@ -69,7 +71,8 @@ public :
     * 
     * @param b pointeur sur une bestiole
     */
-   void addMember(  Bestiole* b ) { listeBestioles.push_back(b); listeBestioles.back()->initCoords(width, height); }
+   //void addMember(  Bestiole* b ) { listeBestioles.push_back(b); listeBestioles.back()->initCoords(width, height); }
+   void addMember(  ICreature* ic ) { listeCreatures.push_back(ic); listeCreatures.back()->initCoords(width, height); }
    
    /**
     * @brief supprime une bestiole de la simulation
@@ -78,14 +81,15 @@ public :
     * 
     * @param b pointeur sur une bestiole
     */
-   void removeMember( Bestiole * b);
+   // void removeMember( Bestiole * b);
+   void removeMember( ICreature * ic);
 
    /**
     * @brief supprime plusieurs bestioles en même temps
     * 
     * @param bestioles vecteur de pointeur des bestioles à supprimer
     */
-   void removeMember( std::vector<Bestiole*> bestioles );
+   void removeMember( std::vector<ICreature*> creatures );
 
 
 
@@ -95,22 +99,14 @@ public :
     * @param b référence d'une bestiole
     * @return int 
     */
-   int nbVoisins( const Bestiole & b );
+   int nbVoisins( const ICreature & ic );
 
    /**
     * @brief Renvoie une référence de la liste des bestioles
     * 
     * @return std::vector<Bestiole*>& 
     */
-   std::vector<Bestiole*> & getBestioles();
-
-   // For debug
-   void printFlotte(void){
-      for(auto it = listeBestioles.begin() ; it!=listeBestioles.end() ; ++it){
-         cout << (*it)->getIdentite() << " ";
-      }
-      cout << endl;
-   }
+   std::vector<ICreature*> & getCreatures();
 
 };
 
