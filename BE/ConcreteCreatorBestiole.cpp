@@ -39,5 +39,5 @@ IComportement* ConcreteCreatorBestiole::getComportementNaissance() {
     }
 
     Bestiole ConcreteCreatorBestiole::createBestiole(IComportement * comportement, CapteurDecorator capteur, AccessoireDecorator accessoire) {
-        return new Bestiole(this->getComportement, this->getCapteur(), this->getAccessoire())
+        return new Bestiole(this->getComportement, this->getCapteur(), this->getAccessoire()) // test
     }
