@@ -7,6 +7,7 @@
 
 class ComportementPeureuse : public IComportement {
 	private:
+	// nb de voisins à partir duquel la bestiole change de direction et vitesse
 	int m_seuil;
 
 public:

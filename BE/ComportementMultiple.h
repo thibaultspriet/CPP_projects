@@ -11,10 +11,10 @@
 
 class ComportementMultiple : public IComportement {
 	private:
-	vector<IComportement*> comportements;
-	IComportement* comportementActif;
-	int m_tempsAvant;
-	static const int m_tempsEntreDeux = 10;
+	vector<IComportement*> comportements; // vecteur qui contient tous les autres types de comportements
+	IComportement* comportementActif; // comportement actuel de la bestiole associée
+	int m_tempsAvant; // temps avant futur changement de comportement 
+	static const int m_tempsEntreDeux = 10; // temps entre deux changements de comportement (fixé à 10)
 
 	public:
 	ComportementMultiple();

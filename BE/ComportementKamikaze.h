@@ -7,6 +7,7 @@
 
 class ComportementKamikaze : public IComportement {
 	private :
+	// coefficient multiplicateur de la vitesse pour attaquer une bestiole
 	static const int m_coefAttaque;
 	public:
 	ComportementKamikaze();
@@ -15,6 +16,7 @@ class ComportementKamikaze : public IComportement {
 	ComportType getComportementType() { return KAMIK; };
 };
 
+// ajout d'une fonction pour calculer la distance entre deux points
 double calculDistance(int xA, int yA, int xB, int yB);
 
 #endif
