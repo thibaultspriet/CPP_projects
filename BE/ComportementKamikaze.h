@@ -3,16 +3,16 @@
 
 #include <iostream>
 #include "IComportement.h"
-#include "Bestiole.h"
-#include <tuple>
 #include <vector>
 
 class ComportementKamikaze : public IComportement {
 	private :
-	double m_coefAttaque;
+	static const int m_coefAttaque;
 	public:
 	ComportementKamikaze();
-	std::tuple<vector<double, double>, double> calculDirection(vector<Bestiole> voisins, Bestiole bestioleAssociee);
+	~ComportementKamikaze();
+	std::tuple<vector<double>, double> calculDirection(vector<Bestiole*> voisins, Bestiole& bestioleAssociee);
+	ComportType getComportementType() { return KAMIK; };
 };
 
 double calculDistance(int xA, int yA, int xB, int yB);

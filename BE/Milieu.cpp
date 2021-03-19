@@ -59,7 +59,6 @@ void Milieu::removeMember(std::vector<Bestiole*> bestioles){
 
 int Milieu::nbVoisins( const Bestiole & b )
 {
-
    int         nb = 0;
 
 
@@ -69,6 +68,16 @@ int Milieu::nbVoisins( const Bestiole & b )
 
    return nb;
 
+}
+
+vector<Bestiole*> Milieu::getVoisins(const Bestiole& b)
+{
+    vector<Bestiole*> voisins;
+    for (std::vector<Bestiole*>::iterator it = listeBestioles.begin(); it != listeBestioles.end(); ++it)
+        if (!(b == **it) && b.jeTeVois(**it))
+            voisins.push_back(**it);
+
+    return voisins;
 }
 
 vector<Bestiole*> & Milieu::getBestioles(){

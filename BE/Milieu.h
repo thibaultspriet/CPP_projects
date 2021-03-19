@@ -98,6 +98,14 @@ public :
    int nbVoisins( const Bestiole & b );
 
    /**
+    * @brief renvoie un pointeur des bestioles que la bestiole passée en argument détecte
+    *
+    * @param b référence d'une bestiole
+    * @return vector<Bestiole*>
+    */
+   vector<Bestiole*> getVoisins(const Bestiole& b);
+
+   /**
     * @brief Renvoie une référence de la liste des bestioles
     * 
     * @return std::vector<Bestiole*>& 

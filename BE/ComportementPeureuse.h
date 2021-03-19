@@ -3,8 +3,6 @@
 
 #include <iostream>
 #include "IComportement.h"
-#include "Bestiole.h"
-#include <tuple>
 #include <vector>
 
 class ComportementPeureuse : public IComportement {
@@ -13,7 +11,11 @@ class ComportementPeureuse : public IComportement {
 
 public:
 	ComportementPeureuse(int seuil);
-	std::tuple<vector<double, double>, double> calculDirection(vector<Bestiole> voisins, Bestiole bestioleAssociee);
+	ComportementPeureuse();
+	~ComportementPeureuse();
+	std::tuple<vector<double>, double> calculDirection(vector<Bestiole*> voisins, Bestiole& bestioleAssociee);
+	ComportType getComportementType() { return PEUR; };
+	int getSeuil();
 };
 
 #endif
