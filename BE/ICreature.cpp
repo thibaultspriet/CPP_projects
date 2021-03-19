@@ -81,10 +81,7 @@ void ICreature::bouge( int xLim, int yLim )
    double         nx, ny;
    int            cx, cy;
    
-   //cout << "======= BEGIN bouge ========" << endl;
    std::vector<double> vit = getVitesse();
-   //cout << "Final vitesse : " << vit.at(0) << " " << vit.at(1) << endl;
-   //cout << "======= END bouge ========" << endl;
 
    
    cx = static_cast<int>( cumulX ); cumulX -= cx;

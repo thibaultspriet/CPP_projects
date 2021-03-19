@@ -31,14 +31,14 @@ Milieu::~Milieu( void )
 void Milieu::step( void )
 {
 
-   std::vector<ICreature*> toRemoveCreatures; // objet temporaire qui stocke les bestioles à supprimer à la fin du pas de simulation
+   std::vector<ICreature*> toRemoveCreatures; // objet temporaire qui stocke les creatures à supprimer à la fin du pas de simulation
    cimg_forXY( *this, x, y ) fillC( x, y, 0, white[0], white[1], white[2] );
-   for ( std::vector<ICreature*>::iterator it = listeCreatures.begin() ; it != listeCreatures.end() ; ++it ) // appelle l'action et désinne chaque bestiole
+   for ( std::vector<ICreature*>::iterator it = listeCreatures.begin() ; it != listeCreatures.end() ; ++it ) // appelle l'action et déssinne chaque créature
    {
       (*it)->action( *this, toRemoveCreatures);
       (*it)->draw( *this );
    } // for
-   if(!toRemoveCreatures.empty()){ // supprime les bestioles qui sont mortes pendant le pas de simulation
+   if(!toRemoveCreatures.empty()){ // supprime les créatures qui sont mortes pendant le pas de simulation
       removeMember(toRemoveCreatures);
    }
 
@@ -46,7 +46,7 @@ void Milieu::step( void )
 
 void Milieu::removeMember(ICreature* ic){
    std::vector<ICreature*>::iterator itr = std::find(listeCreatures.begin(),listeCreatures.end(),ic); 
-   int idxRemove = std::distance(listeCreatures.begin(),itr); // index de la bestiole à supprimer
+   int idxRemove = std::distance(listeCreatures.begin(),itr); // index de la créature à supprimer
    listeCreatures.erase(listeCreatures.begin() + idxRemove);
    delete ic;
 

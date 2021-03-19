@@ -10,7 +10,6 @@
 using namespace std;
 
 
-//class Milieu;
 
 
 /**
@@ -20,7 +19,16 @@ using namespace std;
 class Bestiole : public ICreature
 {
    public:
-      Bestiole(void);
+      /**
+       * @brief Constructeur de bestiole
+       * 
+       */
+      Bestiole(void) : ICreature(){};
+
+      /**
+       * @brief destructeur de bestiole
+       * 
+       */
       ~Bestiole(void) { cout << "dest bestiole" << identite << endl;};
 };
 

@@ -13,7 +13,7 @@ using namespace std;
 
 
 /**
- * @brief Classe milieu qui contient les bestioles.
+ * @brief Classe milieu qui contient les créatures.
  * 
  */
 class Milieu : public UImg
@@ -23,8 +23,7 @@ private :
    static const T          white[]; /*!< couleur blanche */
 
    int                     width, height; /*!< largeur et hauteur du milieu */
-   //std::vector<Bestiole*> listeBestioles; /*!< vecteur de pointeurs vers les bestioles de l'environnement */
-   std::vector<ICreature*> listeCreatures; /*!< vecteur de pointeurs vers les bestioles de l'environnement */
+   std::vector<ICreature*> listeCreatures; /*!< vecteur de pointeurs vers les créatures de l'environnement */
    
 
 public :
@@ -60,51 +59,49 @@ public :
    /**
     * @brief appelé à chaque intervalle de temps de la simulation
     * 
-    * Parcours la liste des bestioles présentes et invoque leur comportement.
+    * Parcours la liste des créatures présentes et invoque leur comportement.
     */
    void step( void );
 
    /**
-    * @brief ajoute une bestiole à la simulation
+    * @brief ajoute une créature à la simulation
     * 
-    * En plus elle donne une position aléatoire à la nouvelle bestiole.
+    * En plus elle donne une position aléatoire à la nouvelle créature.
     * 
-    * @param b pointeur sur une bestiole
+    * @param ic pointeur sur une créature
     */
-   //void addMember(  Bestiole* b ) { listeBestioles.push_back(b); listeBestioles.back()->initCoords(width, height); }
    void addMember(  ICreature* ic ) { listeCreatures.push_back(ic); listeCreatures.back()->initCoords(width, height); }
    
    /**
-    * @brief supprime une bestiole de la simulation
+    * @brief supprime une créature de la simulation
     * 
-    * La bestiole est supprimé de la liste des bestiole, mais l'objet bestiole lui même est également supprimé
+    * La créature est supprimé de la liste des créatures, mais l'objet créature lui même est également supprimé
     * 
-    * @param b pointeur sur une bestiole
+    * @param ic pointeur sur une créature
     */
-   // void removeMember( Bestiole * b);
    void removeMember( ICreature * ic);
 
    /**
-    * @brief supprime plusieurs bestioles en même temps
+    * @brief supprime plusieurs créatures en même temps
     * 
-    * @param bestioles vecteur de pointeur des bestioles à supprimer
+    * @param creatures vecteur de pointeur des créatures à supprimer
     */
    void removeMember( std::vector<ICreature*> creatures );
 
 
 
    /**
-    * @brief renvoie le nombre de bestiole que la bestiole passée en argument détecte
+    * @brief renvoie le nombre de céatures que la créature passée en argument détecte
     * 
-    * @param b référence d'une bestiole
+    * @param ic référence d'une créature
     * @return int 
     */
    int nbVoisins( const ICreature & ic );
 
    /**
-    * @brief Renvoie une référence de la liste des bestioles
+    * @brief Renvoie une référence de la liste des créatures
     * 
-    * @return std::vector<Bestiole*>& 
+    * @return std::vector<ICreature*>& 
     */
    std::vector<ICreature*> & getCreatures();
 
