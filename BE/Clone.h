@@ -2,7 +2,7 @@
 #define _CLONE_H_
 
 #include "Bestiole.h"
-#include "IPrototypeBestiole.h"
+#include "IFactoryNaissance.h"
 
 class Clone {
     public : 
