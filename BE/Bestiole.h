@@ -30,6 +30,7 @@ class Bestiole : public ICreature
        * 
        */
       ~Bestiole(void) { cout << "dest bestiole" << identite << endl;};
+
 };
 
 

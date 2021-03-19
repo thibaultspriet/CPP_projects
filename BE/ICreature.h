@@ -81,6 +81,9 @@ public :
     * @param toRemoveCreatures paramètre intermédiaire qui permet de stocker les créatures à supprimer à la fin d'une "step"
     */
    void action( Milieu & monMilieu, std::vector<ICreature*> & toRemoveCreatures );
+   
+   
+   virtual ICreature clone() {};
 
    /**
     * @brief Affichage d'une créature
@@ -138,6 +141,14 @@ public :
    virtual std::vector<double> getVitesse(void);
 
    /**
+   * @brief Renvoie le vecteur directeur de déplacement de la bestiole
+   *
+   * @return vector<double>
+   */
+   vector<double> getDirection(void);
+
+
+   /**
     * @brief attribut une nouvelle valeur au vecteur vitesse de la créature.
     * 
     * @param vx 
@@ -175,5 +186,7 @@ public :
 
 
 };
+
+
 
 #endif

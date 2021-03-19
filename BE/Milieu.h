@@ -99,6 +99,14 @@ public :
    int nbVoisins( const ICreature & ic );
 
    /**
+    * @brief renvoie un pointeur des créatures que la créature passée en argument détecte
+    *
+    * @param ic référence d'une bestiole
+    * @return vector<Bestiole*>
+    **/
+   std::vector<ICreature*> getVoisins(const ICreature& ic);
+
+   /**
     * @brief Renvoie une référence de la liste des créatures
     * 
     * @return std::vector<ICreature*>& 

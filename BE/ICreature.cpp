@@ -200,6 +200,16 @@ std::vector<double> ICreature::getVitesse(){
     return vitesse;
 };
 
+
+vector<double> ICreature::getDirection() {
+    vector<double> vit = this->vitesse;
+    vector<double> vitUnit(2);
+    double norme = sqrt(vitesse[0] * vitesse[0] + vitesse[1] * vitesse[1]);
+    vitUnit[0] = vit[0] / norme;
+    vitUnit[1] = vit[1] / norme;
+    return vitUnit;
+}
+
 void ICreature::setVitesse(double vx,double vy){
     vitesse.at(0) = vx;
     vitesse.at(1) = vy;
