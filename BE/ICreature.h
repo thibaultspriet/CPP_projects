@@ -23,6 +23,7 @@ protected :
    int               x, y; /*!< position graphique de la bestiole. Affichage sur une grille de pixel, les positions doivent être des entiers */
    double            cumulX, cumulY; /*!< position réelle de la bestiole */ 
    double probDeath; /*!< coefficient déterminant la probabilité de décès d'une bestiole lors d'une collision. si 0 la bestiole est invincible ; si 1 elle meurt à coup sûr.  */
+   double camouflage;
    std::vector<double> vitesse; /*!< vecteur vitesse de la bestiole. vitesse[0] = vx ; vitesse[1] = vy */
    T               * couleur; /*!< couleur de la bestiole */
 
@@ -81,7 +82,7 @@ public :
     * 
     * @param support 
     */
-   virtual void draw( UImg & support );
+   void draw( UImg & support );
 
 
    /**
@@ -99,7 +100,14 @@ public :
     * 
     * @return double 
     */
-   double getProbDeath(void) const;
+   virtual double getProbDeath(void) const;
+   virtual double getCamouflage(void) const;
+
+   int getX() const {return x;};
+   int getY() const {return y;};
+
+   virtual std::vector<double> getVitesse(void);
+   virtual void setVitesse(double vx, double vy);
    
 
    /**

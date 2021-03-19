@@ -21,7 +21,7 @@ class Bestiole : public ICreature
 {
    public:
       Bestiole(void);
-      ~Bestiole(void) {};
+      ~Bestiole(void) { cout << "dest bestiole" << identite << endl;};
 };
 
 

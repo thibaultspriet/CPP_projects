@@ -10,7 +10,10 @@ class OreilleDecorator : public CapteurDecorator{
         double detection;
     public:
         OreilleDecorator(ICreature* ic);
+        ~OreilleDecorator(){};
         bool jeTeVois(const ICreature & ic) const override final;
+        //void draw( UImg & support ) override final;
+
 
 };
 

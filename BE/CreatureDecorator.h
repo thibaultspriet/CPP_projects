@@ -9,10 +9,16 @@ class CreatureDecorator : public ICreature{
         ICreature * creature;
 
     public:
-        ~CreatureDecorator() {};
+        virtual ~CreatureDecorator() {};
         CreatureDecorator(ICreature* ic);
+
         bool jeTeVois(const ICreature & ic) const;
-        void draw(UImg & support);
+        std::vector<double> getVitesse();
+        void setVitesse(double vx, double vy);
+        double getCamouflage(void) const;
+        double getProbDeath(void) const;
+
+        // void draw(UImg & support);
 
 };
 

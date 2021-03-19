@@ -34,6 +34,7 @@ ICreature::ICreature( void )
    couleur[ 2 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
 
    probDeath = (rand() % 101)/100.0 ;// valeur entre 0 et 100
+   camouflage = 0.0;
 
 }
 
@@ -70,6 +71,7 @@ void ICreature::initCoords( int xLim, int yLim )
 
    x = rand() % xLim;
    y = rand() % yLim;
+    
 
 }
 
@@ -78,17 +80,22 @@ void ICreature::bouge( int xLim, int yLim )
 {
    double         nx, ny;
    int            cx, cy;
+   
+   //cout << "======= BEGIN bouge ========" << endl;
+   std::vector<double> vit = getVitesse();
+   //cout << "Final vitesse : " << vit.at(0) << " " << vit.at(1) << endl;
+   //cout << "======= END bouge ========" << endl;
 
-
+   
    cx = static_cast<int>( cumulX ); cumulX -= cx;
    cy = static_cast<int>( cumulY ); cumulY -= cy;
 
-   nx = x + vitesse.at(0) + cx;
-   ny = y + vitesse.at(1) + cy;
+   nx = x + vit.at(0) + cx;
+   ny = y + vit.at(1) + cy;
 
    if ( (nx < 0) || (nx > xLim - 1) ) {
-      vitesse.at(0) = -vitesse.at(0);
-      cumulX = 0.;
+        setVitesse(-vit.at(0),vit.at(1));
+        cumulX = 0.;
    }
    else {
       x = static_cast<int>( nx );
@@ -96,14 +103,14 @@ void ICreature::bouge( int xLim, int yLim )
    }
 
    if ( (ny < 0) || (ny > yLim - 1) ) {
-      vitesse.at(1) = -vitesse.at(1);
+      setVitesse(vit.at(0),-vit.at(1));
       cumulY = 0.;
    }
    else {
       y = static_cast<int>( ny );
       cumulY += ny - y;
    }
-
+   
 }
 
 void ICreature::collide(Milieu & monMilieu, std::vector<ICreature*> & toRemoveCreatures){
@@ -115,15 +122,18 @@ void ICreature::collide(Milieu & monMilieu, std::vector<ICreature*> & toRemoveCr
       if(!((**it) == *this)){            
          double         dist;
          dist = std::sqrt( (x-(**it).x)*(x-(**it).x) + (y-(**it).y)*(y-(**it).y) );
+
          if(dist <= ICreature::AFF_SIZE){ // si collision, tirage aléatoire pour savoir si la bestiole doit mourir
-            double death = (rand() % 101)/100.0;
-            if(death < this->getProbDeath() && !alreadyCollide){
+            double survive = (rand() % 101)/100.0;
+            double death = this->getProbDeath();
+            cout << "death : " << death <<  " survive : " << survive << endl;
+            if(death > survive && !alreadyCollide){
                cout << "Creature " << identite << " va mourir" << endl;
                toRemoveCreatures.push_back(this);
             }
             if(!alreadyCollide){ // inversr le sens du vecteur vitesse à la première collision
-               vitesse.at(0) *= -1;
-               vitesse.at(1) *= -1;
+               std::vector<double> vit = getVitesse();
+               setVitesse(-vit.at(0),-vit.at(1));
                alreadyCollide = !alreadyCollide;
             }
          }
@@ -146,13 +156,14 @@ void ICreature::action( Milieu & monMilieu, std::vector<ICreature*> & toRemoveCr
 void ICreature::draw( UImg & support )
 {
 
-   double orientation = -atan(vitesse.at(1)/vitesse.at(0));
+   std::vector<double> vit = getVitesse();
+   double orientation = -atan(vit.at(1)/vit.at(0));
 
    double dx = cos( orientation )*AFF_SIZE/2.1;
    double dy = -sin( orientation )*AFF_SIZE/2.1;
 
-   double         xt = vitesse.at(0) > 0 ? x + dx : x - dx;
-   double         yt = vitesse.at(0) > 0 ? y + dy : y - dy;
+   double         xt = vit.at(0) > 0 ? x + dx : x - dx;
+   double         yt = vit.at(0) > 0 ? y + dy : y - dy;
 
 
    support.draw_ellipse( x, y, AFF_SIZE, AFF_SIZE/5., -orientation/M_PI*180., couleur );
@@ -182,3 +193,17 @@ bool ICreature::jeTeVois( const ICreature & ic ) const
 double ICreature::getProbDeath() const{
    return this->probDeath;
 }
+
+double ICreature::getCamouflage() const{
+   return camouflage;
+}
+
+
+std::vector<double> ICreature::getVitesse(){
+    return vitesse;
+};
+
+void ICreature::setVitesse(double vx,double vy){
+    vitesse.at(0) = vx;
+    vitesse.at(1) = vy;
+};

@@ -9,6 +9,7 @@ class CapteurDecorator : public CreatureDecorator{
     public:
         virtual bool jeTeVois(const ICreature & ic) const = 0;
         CapteurDecorator(ICreature* ic) : CreatureDecorator(ic){};
+        virtual ~CapteurDecorator(){};
 
 };
 

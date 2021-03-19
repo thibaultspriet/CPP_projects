@@ -11,8 +11,9 @@ class YeuxDecorator : public CapteurDecorator{
         double detection;
     public:
         YeuxDecorator(ICreature* ic);
+        ~YeuxDecorator(){};
         bool jeTeVois(const ICreature & ic) const override final;
-        void draw( UImg & support ) override final;
+        //void draw( UImg & support ) override final;
 
 };
 

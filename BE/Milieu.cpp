@@ -37,7 +37,6 @@ void Milieu::step( void )
    {
       (*it)->action( *this, toRemoveCreatures);
       (*it)->draw( *this );
-
    } // for
    if(!toRemoveCreatures.empty()){ // supprime les bestioles qui sont mortes pendant le pas de simulation
       removeMember(toRemoveCreatures);
