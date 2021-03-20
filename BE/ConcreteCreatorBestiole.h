@@ -8,10 +8,8 @@ class ConcreteCreatorBestiole : public IFactoryNaissance
     int nombreNaissance
 public:
     ConcreteCreatorBesitole();
-    IComportement* getComportementNaissance() {};
-    CapteurDecorator getCapteurNaissance() {};
-    AccessoireDecorator getAccessoireNaissance() {};
-    Bestiole createBestiole(IComportement* comportement, CapteurDecorator capteur, AccessoireDecorator accessoire) {};
+    ComportType getComportementNaissance() {};
+    Bestiole createBestiole(ComportType comportement, CapteurDecorator capteur, AccessoireDecorator accessoire) {};
 
 };
 

@@ -35,7 +35,25 @@ ICreature::ICreature( void )
 
    probDeath = (rand() % 101)/100.0 ;// valeur entre 0 et 100
    camouflage = 0.0;
+   int choix = std::rand() % 5;  //choix aléatoire du comportement
+   switch (choix)
+   {
+   case 0:
+       return new ComportementPrevoyante();
 
+   case 1:
+       return new ComportementPeureuse();
+
+   case 2:
+       return new ComportementKamikaze();
+
+   case 3:
+       return new ComportementGregaire();
+
+   case 4:
+   default:
+       return new ComportementMultiple();
+   }
 }
 
 
@@ -52,9 +70,9 @@ ICreature::ICreature( const ICreature & ic )
    vitesse = ic.vitesse;
    couleur = new T[ 3 ];
    memcpy( couleur, ic.couleur, 3*sizeof(T) );
+   comportement = ic.comportement;
 
 }
-
 
 ICreature::~ICreature( void )
 {

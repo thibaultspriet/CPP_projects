@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "UImg.h"
+#include "IComportement.h"
 
 using namespace std;
 
@@ -31,6 +32,7 @@ protected :
    double camouflage; /*!< coéfficient de camouflage de la bestiole. camouflage > détection la créature ne sera pas vue. Par défaut cette valeur est 0 */
    std::vector<double> vitesse; /*!< vecteur vitesse de la créature. vitesse[0] = vx ; vitesse[1] = vy */
    T               * couleur; /*!< couleur de la créature */
+   ComportType comportement;
 
 private :
 
@@ -72,6 +74,7 @@ public :
     * @brief Destructeur d'un objet créature
     * 
     */
+
    virtual ~ICreature( void );                              
 
    /**
