@@ -9,7 +9,8 @@ class ConcreteCreatorBestiole : public IFactoryNaissance
 public:
     ConcreteCreatorBesitole();
     ComportType getComportementNaissance() {};
-    Bestiole createBestiole(ComportType comportement, CapteurDecorator capteur, AccessoireDecorator accessoire) {};
+    Bestiole create() {};
+    Bestiole create(ComportType comport) {};
 
 };
 

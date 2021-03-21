@@ -75,6 +75,8 @@ public :
     * 
     */
 
+   ICreature(ComportType comport);
+
    virtual ~ICreature( void );                              
 
    /**
