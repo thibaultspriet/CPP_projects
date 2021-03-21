@@ -86,6 +86,9 @@ public :
     */
    //ICreature( const ICreature & ic );
 
+
+   ICreature(ComportType comport);
+
    /**
     * @brief Destructeur d'un objet créature
     * 

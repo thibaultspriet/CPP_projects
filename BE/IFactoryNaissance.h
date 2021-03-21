@@ -7,9 +7,8 @@ class IFactoryNaissance
 {
 public:
     IFactoryNaissance() {};
-    virtual IComportement* getComportementNaissance() {};
-    virtual CapteurDecorator getCapteurNaissance() {};
-    virtual AccessoireDecorator getAccessoireNaissance() {};
-
+    virtual ComportType getComportementNaissance() {};
+    virtual ICreature create() {};
+    virtual ICreature create() {};
 };
 #endif

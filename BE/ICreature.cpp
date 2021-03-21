@@ -42,7 +42,6 @@ ICreature::ICreature( void )
 
    initCreature();
    comportement = new ComportementKamikaze();
-
 }
 
 
@@ -68,6 +67,50 @@ ICreature::ICreature(IComportement* comportement) : comportement(comportement){
    initCreature();
 }
 
+ICreature::ICreature(ComportType comport) {
+    identite = ++next;
+
+    cout << "const creature (" << identite << ") par defaut" << endl;
+
+    x = y = 0;
+    cumulX = cumulY = 0.;
+
+    // vitesse initiale aléatoire
+    vitesse.push_back(static_cast<double>(rand()) / RAND_MAX * MAX_VITESSE);
+    vitesse.push_back(static_cast<double>(rand()) / RAND_MAX * MAX_VITESSE);
+
+    // définit la couleur de la bestiole
+    couleur = new T[3];
+    couleur[0] = static_cast<int>(static_cast<double>(rand()) / RAND_MAX * 230.);
+    couleur[1] = static_cast<int>(static_cast<double>(rand()) / RAND_MAX * 230.);
+    couleur[2] = static_cast<int>(static_cast<double>(rand()) / RAND_MAX * 230.);
+
+    probDeath = (rand() % 101) / 100.0;// valeur entre 0 et 100
+    camouflage = 0.0;
+    switch (comport)
+    {
+    case GREG:
+        comportement = new ComportementGregaire();
+        break;
+
+    case KAMIK:
+        comportement = new ComportementKamikaze();
+        break;
+
+   //  case MULTI:
+   //      comportement = new ComportementMultiple();
+   //      break;
+
+    case PEUR:
+        comportement = new ComportementPeureuse();
+        break;
+
+    case PREV:
+    default:
+        comportement = new ComportementPrevoyante();
+        break;
+    }
+}
 
 ICreature::~ICreature( void )
 {
