@@ -25,6 +25,8 @@ class Bestiole : public ICreature
        */
       Bestiole(void) : ICreature(){};
 
+      Bestiole(ComportType comport) : ICreature(ComportType comport) {};
+
       /**
        * @brief destructeur de bestiole
        * 
