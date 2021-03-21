@@ -12,7 +12,7 @@ ComportementPeureuse::ComportementPeureuse(int seuil) : IComportement() {
 
 ComportementPeureuse::ComportementPeureuse() :IComportement()
 {
-	// on initialise aléatoirement le seuil si le client ne l'indique pas dans le constructeur
+	// on initialise alï¿½atoirement le seuil si le client ne l'indique pas dans le constructeur
 	m_seuil = rand() % 4 + 1;
 	cout << "construct comp PEUR" << endl;
 }
@@ -22,8 +22,8 @@ ComportementPeureuse::~ComportementPeureuse()
 	cout << "destruct Comportement PEUR" << endl;
 }
 
-tuple<vector<double>, double> ComportementPeureuse::calculDirection(vector<Bestiole*> voisins, Bestiole& bestioleAssociee) {
-	// si le nb de voisins est supérieur au seuil, la bestiole prend la direction inverse de ses voisins 2 fois plus vite
+pair<vector<double>, double> ComportementPeureuse::calculDirection(vector<ICreature*> voisins, ICreature& creatureAssociee) {
+	// si le nb de voisins est supï¿½rieur au seuil, la bestiole prend la direction inverse de ses voisins 2 fois plus vite
 	if (voisins.size() >= m_seuil) {
 		vector<double> moyenne_direction(2);
 		double moyenne_direction_x = 0;
@@ -33,19 +33,19 @@ tuple<vector<double>, double> ComportementPeureuse::calculDirection(vector<Besti
 			moyenne_direction_x += voisins.at(i)->getDirection()[0];
 			moyenne_direction_y += voisins.at(i)->getDirection()[1];
 		}
-		moyenne_direction_x / voisins.size();
-		moyenne_direction_y / voisins.size();
+		moyenne_direction_x = moyenne_direction_x / voisins.size();
+		moyenne_direction_y = moyenne_direction_y / voisins.size();
 		moyenne_direction[0] = - moyenne_direction_x;
 		moyenne_direction[1] = - moyenne_direction_y;
-		return make_tuple(moyenne_direction, 2);
+		return make_pair(moyenne_direction, 2);
 	}
-	// sinon, la bestiole part avec la même direction et même vitesse que précédemment
+	// sinon, la bestiole part avec la mï¿½me direction et mï¿½me vitesse que prï¿½cï¿½demment
 	else {
-		return make_tuple(bestioleAssociee.getDirection(), 1);
+		return make_pair(creatureAssociee.getDirection(), 1);
 	}
 }
 
-// méthode permettant de récupérer le seuil
+// mï¿½thode permettant de rï¿½cupï¿½rer le seuil
 int ComportementPeureuse::getSeuil() {
 	return m_seuil;
 }

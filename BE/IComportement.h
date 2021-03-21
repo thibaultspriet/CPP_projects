@@ -4,12 +4,13 @@
 #include <vector>
 #include <iostream>
 #include <string>
-#include "Bestiole.h"
-#include <tuple>
+#include "ICreature.h"
+using namespace std;
 
-class Bestiole;
 
-// différents types de comportements possibles
+class ICreature;
+
+// diffï¿½rents types de comportements possibles
 enum ComportType
 {
 	GREG,
@@ -19,14 +20,42 @@ enum ComportType
 	PREV,
 };
 
+
+/**
+ * @brief Class IComportement
+ * 
+ * classe abstraite qui dÃ©finit les mÃ©thodes que doivent implÃ©menter les diffÃ©rents comportements.
+ * 
+ */
 class IComportement {
 	public :
-	// fonction virtuelle permettant de récupérer le vecteur directeur de vitesse et le coefficient multiplicateur de la valeur de la vitesse
-	virtual std::tuple<vector<double>, double> calculDirection(vector<Bestiole*> voisins, Bestiole& bestioleAssociee) = 0;
-	IComportement() {};
-	virtual ~IComportement() {};
-	// fonction virtuelle permettant de récupérer le type de comportement de l'énumération ci-dessus
-	virtual ComportType getComportementType() = 0;
+		/**
+		 * @brief fonction virtuelle permettant de rï¿½cupï¿½rer le vecteur directeur de vitesse et le coefficient multiplicateur de la valeur de la vitesse
+		 * 
+		 * @param voisins 
+		 * @param creatureAssociee 
+		 * @return std::pair<std::vector<double>, double> 
+		 */
+		virtual std::pair<std::vector<double>, double> calculDirection(std::vector<ICreature*> voisins, ICreature& creatureAssociee) {return make_pair(std::vector<double> (2),0.0);};
+		
+		/**
+		 * @brief Constructeur IComportement
+		 * 
+		 */
+		IComportement() {};
+
+		/**
+		 * @brief Destructeur IComportement
+		 * 
+		 */
+		virtual ~IComportement() {};
+		
+		/**
+		 * @brief  fonction virtuelle permettant de rï¿½cupï¿½rer le type de comportement de l'ï¿½numï¿½ration ci-dessus
+		 * 
+		 * @return ComportType 
+		 */
+		virtual ComportType getComportementType() {return KAMIK;};
 };
 
 

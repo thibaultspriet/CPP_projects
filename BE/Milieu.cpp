@@ -36,7 +36,7 @@ void Milieu::step( void )
    for ( std::vector<ICreature*>::iterator it = listeCreatures.begin() ; it != listeCreatures.end() ; ++it ) // appelle l'action et déssinne chaque créature
    {
       (*it)->action( *this, toRemoveCreatures);
-      (*it)->draw( *this );
+      (*it)->draw( *this, *this );
    } // for
    if(!toRemoveCreatures.empty()){ // supprime les créatures qui sont mortes pendant le pas de simulation
       removeMember(toRemoveCreatures);

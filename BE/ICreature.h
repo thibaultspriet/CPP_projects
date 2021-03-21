@@ -4,10 +4,12 @@
 #include <iostream>
 #include <vector>
 #include "UImg.h"
+#include "IComportement.h"
 
 using namespace std;
 
 class Milieu;
+class IComportement;
 
 
 /**
@@ -31,16 +33,16 @@ protected :
    double camouflage; /*!< coéfficient de camouflage de la bestiole. camouflage > détection la créature ne sera pas vue. Par défaut cette valeur est 0 */
    std::vector<double> vitesse; /*!< vecteur vitesse de la créature. vitesse[0] = vx ; vitesse[1] = vy */
    T               * couleur; /*!< couleur de la créature */
+   IComportement* comportement; /*!< comportement aggrégé, permet de donner la direction des créatures. */
 
 private :
 
    /**
     * @brief déplace la créature dans la limite du milieu
     * 
-    * @param xLim posiiton horizontale max
-    * @param yLim  position verticale max
+    * @param monMilieu permet d'aacèder aux dimensions du milieu ainsi qu'obtenir le nombre de voisins de la créature.
     */
-   void bouge( int xLim, int yLim );
+   void bouge( Milieu& monMilieu );
 
    /**
     * @brief gère la collision entre les créatures
@@ -53,20 +55,36 @@ private :
     */
    void collide(Milieu & monMilieu, std::vector<ICreature*> & toRemoveCreature);
 
+
+   /**
+    * @brief Fixe les attributs des créatures de manière commune entre les différents constructeurs 
+    * 
+    */
+   void initCreature(void);
+
 public :     
 
    /**
     * @brief Constructeur d'un objet créature
     * 
+    * Attribut le comportement Kamikaze par défaut. En pratique ce constructeur n'est pas utilisé.
+    * 
     */
-   ICreature( void );    
+   ICreature( void ); 
+
+   /**
+    * @brief Constructeur de ICreature avec un comportement donné.
+    * 
+    * @param comportement 
+    */
+   ICreature(IComportement* comportement);   
 
    /**
     * @brief Constructeur par copie d'une créature
     * 
     * @param b 
     */
-   ICreature( const ICreature & ic );
+   //ICreature( const ICreature & ic );
 
    /**
     * @brief Destructeur d'un objet créature
@@ -83,14 +101,16 @@ public :
    void action( Milieu & monMilieu, std::vector<ICreature*> & toRemoveCreatures );
    
    
-   virtual ICreature clone() {};
+   //virtual ICreature clone() {};
+   virtual void clone() {};
 
    /**
     * @brief Affichage d'une créature
     * 
     * @param support 
+    * @param monMilieu
     */
-   void draw( UImg & support );
+   void draw( UImg & support, Milieu& monMilieu );
 
 
    /**
@@ -140,12 +160,37 @@ public :
     */
    virtual std::vector<double> getVitesse(void);
 
+   
+   /**
+    * @brief Retourne la norme du vecteur vitesse.
+    * 
+    * @return double 
+    */
+   double getNormeVitesse(std::vector<double>);
+
    /**
    * @brief Renvoie le vecteur directeur de déplacement de la bestiole
    *
    * @return vector<double>
    */
    vector<double> getDirection(void);
+
+
+   /**
+    * @brief Retourne le vecteur vitesse de la créature en fonction de son comportement
+    * 
+    * @param monMilieu 
+    * @return std::vector<double> 
+    */
+   std::vector<double> getComportementVitesse(Milieu& monMilieu);
+
+   /**
+    * @brief Retourne le vecteur vitesse de la créature, multiplié par un facteur en fonction de son comportement
+    * 
+    * @param monMilieu 
+    * @return vector<double> 
+    */
+   vector<double> getComportementVitesseMultiple(Milieu& monMilieu);
 
 
    /**

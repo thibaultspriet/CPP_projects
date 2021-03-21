@@ -1,7 +1,6 @@
-#include <vector>
 #include "ComportementPrevoyante.h"
+#include <vector>
 #include <iostream>
-#include <tuple>
 
 using namespace std;
 
@@ -13,10 +12,10 @@ ComportementPrevoyante::~ComportementPrevoyante() {
     cout << "destruct Comportement PREV" << endl;
 }
 
-tuple<vector<double>, double> ComportementPrevoyante::calculDirection(vector<Bestiole*> voisins, Bestiole& bestioleAssociee)
+pair<vector<double>, double> ComportementPrevoyante::calculDirection(vector<ICreature*> voisins, ICreature& creatureAssociee)
 {
-    //à réfléchir
-    return make_tuple(bestioleAssociee.getDirection(), 1);
+    //ï¿½ rï¿½flï¿½chir
+    return make_pair(creatureAssociee.getDirection(), 1);
 }
 
 

@@ -22,8 +22,9 @@ class Bestiole : public ICreature
       /**
        * @brief Constructeur de bestiole
        * 
+       * @param comportement comportement à attribuer à la bestiole
        */
-      Bestiole(void) : ICreature(){};
+      Bestiole(IComportement* comportement) : ICreature(comportement){};
 
       /**
        * @brief destructeur de bestiole

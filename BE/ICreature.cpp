@@ -1,5 +1,9 @@
 #include "ICreature.h"
 #include "Milieu.h"
+#include "ComportementGregaire.h"
+#include "ComportementKamikaze.h"
+#include "ComportementPeureuse.h"
+#include "ComportementPrevoyante.h"
 
 #include <cstdlib>
 #include <cmath>
@@ -13,13 +17,8 @@ const double      ICreature::LIMITE_VUE = 30.;
 int               ICreature::next = 0;
 
 
-ICreature::ICreature( void )
-{
-
+void ICreature::initCreature(){
    identite = ++next;
-
-   cout << "const creature (" << identite << ") par defaut" << endl;
-
    x = y = 0;
    cumulX = cumulY = 0.;
 
@@ -33,26 +32,40 @@ ICreature::ICreature( void )
    couleur[ 1 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
    couleur[ 2 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
 
-   probDeath = (rand() % 101)/100.0 ;// valeur entre 0 et 100
+   probDeath = (rand() % 101)/100.0 ;// valeur entre 0 et 1
    camouflage = 0.0;
+}
+
+ICreature::ICreature( void )
+{
+   cout << "const creature (" << identite << ") par defaut" << endl;
+
+   initCreature();
+   comportement = new ComportementKamikaze();
 
 }
 
 
-ICreature::ICreature( const ICreature & ic )
-{
+// ICreature::ICreature( const ICreature & ic )
+// {
 
-   identite = ++next;
+//    identite = ++next;
 
-   cout << "const creature (" << identite << ") par copie" << endl;
+//    cout << "const creature (" << identite << ") par copie" << endl;
 
-   x = ic.x;
-   y = ic.y;
-   cumulX = cumulY = 0.;
-   vitesse = ic.vitesse;
-   couleur = new T[ 3 ];
-   memcpy( couleur, ic.couleur, 3*sizeof(T) );
+//    x = ic.x;
+//    y = ic.y;
+//    cumulX = cumulY = 0.;
+//    vitesse = ic.vitesse;
+//    couleur = new T[ 3 ];
+//    memcpy( couleur, ic.couleur, 3*sizeof(T) );
 
+// }
+
+ICreature::ICreature(IComportement* comportement) : comportement(comportement){
+
+   cout << "const creature (" << identite << ") par defaut" << endl;
+   initCreature();
 }
 
 
@@ -60,10 +73,13 @@ ICreature::~ICreature( void )
 {
 
    delete[] couleur;
+   delete comportement;
 
    cout << "dest creature " << identite << endl;
 
 }
+
+
 
 
 void ICreature::initCoords( int xLim, int yLim )
@@ -76,22 +92,26 @@ void ICreature::initCoords( int xLim, int yLim )
 }
 
 
-void ICreature::bouge( int xLim, int yLim )
+void ICreature::bouge( Milieu& monMilieu )
 {
    double         nx, ny;
    int            cx, cy;
+   int xLim = monMilieu.getWidth();
+   int yLim = monMilieu.getHeight();
    
-   std::vector<double> vit = getVitesse();
+   vector<double> vit_effective = getComportementVitesseMultiple(monMilieu);
+   vector<double> vit_to_set = getComportementVitesse(monMilieu);
+
 
    
    cx = static_cast<int>( cumulX ); cumulX -= cx;
    cy = static_cast<int>( cumulY ); cumulY -= cy;
 
-   nx = x + vit.at(0) + cx;
-   ny = y + vit.at(1) + cy;
+   nx = x + vit_effective.at(0) + cx;
+   ny = y + vit_effective.at(1) + cy;
 
    if ( (nx < 0) || (nx > xLim - 1) ) {
-        setVitesse(-vit.at(0),vit.at(1));
+        setVitesse(-vit_to_set.at(0),vit_to_set.at(1));
         cumulX = 0.;
    }
    else {
@@ -100,13 +120,14 @@ void ICreature::bouge( int xLim, int yLim )
    }
 
    if ( (ny < 0) || (ny > yLim - 1) ) {
-      setVitesse(vit.at(0),-vit.at(1));
+      setVitesse(vit_to_set.at(0),-vit_to_set.at(1));
       cumulY = 0.;
    }
    else {
       y = static_cast<int>( ny );
       cumulY += ny - y;
    }
+
    
 }
 
@@ -129,8 +150,8 @@ void ICreature::collide(Milieu & monMilieu, std::vector<ICreature*> & toRemoveCr
                toRemoveCreatures.push_back(this);
             }
             if(!alreadyCollide){ // inversr le sens du vecteur vitesse à la première collision
-               std::vector<double> vit = getVitesse();
-               setVitesse(-vit.at(0),-vit.at(1));
+               vector<double> vit_to_set = getComportementVitesse(monMilieu);
+               setVitesse(-vit_to_set.at(0),-vit_to_set.at(1));
                alreadyCollide = !alreadyCollide;
             }
          }
@@ -143,17 +164,18 @@ void ICreature::collide(Milieu & monMilieu, std::vector<ICreature*> & toRemoveCr
 
 void ICreature::action( Milieu & monMilieu, std::vector<ICreature*> & toRemoveCreatures )
 {
-   bouge( monMilieu.getWidth(), monMilieu.getHeight() );
+   bouge( monMilieu );
    collide(monMilieu, toRemoveCreatures);
 
 }
 
 
 
-void ICreature::draw( UImg & support )
+void ICreature::draw( UImg & support, Milieu& monMilieu )
 {
 
-   std::vector<double> vit = getVitesse();
+   vector<double> vit = getComportementVitesseMultiple(monMilieu);
+
    double orientation = -atan(vit.at(1)/vit.at(0));
 
    double dx = cos( orientation )*AFF_SIZE/2.1;
@@ -200,14 +222,36 @@ std::vector<double> ICreature::getVitesse(){
     return vitesse;
 };
 
+double ICreature::getNormeVitesse(std::vector<double> vit){
+   return sqrt(vit.at(0)*vit.at(0) + vit.at(1)*vit.at(1));
+}
+
 
 vector<double> ICreature::getDirection() {
-    vector<double> vit = this->vitesse;
+    vector<double> vit = getVitesse();
     vector<double> vitUnit(2);
-    double norme = sqrt(vitesse[0] * vitesse[0] + vitesse[1] * vitesse[1]);
-    vitUnit[0] = vit[0] / norme;
-    vitUnit[1] = vit[1] / norme;
+    double norme = sqrt(vit.at(0) * vit.at(0) + vit.at(1) * vit.at(1));
+    vitUnit.at(0) = vit.at(0) / norme;
+    vitUnit.at(1) = vit.at(1) / norme;
     return vitUnit;
+}
+
+std::vector<double> ICreature::getComportementVitesse(Milieu& monMilieu){
+   pair<vector<double>, double> direction = comportement->calculDirection(monMilieu.getVoisins(*this),*this);
+   std::vector<double> vit;
+   double normeVit = getNormeVitesse(getVitesse());
+   vit.push_back(direction.first.at(0) * normeVit);
+   vit.push_back(direction.first.at(1) * normeVit);
+   return vit;
+}
+
+vector<double> ICreature::getComportementVitesseMultiple(Milieu& monMilieu){
+   pair<vector<double>, double> direction = comportement->calculDirection(monMilieu.getVoisins(*this),*this);
+   std::vector<double> vit;
+   double normeVit = getNormeVitesse(getVitesse());
+   vit.push_back(direction.first.at(0) * direction.second * normeVit);
+   vit.push_back(direction.first.at(1) * direction.second * normeVit);
+   return vit;
 }
 
 void ICreature::setVitesse(double vx,double vy){

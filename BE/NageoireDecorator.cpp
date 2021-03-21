@@ -5,7 +5,7 @@
 using namespace std;
 
 NageoireDecorator::NageoireDecorator(ICreature* ic) : AccessoireDecorator(ic){
-    multiple_vitesse = 4.;
+    multiple_vitesse = 2.3;
     probDeath = 0;
 };
 
