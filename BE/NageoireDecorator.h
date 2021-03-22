@@ -12,6 +12,9 @@
  */
 class NageoireDecorator : public AccessoireDecorator{
 
+    protected:
+        static const double MULTIPLE_VITESSE_MAX;
+
     private:
         double multiple_vitesse; /*!< facteur multiplicateur de la vitesse */
     public:

@@ -11,6 +11,13 @@
  */
 class OreilleDecorator : public CapteurDecorator{
 
+    protected:
+        static const double DIST_MIN;
+        static const double DIST_MAX;
+        
+        static const double DETECTION_MIN;
+        static const double DETECTION_MAX;
+
     private:
         double distance; /*!< distance à laquelle la créature peut en voir une autre */
         double detection; /*!< probabilité de détection. si detection > camouflage la créature voit l'autre créature. */

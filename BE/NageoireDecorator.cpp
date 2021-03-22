@@ -1,12 +1,18 @@
 #include "NageoireDecorator.h"
 
 #include <iostream>
+#include <random>
 #include <vector>
 using namespace std;
 
+const double NageoireDecorator::MULTIPLE_VITESSE_MAX = 4.;
+
 NageoireDecorator::NageoireDecorator(ICreature* ic) : AccessoireDecorator(ic){
-    multiple_vitesse = 2.3;
-    probDeath = 0;
+
+    std::default_random_engine re;
+    std::uniform_real_distribution<double> vitesse_range(1,MULTIPLE_VITESSE_MAX);
+
+    multiple_vitesse = vitesse_range(re);
 };
 
 std::vector<double> NageoireDecorator::getVitesse() {

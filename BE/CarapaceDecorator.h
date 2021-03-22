@@ -10,6 +10,11 @@
  * 
  */
 class CarapaceDecorator : public AccessoireDecorator{
+
+    protected:
+        static const double PROTEC_DEATH_MAX;
+        static const double DECREASE_VITESSE_MAX;
+
     private:
         double protection_death; /*!< facteur qui réduit la probabilité de mourir de la créature */
         double decrease_vitesse; /*!< facteur qui diminue la vitesse de la créature */

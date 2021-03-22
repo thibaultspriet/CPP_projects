@@ -12,6 +12,17 @@
  */
 class YeuxDecorator : public CapteurDecorator{
 
+    protected:
+        static const double ALPHA_MIN;
+        static const double ALPHA_MAX;
+
+        static const double DIST_MIN;
+        static const double DIST_MAX;
+        
+        static const double DETECTION_MIN;
+        static const double DETECTION_MAX;
+
+
     private:
         double champVision; /*!< angle du champ de vision */
         double distance; /*!< distance sur laquelle la créature est capable de voir */

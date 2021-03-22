@@ -1,8 +1,17 @@
 #include "CarapaceDecorator.h"
+#include <random>
+
+const double CarapaceDecorator::PROTEC_DEATH_MAX = 5;
+const double CarapaceDecorator::DECREASE_VITESSE_MAX = 4;
 
 CarapaceDecorator::CarapaceDecorator(ICreature* ic) : AccessoireDecorator(ic) {
-    protection_death = 2.9;
-    decrease_vitesse = 2.;
+
+    std::default_random_engine re;
+    std::uniform_real_distribution<double> protection_range(1,PROTEC_DEATH_MAX);
+    std::uniform_real_distribution<double> vitesse_range(1,DECREASE_VITESSE_MAX);
+
+    protection_death = protection_range(re);
+    decrease_vitesse = vitesse_range(re);
 };
 
 std::vector<double> CarapaceDecorator::getVitesse(){

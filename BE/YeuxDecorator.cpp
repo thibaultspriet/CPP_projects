@@ -1,15 +1,32 @@
 #include "YeuxDecorator.h"
 
 #include <iostream>
+#include <random>
 #include <cmath>
 
 using namespace std;
+
+const double YeuxDecorator::ALPHA_MIN = M_PI / 6;
+const double YeuxDecorator::ALPHA_MAX = M_PI;
+
+const double YeuxDecorator::DIST_MIN = ICreature::LIMITE_VUE;
+const double YeuxDecorator::DIST_MAX = ICreature::LIMITE_VUE * 2;
+
+const double YeuxDecorator::DETECTION_MIN = 0;
+const double YeuxDecorator::DETECTION_MAX = 1;
+
+
 YeuxDecorator::YeuxDecorator(ICreature* ic) : CapteurDecorator(ic) {
+
+    std::default_random_engine re;
     
-    champVision = M_PI / 3;
-    distance = 400;
-    detection = 0.7;
-    probDeath = 0;
+    std::uniform_real_distribution<double> alpha_range(ALPHA_MIN,ALPHA_MAX);
+    std::uniform_real_distribution<double> dist_range(DIST_MIN,DIST_MAX);
+    std::uniform_real_distribution<double> detection_range(DETECTION_MIN,DETECTION_MAX);
+    
+    champVision = alpha_range(re);
+    distance = dist_range(re);
+    detection = detection_range(re);
 }
 
 bool YeuxDecorator::jeTeVois(const ICreature& ic) const{
@@ -24,29 +41,4 @@ bool YeuxDecorator::jeTeVois(const ICreature& ic) const{
         return angle <= champVision/2 && dist <= distance && detection > ic.getCamouflage();
     }
 }
-
-/* void YeuxDecorator::draw(UImg & support){
-
-//     std::vector<double> vitesse = CreatureDecorator::getVitesse();
-//     double orientation = -atan(vitesse.at(1)/vitesse.at(0));
-
-//     double dx_t = cos( orientation )*AFF_SIZE/2.1;
-//     double dy_t = -sin( orientation )*AFF_SIZE/2.1;
-
-//     double         xt_t = vitesse.at(0) > 0 ? x + dx_t : x - dx_t;
-//     double         yt_t = vitesse.at(0) > 0 ? y + dy_t : y - dy_t;
-    
-//     double         xt_y = vitesse.at(0) > 0 ? x + dx_t*2 : x - dx_t*1.5;
-//     double         yt_y = vitesse.at(0) > 0 ? y + dy_t*2 : y - dy_t*1.5;
-    
-    
-
-//     T    white[] = { (T)255, (T)255, (T)255 };
-//     T    black[] = { (T)0, (T)0, (T)0 };
-
-//     support.draw_ellipse( x, y, AFF_SIZE, AFF_SIZE/5., -orientation/M_PI*180., couleur );
-//     support.draw_circle( xt_t, yt_t, AFF_SIZE/2., couleur );
-//     support.draw_circle( xt_y, yt_y, AFF_SIZE/4., black, 1 );
-//     support.draw_circle( xt_y, yt_y, AFF_SIZE/16., white, 1 );
-// }*/
 

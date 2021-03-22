@@ -12,6 +12,10 @@
  */
 class CamouflageDecorator : public AccessoireDecorator{
 
+    protected:
+        static const double CAMOUF_MIN;
+        static const double CAMOUF_MAX;
+
     private:
         double camouflage; /*!< valeur du camouflage de la créature */
     public:

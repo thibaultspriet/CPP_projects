@@ -1,11 +1,24 @@
 #include "OreilleDecorator.h"
 
 #include <iostream>
+#include <random>
+
 using namespace std;
 
+const double OreilleDecorator::DIST_MIN = ICreature::LIMITE_VUE;
+const double OreilleDecorator::DIST_MAX = ICreature::LIMITE_VUE * 2;
+
+const double OreilleDecorator::DETECTION_MIN = 0;
+const double OreilleDecorator::DETECTION_MAX = 1;
+
 OreilleDecorator::OreilleDecorator(ICreature* ic) : CapteurDecorator(ic){
-    distance = 1.;
-    detection = .7;
+
+    std::default_random_engine re;
+    std::uniform_real_distribution<double> distance_range(DIST_MIN,DIST_MAX);
+    std::uniform_real_distribution<double> detection_range(DETECTION_MIN,DETECTION_MAX);
+
+    distance = distance_range(re);
+    detection = detection_range(re);
 }
 
 bool OreilleDecorator::jeTeVois(const ICreature & ic) const{
