@@ -4,6 +4,7 @@
 
 #include "UImg.h"
 #include "Bestiole.h"
+#include "Configuration.h"
 
 #include <iostream>
 #include <vector>
@@ -24,6 +25,9 @@ private :
 
    int                     width, height; /*!< largeur et hauteur du milieu */
    std::vector<ICreature*> listeCreatures; /*!< vecteur de pointeurs vers les créatures de l'environnement */
+
+   Configuration* config; /*!< objet configuration qui contient le pourcentage de chaque comportement */
+
    
 
 public :
@@ -34,6 +38,8 @@ public :
     * @param _height hauteur
     */
    Milieu( int _width, int _height );
+
+   Milieu( int _width, int _height, Configuration* config);
 
    /**
     * @brief Destructeur de l'objet milieu
@@ -112,6 +118,14 @@ public :
     * @return std::vector<ICreature*>& 
     */
    std::vector<ICreature*> & getCreatures();
+
+
+   /**
+    * @brief Retourne l'objet configuration
+    * 
+    * @return Configuration* 
+    */
+   Configuration* getConfig(void){return config;};
 
 };
 
