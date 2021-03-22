@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <map>
 
 #include "IComportement.h"
 
@@ -18,7 +19,7 @@ using namespace std;
 class Configuration{
     private:
         int nb_creature; /*!< nombre de créatures que le client souhaite */
-        vector<pair<int,ComportType> > config; /*!< pourcentage et comportement */
+        map<ComportType,int> config; /*!< pourcentage et comportement */
     public:
 
         /**
@@ -27,7 +28,7 @@ class Configuration{
          * @param nb_creature nombre de créatures que le client souhaite
          * @param config  pourcentage et comportement
          */
-        Configuration(int nb_creature, vector<pair<int,ComportType> > config) : nb_creature(nb_creature),config(config){};
+        Configuration(int nb_creature, map<ComportType,int> config) : nb_creature(nb_creature),config(config){};
         
         /**
          * @brief Destructeur de Configuration
@@ -47,7 +48,7 @@ class Configuration{
          * 
          * @return vector<pair<int,ComportType> > 
          */
-        vector<pair<int,ComportType> > getConfig(void){return config;};
+        map<ComportType,int> getConfig(void){return config;};
 
         /**
          * @brief Retourne le nombre de gregaires

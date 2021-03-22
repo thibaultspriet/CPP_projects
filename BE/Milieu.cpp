@@ -3,6 +3,7 @@
 #include "Bestiole.h"
 
 #include <cstdlib>
+#include <cmath>
 #include <ctime>
 #include <vector>
 
@@ -17,11 +18,11 @@ Milieu::Milieu( int _width, int _height ) : UImg( _width, _height, 1, 3 ),
 
    cout << "const Milieu" << endl;
 
-   std::vector<std::pair<int,ComportType> > conf;
-   conf.push_back(make_pair(25,KAMIK));
-   conf.push_back(make_pair(25,GREG));
-   conf.push_back(make_pair(25,PREV));
-   conf.push_back(make_pair(25,PEUR));
+   std::map<ComportType,int> conf;
+   conf[KAMIK] = 25;
+   conf[GREG] = 25;
+   conf[PREV] = 20;
+   conf[PEUR] = 25;
    config = new Configuration(20,conf);
 
    std::srand( time(NULL) );
@@ -58,6 +59,10 @@ void Milieu::step( void )
    if(!toRemoveCreatures.empty()){ // supprime les créatures qui sont mortes pendant le pas de simulation
       removeMember(toRemoveCreatures);
    }
+
+   // Naissance spontanée aléatoire de bestioles
+   //if(rand() % 100 + 1 <= config->getKamik())
+
 
 }
 
