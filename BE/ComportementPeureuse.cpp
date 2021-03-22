@@ -23,21 +23,10 @@ ComportementPeureuse::~ComportementPeureuse()
 }
 
 pair<vector<double>, double> ComportementPeureuse::calculDirection(vector<ICreature*> voisins, ICreature& creatureAssociee) {
-	// si le nb de voisins est sup�rieur au seuil, la bestiole prend la direction inverse de ses voisins 2 fois plus vite
+	// si le nb de voisins est sup�rieur au seuil, la bestiole prend la direction opposée 2 fois plus vite
 	if (voisins.size() >= m_seuil) {
-		vector<double> moyenne_direction(2);
-		double moyenne_direction_x = 0;
-		double moyenne_direction_y = 0;
 		// calcul de la moyenne de direction de ses voisins
-		for (int i = 0; i < voisins.size(); i++) {
-			moyenne_direction_x += voisins.at(i)->getDirection()[0];
-			moyenne_direction_y += voisins.at(i)->getDirection()[1];
-		}
-		moyenne_direction_x = moyenne_direction_x / voisins.size();
-		moyenne_direction_y = moyenne_direction_y / voisins.size();
-		moyenne_direction[0] = - moyenne_direction_x;
-		moyenne_direction[1] = - moyenne_direction_y;
-		return make_pair(moyenne_direction, 2);
+		return make_pair(- creatureAssociee.getDirection(), 2);
 	}
 	// sinon, la bestiole part avec la m�me direction et m�me vitesse que pr�c�demment
 	else {

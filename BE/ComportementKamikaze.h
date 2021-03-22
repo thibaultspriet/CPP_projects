@@ -58,4 +58,16 @@ class ComportementKamikaze : public IComportement {
  */
 double calculDistance(int xA, int yA, int xB, int yB);
 
+// ajout d'une fonction pour calculer le vecteur entre deux points
+/**
+ * @brief foncion outil qui permet de calculer un vecteur entre deux points.
+ *
+ * @param xA
+ * @param yA
+ * @param xB
+ * @param yB
+ * @return vector<double>
+ */
+vector<double> vecteurEntreDeuxPoints(int xA, int yA, int xB, int yB);
+
 #endif

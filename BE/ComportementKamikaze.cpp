@@ -38,10 +38,17 @@ pair<vector<double>, double> ComportementKamikaze::calculDirection(vector<ICreat
 				argmin = i;
 			}
 		}
-		return make_pair(voisins.at(argmin)->getDirection(), m_coefAttaque);
+		return make_pair(vecteurAB(positionBestiole_x, positionBestiole_y,voisins.at(argmin)->getX(),voisins.at(argmin)->getY())/min, m_coefAttaque);
 	}
 }
 
 double calculDistance(int xA, int yA, int xB, int yB) {
 	return sqrt((xB - xA) * (xB - xA) + (yB - yA) * (yB - yA));
+}
+
+vector<double> vecteurEntreDeuxPoints(int xA, int yA, int xB, int yB) {
+	vector<double> vecteurAB(2);
+	vecteurAB[0] = xB - xA;
+	vecteurAB[1] = yB - yA;
+	return vecteurAB;
 }
