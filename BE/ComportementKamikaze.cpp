@@ -38,7 +38,10 @@ pair<vector<double>, double> ComportementKamikaze::calculDirection(vector<ICreat
 				argmin = i;
 			}
 		}
-		return make_pair(vecteurAB(positionBestiole_x, positionBestiole_y,voisins.at(argmin)->getX(),voisins.at(argmin)->getY())/min, m_coefAttaque);
+		vector<double> vecteur_creatures = vecteurEntreDeuxPoints(positionBestiole_x, positionBestiole_y,voisins.at(argmin)->getX(),voisins.at(argmin)->getY());
+		vecteur_creatures.at(0) /= min;
+		vecteur_creatures.at(1) /= min;
+		return make_pair(vecteur_creatures, m_coefAttaque);
 	}
 }
 
