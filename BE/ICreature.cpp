@@ -19,8 +19,8 @@ int               ICreature::next = 0;
 
 void ICreature::initCreature(){
    identite = ++next;
-   x = y = 0;
-   cumulX = cumulY = 0.;
+   x = this->y = 0;
+   cumulX = this->cumulY = 0.;
 
    // vitesse initiale aléatoire
    vitesse.push_back(static_cast<double>( rand() )/RAND_MAX*MAX_VITESSE);
@@ -38,36 +38,37 @@ void ICreature::initCreature(){
 
 ICreature::ICreature( void )
 {
-   cout << "const creature (" << identite << ") par defaut" << endl;
-
    initCreature();
    comportement = new ComportementKamikaze();
+   cout << "const creature (" << identite << ") par defaut" << endl;
 }
 
 
-// ICreature::ICreature( const ICreature & ic )
-// {
+ICreature::ICreature( const ICreature & ic ) :  identite(++next), x(ic.x), y(ic.y), cumulX(ic.cumulX), cumulY(ic.cumulY), vitesse(ic.vitesse)
+{
 
-//    identite = ++next;
+   // identite = ++next;
 
-//    cout << "const creature (" << identite << ") par copie" << endl;
+   cout << "const creature (" << identite << ") par copie" << endl;
+   // cout << "jusqu'ici" << endl;
+   // x = ic.x;
+   // cout << "jusqu'ici" << endl;
+   // y = ic.y;
+   // cumulX = cumulY = 0.;
+   // vitesse = ic.vitesse;
+   couleur = new T[ 3 ];
+   memcpy( couleur, ic.couleur, 3*sizeof(T) );
+   comportement = new IComportement(*(ic.comportement));
 
-//    x = ic.x;
-//    y = ic.y;
-//    cumulX = cumulY = 0.;
-//    vitesse = ic.vitesse;
-//    couleur = new T[ 3 ];
-//    memcpy( couleur, ic.couleur, 3*sizeof(T) );
-
-// }
+}
 
 ICreature::ICreature(IComportement* comportement) : comportement(comportement){
 
-   cout << "const creature (" << identite << ") par defaut" << endl;
    initCreature();
+   cout << "const creature (" << identite << ") comportement" << endl;
 }
 
-ICreature::ICreature(ComportType comport) {
+/* ICreature::ICreature(ComportType comport) {
     identite = ++next;
 
     cout << "const creature (" << identite << ") par defaut" << endl;
@@ -110,7 +111,7 @@ ICreature::ICreature(ComportType comport) {
         comportement = new ComportementPrevoyante();
         break;
     }
-}
+} */
 
 ICreature::~ICreature( void )
 {

@@ -82,12 +82,11 @@ public :
    /**
     * @brief Constructeur par copie d'une créature
     * 
-    * @param b 
+    * @param ic 
     */
-   //ICreature( const ICreature & ic );
+   ICreature( const ICreature & ic );
 
 
-   ICreature(ComportType comport);
 
    /**
     * @brief Destructeur d'un objet créature
@@ -229,6 +228,8 @@ public :
     * @return int 
     */
    int getIdentite(void) {return identite;};
+
+   IComportement* getComportement(void) {return comportement;};
         
 
 

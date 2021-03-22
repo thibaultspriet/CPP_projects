@@ -26,7 +26,12 @@ class Bestiole : public ICreature
        */
       Bestiole(IComportement* comportement) : ICreature(comportement){};
 
-      Bestiole(ComportType comport) : ICreature(ComportType comport) {};
+      /**
+       * @brief Constructeur par copie d'une bestiole
+       * 
+       * @param b 
+       */
+      Bestiole(const Bestiole& b) : ICreature(b){cout << "constructeur par copie de bestiole" << endl;};
 
       /**
        * @brief destructeur de bestiole

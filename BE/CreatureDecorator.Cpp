@@ -1,7 +1,7 @@
 #include "CreatureDecorator.h"
 
-CreatureDecorator::CreatureDecorator(ICreature * ic){
-    creature = ic;
+CreatureDecorator::CreatureDecorator(ICreature* ic) : creature(ic){
+    //creature = ic;
 };
 
 
