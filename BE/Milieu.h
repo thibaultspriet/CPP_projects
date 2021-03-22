@@ -77,6 +77,8 @@ public :
     * @param ic pointeur sur une créature
     */
    void addMember(  ICreature* ic ) { listeCreatures.push_back(ic); listeCreatures.back()->initCoords(width, height); }
+
+   void randomNaissance(std::map<ComportType,int>);
    
    /**
     * @brief supprime une créature de la simulation

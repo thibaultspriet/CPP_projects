@@ -1,9 +1,14 @@
 #include "Milieu.h"
 #include "ICreature.h"
 #include "Bestiole.h"
+#include "ConcreteCreatorBestiole.h"
+
+#include "ComportementGregaire.h"
+#include "ComportementKamikaze.h"
+#include "ComportementPeureuse.h"
+#include "ComportementPrevoyante.h"
 
 #include <cstdlib>
-#include <cmath>
 #include <ctime>
 #include <vector>
 
@@ -21,7 +26,7 @@ Milieu::Milieu( int _width, int _height ) : UImg( _width, _height, 1, 3 ),
    std::map<ComportType,int> conf;
    conf[KAMIK] = 25;
    conf[GREG] = 25;
-   conf[PREV] = 20;
+   conf[PREV] = 25;
    conf[PEUR] = 25;
    config = new Configuration(20,conf);
 
@@ -59,10 +64,40 @@ void Milieu::step( void )
    if(!toRemoveCreatures.empty()){ // supprime les créatures qui sont mortes pendant le pas de simulation
       removeMember(toRemoveCreatures);
    }
+   randomNaissance(config->getConfig());
+}
 
+
+void Milieu::randomNaissance(std::map<ComportType,int> config_){
    // Naissance spontanée aléatoire de bestioles
-   //if(rand() % 100 + 1 <= config->getKamik())
-
+   ConcreteCreatorBestiole bestiole_creator;
+   if(config_.find(KAMIK) != config_.end()){
+      if(::rand() % 100 + 1 < config_[KAMIK]){
+         cout << "une bestiole est naît aléatoirement" << endl;
+         addMember(bestiole_creator.create(new ComportementKamikaze()));
+      }
+   }
+   
+   if(config_.find(GREG) != config_.end()){
+      if(::rand() % 100 + 1 < config_[GREG]){
+         cout << "une bestiole est naît aléatoirement" << endl;
+         addMember(bestiole_creator.create(new ComportementGregaire()));
+      }
+   }
+   
+   if(config_.find(PEUR) != config_.end()){
+      if(::rand() % 100 + 1 < config_[PEUR]){
+         cout << "une bestiole est naît aléatoirement" << endl;
+         addMember(bestiole_creator.create(new ComportementPeureuse()));
+      }
+   }
+   
+   if(config_.find(PREV) != config_.end()){
+      if(::rand() % 100 + 1 < config_[PREV]){
+         cout << "une bestiole est naît aléatoirement" << endl;
+         addMember(bestiole_creator.create(new ComportementPrevoyante()));
+      }
+   }
 
 }
 
