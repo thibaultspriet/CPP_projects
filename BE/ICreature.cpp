@@ -34,6 +34,7 @@ void ICreature::initCreature(){
 
    probDeath = (rand() % 101)/100.0 ;// valeur entre 0 et 1
    camouflage = 0.0;
+   dureeVie = rand() % 100 + 100;
 }
 
 ICreature::ICreature( void )
@@ -210,7 +211,7 @@ void ICreature::action( Milieu & monMilieu, std::vector<ICreature*> & toRemoveCr
 {
    bouge( monMilieu );
    collide(monMilieu, toRemoveCreatures);
-
+   decreaseDureeVie();
 }
 
 

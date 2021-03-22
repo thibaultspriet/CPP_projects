@@ -59,6 +59,12 @@ void Milieu::step( void )
    for ( std::vector<ICreature*>::iterator it = listeCreatures.begin() ; it != listeCreatures.end() ; ++it ) // appelle l'action et déssinne chaque créature
    {
       (*it)->action( *this, toRemoveCreatures);
+      if((*it)->getDureeVie() == 0){
+         if(find(toRemoveCreatures.begin(),toRemoveCreatures.end(),*it) == toRemoveCreatures.end()){
+            //cout << "bestiole " << (*it)->getIdentite() << " est morte de vieillesse" << endl;
+            toRemoveCreatures.push_back(*it);
+         }
+      }
       (*it)->draw( *this, *this );
    } // for
    if(!toRemoveCreatures.empty()){ // supprime les créatures qui sont mortes pendant le pas de simulation

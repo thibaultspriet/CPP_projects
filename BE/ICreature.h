@@ -34,6 +34,7 @@ protected :
    std::vector<double> vitesse; /*!< vecteur vitesse de la créature. vitesse[0] = vx ; vitesse[1] = vy */
    T               * couleur; /*!< couleur de la créature */
    IComportement* comportement; /*!< comportement aggrégé, permet de donner la direction des créatures. */
+   int dureeVie;
 
 private :
 
@@ -54,6 +55,8 @@ private :
     * @param toRemoveCreature paramètre intermédiaire qui permet de stocker les créatures à supprimer à la fin d'une "step"
     */
    void collide(Milieu & monMilieu, std::vector<ICreature*> & toRemoveCreature);
+
+   void decreaseDureeVie(void){--dureeVie;};
 
 
    /**
@@ -230,6 +233,8 @@ public :
    int getIdentite(void) {return identite;};
 
    IComportement* getComportement(void) {return comportement;};
+
+   int getDureeVie(void){return dureeVie;};
         
 
 
