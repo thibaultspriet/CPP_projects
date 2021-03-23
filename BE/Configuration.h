@@ -22,6 +22,15 @@ class Configuration{
         map<ComportType,int> config; /*!< pourcentage et comportement */
     public:
 
+        
+        /**
+         * @brief Constructeur par défaut de configuration
+         * 
+         * Retourne une configuration avec 20 bestioles, et avec 25% de chaque comportement qu'on a implémenté (pas multiple)
+         * 
+         */
+        Configuration();
+
         /**
          * @brief Constructeur de Configuration
          * 
@@ -77,6 +86,20 @@ class Configuration{
          * @return int 
          */
         int getPrev(void);
+
+
+        // ===================== BEGIN Fonctions de  DEBUG =====================
+        void printConfiguration(void){
+            cout << "===== BEGIN Configuration =====" << endl;
+            cout << "Créatures totales : " << nb_creature << endl;
+            cout << "Kamikazes : " << getKamik() << endl;
+            cout << "Gregaires : " << getGreg() << endl;
+            cout << "Peureuses : " << getPeur() << endl;
+            cout << "Prevoyantes : " << getPrev() << endl;
+            cout << "===== END Configuration =====" << endl;
+
+        }
+        // ===================== END Fonctions de  DEBUG =====================
 };
 
 #endif

@@ -13,14 +13,14 @@
 class YeuxDecorator : public CapteurDecorator{
 
     protected:
-        static const double ALPHA_MIN;
-        static const double ALPHA_MAX;
+        static const double ALPHA_MIN; /*!< champ de vision min avec des yeux */
+        static const double ALPHA_MAX; /*!< champ de vision max avec des yeux */
 
-        static const double DIST_MIN;
-        static const double DIST_MAX;
+        static const double DIST_MIN; /*!< distance min */
+        static const double DIST_MAX; /*!< distance max */
         
-        static const double DETECTION_MIN;
-        static const double DETECTION_MAX;
+        static const double DETECTION_MIN; /*!< seuil de détection min */
+        static const double DETECTION_MAX; /*!< seuil de détection max */
 
 
     private:
@@ -35,6 +35,14 @@ class YeuxDecorator : public CapteurDecorator{
          * @param ic 
          */
         YeuxDecorator(ICreature* ic);
+
+
+        /**
+         * @brief Copie une créature avec des yeux
+         * 
+         * @return ICreature* 
+         */
+        ICreature* clone(void) override;
         
         /**
          * @brief Destructeur de YeuxDecorator
@@ -50,6 +58,17 @@ class YeuxDecorator : public CapteurDecorator{
          * @return false 
          */
         bool jeTeVois(const ICreature & ic) const override final;
+
+        /**
+         * @brief Dessine une créature avec ses yeux.
+         * 
+         * Modélisé par un point noir au bout de la tête
+         * 
+         * @param support 
+         * @param monMilieu 
+         * @param creatureToDraw 
+         */
+        void draw(UImg & support, Milieu& monMilieu, ICreature& creatureToDraw) override;
 
 };
 

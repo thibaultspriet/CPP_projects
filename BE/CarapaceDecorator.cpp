@@ -1,8 +1,8 @@
 #include "CarapaceDecorator.h"
 #include <random>
 
-const double CarapaceDecorator::PROTEC_DEATH_MAX = 5;
-const double CarapaceDecorator::DECREASE_VITESSE_MAX = 4;
+const double CarapaceDecorator::PROTEC_DEATH_MAX = 5.0;
+const double CarapaceDecorator::DECREASE_VITESSE_MAX = 4.0;
 
 CarapaceDecorator::CarapaceDecorator(ICreature* ic) : AccessoireDecorator(ic) {
 
@@ -14,18 +14,21 @@ CarapaceDecorator::CarapaceDecorator(ICreature* ic) : AccessoireDecorator(ic) {
     decrease_vitesse = vitesse_range(re);
 };
 
+ICreature* CarapaceDecorator::clone(){
+    cout << "clonage Carapace decorator" << endl;
+    CarapaceDecorator* creature_clone = new CarapaceDecorator(*this);
+    creature_clone->creature = this->creature->clone();
+    return creature_clone;
+};
+
 std::vector<double> CarapaceDecorator::getVitesse(){
-    //cout << "========== BEGIN Carapace Decorator =========" << endl;
     std::vector<double> vitesse = CreatureDecorator::getVitesse();
-    //cout << "Vitesse wrapped creature : " << vitesse.at(0) << " " << vitesse.at(1) << endl;
     std::transform(
         vitesse.begin(),
         vitesse.end(),
         vitesse.begin(),
         [this](double v){return v / decrease_vitesse;}
     );
-    //cout << "Viteese multiplied : " << vitesse.at(0) << " " << vitesse.at(1) << endl;
-    //cout << "========== END Carapace Decorator =========" << endl;
     return vitesse;
 }
 
@@ -36,4 +39,18 @@ void CarapaceDecorator::setVitesse(double vx, double vy){
 double CarapaceDecorator::getProbDeath() const {
     cout << "J'ai une chance de mourir initiale de : " << AccessoireDecorator::getProbDeath() << " et avec ma protection : " << AccessoireDecorator::getProbDeath() / protection_death << endl;
     return AccessoireDecorator::getProbDeath() / protection_death;
+}
+
+void CarapaceDecorator::draw( UImg & support, Milieu& monMilieu, ICreature& creatureToDraw )
+{
+   
+   creature->draw(support,monMilieu,creatureToDraw);
+
+   const T    black[] = { (T)0, (T)0, (T)0 };
+
+   int x = creatureToDraw.getX();
+   int y = creatureToDraw.getY();
+
+   support.draw_circle(x,y,AFF_SIZE/3, black);
+
 }

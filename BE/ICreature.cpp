@@ -10,9 +10,10 @@
 
 
 
-const double      ICreature::AFF_SIZE = 8.;
-const double      ICreature::MAX_VITESSE = 10.;
-const double      ICreature::LIMITE_VUE = 30.;
+const double      ICreature::AFF_SIZE = 8.0;
+const double      ICreature::MAX_VITESSE = 10.0;
+const double      ICreature::LIMITE_VUE = 30.0;
+
 
 int               ICreature::next = 0;
 
@@ -34,7 +35,9 @@ void ICreature::initCreature(){
 
    probDeath = (rand() % 101)/100.0 ;// valeur entre 0 et 1
    camouflage = 0.0;
-   dureeVie = rand() % 100 + 100;
+   dureeVie = rand() % 100 + 300;
+   cloneRate = 1.0 / 1000.0; // une créature peut avoir un taux de clonnage compris entre 0 et 3%
+   cout << cloneRate << endl;
 }
 
 ICreature::ICreature( void )
@@ -45,74 +48,43 @@ ICreature::ICreature( void )
 }
 
 
-ICreature::ICreature( const ICreature & ic ) :  identite(++next), x(ic.x), y(ic.y), cumulX(ic.cumulX), cumulY(ic.cumulY), vitesse(ic.vitesse)
+ICreature::ICreature( const ICreature & ic ) :  identite(++next), x(ic.x), y(ic.y), cumulX(ic.cumulX), cumulY(ic.cumulY), vitesse(ic.vitesse), dureeVie(ic.dureeVie), cloneRate(ic.cloneRate)
 {
 
-   // identite = ++next;
-
    cout << "const creature (" << identite << ") par copie" << endl;
-   // cout << "jusqu'ici" << endl;
-   // x = ic.x;
-   // cout << "jusqu'ici" << endl;
-   // y = ic.y;
-   // cumulX = cumulY = 0.;
-   // vitesse = ic.vitesse;
    couleur = new T[ 3 ];
    memcpy( couleur, ic.couleur, 3*sizeof(T) );
-   comportement = new IComportement(*(ic.comportement));
+   comportement = (ic.comportement)->clone();
 
 }
 
 ICreature::ICreature(IComportement* comportement) : comportement(comportement){
 
    initCreature();
+   switch (comportement->getComportementType())
+   {
+   case KAMIK:
+      setColor(230,0,0);
+      break;
+   case GREG:
+      setColor(230,230,230);
+      break;
+   case PEUR:
+      setColor(0,230,0);
+      break;
+   case PREV:
+      setColor(0,0,230);
+      break;
+   }
    cout << "const creature (" << identite << ") comportement" << endl;
 }
 
-/* ICreature::ICreature(ComportType comport) {
-    identite = ++next;
+ICreature* ICreature::clone(){
+   ICreature* creature_clone = new ICreature(*this);
+   cout << "clonage ICreature" << endl;
+   return creature_clone;
+} 
 
-    cout << "const creature (" << identite << ") par defaut" << endl;
-
-    x = y = 0;
-    cumulX = cumulY = 0.;
-
-    // vitesse initiale aléatoire
-    vitesse.push_back(static_cast<double>(rand()) / RAND_MAX * MAX_VITESSE);
-    vitesse.push_back(static_cast<double>(rand()) / RAND_MAX * MAX_VITESSE);
-
-    // définit la couleur de la bestiole
-    couleur = new T[3];
-    couleur[0] = static_cast<int>(static_cast<double>(rand()) / RAND_MAX * 230.);
-    couleur[1] = static_cast<int>(static_cast<double>(rand()) / RAND_MAX * 230.);
-    couleur[2] = static_cast<int>(static_cast<double>(rand()) / RAND_MAX * 230.);
-
-    probDeath = (rand() % 101) / 100.0;// valeur entre 0 et 100
-    camouflage = 0.0;
-    switch (comport)
-    {
-    case GREG:
-        comportement = new ComportementGregaire();
-        break;
-
-    case KAMIK:
-        comportement = new ComportementKamikaze();
-        break;
-
-   //  case MULTI:
-   //      comportement = new ComportementMultiple();
-   //      break;
-
-    case PEUR:
-        comportement = new ComportementPeureuse();
-        break;
-
-    case PREV:
-    default:
-        comportement = new ComportementPrevoyante();
-        break;
-    }
-} */
 
 ICreature::~ICreature( void )
 {
@@ -181,7 +153,7 @@ void ICreature::collide(Milieu & monMilieu, std::vector<ICreature*> & toRemoveCr
    std::vector<ICreature*> & creatures = monMilieu.getCreatures();
    bool alreadyCollide = false;
 
-   for ( vector<ICreature*>::iterator it = creatures.begin() ; it != creatures.end() ; ++it ){
+   for ( auto it = creatures.begin() ; it != creatures.end() ; ++it ){
       if(!((**it) == *this)){            
          double         dist;
          dist = std::sqrt( (x-(**it).x)*(x-(**it).x) + (y-(**it).y)*(y-(**it).y) );
@@ -207,8 +179,15 @@ void ICreature::collide(Milieu & monMilieu, std::vector<ICreature*> & toRemoveCr
 
 
 
-void ICreature::action( Milieu & monMilieu, std::vector<ICreature*> & toRemoveCreatures )
+void ICreature::action( Milieu & monMilieu, std::vector<ICreature*> & toRemoveCreatures, std::vector<ICreature*> & toAppendCreatures )
 {
+   // clonnage
+   double clonnage = ((rand() % 1001) + 1) / 1000.0;
+   if( clonnage <= cloneRate){
+      ICreature* creature_clone = clone();
+      toAppendCreatures.push_back(creature_clone);
+      cout << "clonnage rate : " << cloneRate << " ; random : " << clonnage << endl;
+   }
    bouge( monMilieu );
    collide(monMilieu, toRemoveCreatures);
    decreaseDureeVie();
@@ -216,21 +195,25 @@ void ICreature::action( Milieu & monMilieu, std::vector<ICreature*> & toRemoveCr
 
 
 
-void ICreature::draw( UImg & support, Milieu& monMilieu )
+void ICreature::draw( UImg & support, Milieu& monMilieu, ICreature& creatureToDraw )
 {
 
-   vector<double> vit = getComportementVitesseMultiple(monMilieu);
+   vector<double> vit = creatureToDraw.getComportementVitesseMultiple(monMilieu);
 
    double orientation = -atan(vit.at(1)/vit.at(0));
 
    double dx = cos( orientation )*AFF_SIZE/2.1;
    double dy = -sin( orientation )*AFF_SIZE/2.1;
 
+   int x = creatureToDraw.getX();
+   int y = creatureToDraw.getY();
+
    double         xt = vit.at(0) > 0 ? x + dx : x - dx;
    double         yt = vit.at(0) > 0 ? y + dy : y - dy;
 
 
-   support.draw_ellipse( x, y, AFF_SIZE, AFF_SIZE/5., -orientation/M_PI*180., couleur );
+   double opacity = creatureToDraw.getCamouflage() == 0 ? 1 : .3;
+   support.draw_ellipse( x, y, AFF_SIZE, AFF_SIZE/5., -orientation/M_PI*180., couleur, opacity );
    support.draw_circle( xt, yt, AFF_SIZE/2., couleur );
 
 }
@@ -287,6 +270,7 @@ std::vector<double> ICreature::getComportementVitesse(Milieu& monMilieu){
    double normeVit = getNormeVitesse(getVitesse());
    vit.push_back(direction.first.at(0) * normeVit);
    vit.push_back(direction.first.at(1) * normeVit);
+
    return vit;
 }
 
@@ -303,3 +287,10 @@ void ICreature::setVitesse(double vx,double vy){
     vitesse.at(0) = vx;
     vitesse.at(1) = vy;
 };
+
+void ICreature::setColor(int r, int g, int b){
+   couleur[0] = r;
+   couleur[1] = g;
+   couleur[2] = b;
+
+}

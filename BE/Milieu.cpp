@@ -17,21 +17,14 @@ using namespace std;
 const T    Milieu::white[] = { (T)255, (T)255, (T)255 };
 
 
-Milieu::Milieu( int _width, int _height ) : UImg( _width, _height, 1, 3 ),
-                                            width(_width), height(_height)
+Milieu::Milieu( int _width, int _height ) : UImg( _width, _height, 1, 3 ), width(_width), height(_height)
 {
-
    cout << "const Milieu" << endl;
 
-   std::map<ComportType,int> conf;
-   conf[KAMIK] = 25;
-   conf[GREG] = 25;
-   conf[PREV] = 25;
-   conf[PEUR] = 25;
-   config = new Configuration(20,conf);
+   // Configuration par défaut
+   config = new Configuration();
 
    std::srand( time(NULL) );
-
 };
 
 Milieu::Milieu(int _width, int _heigh, Configuration* _config) : UImg( _width, _height, 1, 3 ), width(_width), height(_height), config(_config)
@@ -45,9 +38,7 @@ Milieu::Milieu(int _width, int _heigh, Configuration* _config) : UImg( _width, _
 
 Milieu::~Milieu( void )
 {
-
    cout << "dest Milieu" << endl;
-
 }
 
 
@@ -55,20 +46,25 @@ void Milieu::step( void )
 {
 
    std::vector<ICreature*> toRemoveCreatures; // objet temporaire qui stocke les creatures à supprimer à la fin du pas de simulation
+   std::vector<ICreature*> toAppendCreatures; // objet temporaire qui stocke les creatures à ajouter à la fin du pas de simulation
    cimg_forXY( *this, x, y ) fillC( x, y, 0, white[0], white[1], white[2] );
-   for ( std::vector<ICreature*>::iterator it = listeCreatures.begin() ; it != listeCreatures.end() ; ++it ) // appelle l'action et déssinne chaque créature
+   for (auto it = listeCreatures.begin() ; it != listeCreatures.end() ; ++it ) // appelle l'action et déssinne chaque créature
    {
-      (*it)->action( *this, toRemoveCreatures);
+      (*it)->action( *this, toRemoveCreatures, toAppendCreatures);
       if((*it)->getDureeVie() == 0){
          if(find(toRemoveCreatures.begin(),toRemoveCreatures.end(),*it) == toRemoveCreatures.end()){
-            //cout << "bestiole " << (*it)->getIdentite() << " est morte de vieillesse" << endl;
             toRemoveCreatures.push_back(*it);
          }
       }
-      (*it)->draw( *this, *this );
+      (*it)->draw( *this, *this, **it );
    } // for
    if(!toRemoveCreatures.empty()){ // supprime les créatures qui sont mortes pendant le pas de simulation
       removeMember(toRemoveCreatures);
+   }
+   if(!toAppendCreatures.empty()){ // ajoute les créatures qui sont nées pendant le pas de simulation
+      for(auto it = toAppendCreatures.begin() ; it != toAppendCreatures.end() ; ++it){
+         addMember(*it);
+      }
    }
    randomNaissance(config->getConfig());
 }
@@ -79,28 +75,24 @@ void Milieu::randomNaissance(std::map<ComportType,int> config_){
    ConcreteCreatorBestiole bestiole_creator;
    if(config_.find(KAMIK) != config_.end()){
       if(::rand() % 100 + 1 < config_[KAMIK]){
-         cout << "une bestiole est naît aléatoirement" << endl;
          addMember(bestiole_creator.create(new ComportementKamikaze()));
       }
    }
    
    if(config_.find(GREG) != config_.end()){
       if(::rand() % 100 + 1 < config_[GREG]){
-         cout << "une bestiole est naît aléatoirement" << endl;
          addMember(bestiole_creator.create(new ComportementGregaire()));
       }
    }
    
    if(config_.find(PEUR) != config_.end()){
       if(::rand() % 100 + 1 < config_[PEUR]){
-         cout << "une bestiole est naît aléatoirement" << endl;
          addMember(bestiole_creator.create(new ComportementPeureuse()));
       }
    }
    
    if(config_.find(PREV) != config_.end()){
       if(::rand() % 100 + 1 < config_[PREV]){
-         cout << "une bestiole est naît aléatoirement" << endl;
          addMember(bestiole_creator.create(new ComportementPrevoyante()));
       }
    }

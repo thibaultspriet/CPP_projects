@@ -44,7 +44,7 @@ class AccessoireDecorator : public CreatureDecorator{
          * @brief Destructeur de AccessoireDecorator
          * 
          */
-        virtual ~AccessoireDecorator(){};
+        virtual ~AccessoireDecorator() {};
         
         /**
          * @brief méthode getCamouflage
@@ -59,6 +59,24 @@ class AccessoireDecorator : public CreatureDecorator{
          * @return double 
          */
         virtual double getProbDeath(void) const {return CreatureDecorator::getProbDeath();};
+
+        /**
+         * @brief Méthode virtuelle pure
+         * 
+         * Dans les classes filles (oreille, yeux, nageoire ..) permet de dessiner la créature avec son accessoire
+         * 
+         * @param support 
+         * @param monMilieu 
+         * @param creatureToDraw 
+         */
+        virtual void draw(UImg & support, Milieu& monMilieu, ICreature& creatureToDraw) = 0;
+
+        /**
+         * @brief permet de cloner une créature avec son accessoire
+         * 
+         * @return ICreature* 
+         */
+        virtual ICreature* clone(void) = 0;
 
 };
 

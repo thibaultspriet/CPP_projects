@@ -28,13 +28,34 @@ class CapteurDecorator : public CreatureDecorator{
          * 
          * @param ic 
          */
-        CapteurDecorator(ICreature* ic) : CreatureDecorator(ic){};
+        CapteurDecorator(ICreature* ic) : CreatureDecorator(ic){cout << "const capteur decorator call" << endl;};
+
+    
 
         /**
          * @brief Destructeur de CapteurDecorator
          * 
          */
-        virtual ~CapteurDecorator(){};
+        virtual ~CapteurDecorator() {};
+
+
+        /**
+         * @brief Méthode virtuelle pure
+         * 
+         * Dans les classes filles (oreille, yeux, nageoire ..) permet de dessiner la créature avec son capteur
+         * 
+         * @param support 
+         * @param monMilieu 
+         * @param creatureToDraw 
+         */
+        virtual void draw(UImg & support, Milieu& monMilieu, ICreature& creatureToDraw) = 0; 
+
+        /**
+         * @brief permet de cloner une créature avec son capteur
+         * 
+         * @return ICreature* 
+         */
+        virtual ICreature* clone(void) = 0;
 
 };
 

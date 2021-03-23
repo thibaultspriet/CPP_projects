@@ -15,7 +15,7 @@
  */
 class CreatureDecorator : public ICreature{
 
-    private:
+    protected:
         ICreature * creature; /*!< Créature emballée */
 
     public:
@@ -31,7 +31,7 @@ class CreatureDecorator : public ICreature{
          * @brief Destructeur de CreatureDecorator
          * 
          */
-        virtual ~CreatureDecorator() {};
+        virtual ~CreatureDecorator() {delete creature;};
 
 
         /**
@@ -71,6 +71,25 @@ class CreatureDecorator : public ICreature{
          * @return double 
          */
         double getProbDeath(void) const;
+
+
+        /**
+         * @brief Méthode virtuelle pure
+         * 
+         * Dans les classes filles (oreille, yeux, nageoire ..) permet de dessiner la créature avec son décorateur
+         * 
+         * @param support 
+         * @param monMilieu 
+         * @param creatureToDraw 
+         */
+        virtual void draw(UImg & support, Milieu& monMilieu, ICreature& creatureToDraw) = 0;
+
+        /**
+         * @brief permet de cloner une créature avec son décorateur
+         * 
+         * @return ICreature* 
+         */
+        virtual ICreature* clone(void) = 0;
 
 };
 

@@ -31,7 +31,17 @@ class Bestiole : public ICreature
        * 
        * @param b 
        */
-      Bestiole(const Bestiole& b) : ICreature(b){cout << "constructeur par copie de bestiole" << endl;};
+      Bestiole(const Bestiole& b) : ICreature(b) {cout << "constructeur par copie de bestiole" << endl;};
+
+      
+      /**
+       * @brief Redéfinition de la méthode classe de la classe mère ICréature
+       * 
+       * Appelle la fonction de la classe mère
+       * 
+       * @return ICreature* 
+       */
+      ICreature* clone(void) override {cout << "clonage bestiole" << endl ; return ICreature::clone();};
 
       /**
        * @brief destructeur de bestiole

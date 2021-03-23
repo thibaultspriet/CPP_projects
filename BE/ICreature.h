@@ -13,7 +13,7 @@ class IComportement;
 
 
 /**
- * @brief Class ICreature, définit les attributs et méthodes des bestio
+ * @brief Class ICreature, définit les attributs et méthodes des créatures
  * 
  */
 class ICreature{
@@ -34,7 +34,8 @@ protected :
    std::vector<double> vitesse; /*!< vecteur vitesse de la créature. vitesse[0] = vx ; vitesse[1] = vy */
    T               * couleur; /*!< couleur de la créature */
    IComportement* comportement; /*!< comportement aggrégé, permet de donner la direction des créatures. */
-   int dureeVie;
+   int dureeVie; /*!< durée de vie de la créature en nombre de pas de simulation */
+   double cloneRate; /*!< double entre 0 et 1 qui represente le pourcentage de chance de se cloner pour la créature à chaque instant de sa vie */
 
 private :
 
@@ -56,6 +57,11 @@ private :
     */
    void collide(Milieu & monMilieu, std::vector<ICreature*> & toRemoveCreature);
 
+   
+   /**
+    * @brief Appelé à chaque pas de simulation pour diminuer de 1 la durée de vie de la créature
+    * 
+    */
    void decreaseDureeVie(void){--dureeVie;};
 
 
@@ -102,20 +108,28 @@ public :
     * 
     * @param monMilieu référence du milieu
     * @param toRemoveCreatures paramètre intermédiaire qui permet de stocker les créatures à supprimer à la fin d'une "step"
+    * @param toAppendCreatures paramètre intermédiaire qui permet de stocker les créatures à ajouter à la fin d'une "step"
     */
-   void action( Milieu & monMilieu, std::vector<ICreature*> & toRemoveCreatures );
+   void action( Milieu & monMilieu, std::vector<ICreature*> & toRemoveCreatures, std::vector<ICreature*> & toAppendCreatures );
    
    
-   //virtual ICreature clone() {};
-   virtual void clone() {};
+   /**
+    * @brief méthode virtuelle qui permet de cloner une créature
+    * 
+    * Cette méthode permet de mettre en place le design pattern Prototype
+    * 
+    * @return ICreature* 
+    */
+   virtual ICreature* clone();
 
    /**
     * @brief Affichage d'une créature
     * 
     * @param support 
     * @param monMilieu
+    * @param creatureToDraw référence vers la créature à dessiner. Cela permet d'afficher les différents décorateurs
     */
-   void draw( UImg & support, Milieu& monMilieu );
+   virtual void draw( UImg & support, Milieu& monMilieu, ICreature& creatureToDraw );
 
 
    /**
@@ -232,9 +246,44 @@ public :
     */
    int getIdentite(void) {return identite;};
 
+
+   /**
+    * @brief Retourne l'objet IComportement agrégé
+    * 
+    * @return IComportement* 
+    */
    IComportement* getComportement(void) {return comportement;};
 
+   
+   /**
+    * @brief Retourne la durée de vie de la créature
+    * 
+    * @return int 
+    */
    int getDureeVie(void){return dureeVie;};
+
+   
+   /**
+    * @brief Permet d'attribuer une couleur à la créature
+    * 
+    * @param r entre 0 et 255, niveau de rouge
+    * @param g entre 0 et 255, niveau de vert
+    * @param b entre 0 et 255 niveau de bleu
+    */
+   void setColor(int r, int g, int b);
+
+
+   // ===================== BEGIN Fonctions de  DEBUG =====================
+   void printCreature(void){
+      cout << "====== BEGIN PRINT CREATURE ======" << endl;
+      cout << "créature " << identite << endl;
+      cout << "position : (" << x << "," << y << ")" << endl;
+      cout << "vitesse : (" << vitesse.at(0) << "," << vitesse.at(1) << ")" << endl;
+      //cout << "comportement : " << getComportement()->getComportementType() << endl;
+      cout << "====== END PRINT CREATURE ======" << endl;
+   };
+   // ===================== END Fonctions de  DEBUG =====================
+
         
 
 

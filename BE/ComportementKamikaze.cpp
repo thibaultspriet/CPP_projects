@@ -5,9 +5,7 @@
 
 using namespace std;
 
-// coefficient multiplicateur = 3
 const int ComportementKamikaze::m_coefAttaque = rand() % 3 + 1;
-//const int ComportementKamikaze::m_coefAttaque = 3;
 
 ComportementKamikaze::ComportementKamikaze() : IComportement() {
 	cout << "construct Comportement KAMIK" << endl;
@@ -27,8 +25,6 @@ pair<vector<double>, double> ComportementKamikaze::calculDirection(vector<ICreat
 	else {
 		int positionBestiole_x = creatureAssociee.getX();
 		int positionBestiole_y = creatureAssociee.getY();
-		// tableau qui contiendra la distance de chaque voisin � la bestiole
-		//vector<int> distanceVoisins(voisins.size());
 		double min = 1.79769e+308; // maximum double c++
 		int argmin = -1;
 		for (int i = 0; i < voisins.size(); i++) {

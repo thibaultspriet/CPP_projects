@@ -6,7 +6,7 @@
 using namespace std;
 
 const double OreilleDecorator::DIST_MIN = ICreature::LIMITE_VUE;
-const double OreilleDecorator::DIST_MAX = ICreature::LIMITE_VUE * 2;
+const double OreilleDecorator::DIST_MAX = ICreature::LIMITE_VUE * 2.0;
 
 const double OreilleDecorator::DETECTION_MIN = 0;
 const double OreilleDecorator::DETECTION_MAX = 1;
@@ -21,6 +21,13 @@ OreilleDecorator::OreilleDecorator(ICreature* ic) : CapteurDecorator(ic){
     detection = detection_range(re);
 }
 
+ICreature* OreilleDecorator::clone(){
+    cout << "clonage Oreille decorator" << endl;
+    OreilleDecorator* creature_clone = new OreilleDecorator(*this);
+    creature_clone->creature = this->creature->clone();
+    return creature_clone;
+}
+
 bool OreilleDecorator::jeTeVois(const ICreature & ic) const{
     if(CreatureDecorator::jeTeVois(ic)){
         return true;
@@ -32,27 +39,32 @@ bool OreilleDecorator::jeTeVois(const ICreature & ic) const{
     }
 }
 
-// void OreilleDecorator::draw(UImg & support){
 
-//     std::vector<double> vitesse = CreatureDecorator::getVitesse();
-//     double orientation = -atan(vitesse.at(1)/vitesse.at(0));
+void OreilleDecorator::draw( UImg & support, Milieu& monMilieu, ICreature& creatureToDraw )
+{
 
-//     double dx_t = cos( orientation )*AFF_SIZE/2.1;
-//     double dy_t = -sin( orientation )*AFF_SIZE/2.1;
+   creature->draw(support,monMilieu,creatureToDraw);
 
-//     double         xt_t = vitesse.at(0) > 0 ? x + dx_t : x - dx_t;
-//     double         yt_t = vitesse.at(0) > 0 ? y + dy_t : y - dy_t;
-    
-//     double         xt_y = vitesse.at(0) > 0 ? x + dx_t*2 : x - dx_t*1.5;
-//     double         yt_y = vitesse.at(0) > 0 ? y + dy_t*2 : y - dy_t*1.5;
-    
-    
+   T black[] = {(T) 0, (T) 0, (T) 0};
 
-//     T    white[] = { (T)255, (T)255, (T)255 };
-//     T    black[] = { (T)0, (T)0, (T)0 };
+   vector<double> vit = creatureToDraw.getComportementVitesseMultiple(monMilieu);
 
-//     support.draw_ellipse( x, y, AFF_SIZE, AFF_SIZE/5., -orientation/M_PI*180., couleur );
-//     support.draw_circle( xt_t, yt_t, AFF_SIZE/2., couleur );
-//     support.draw_circle( xt_y, yt_y, AFF_SIZE/4., black, 1 );
-//     support.draw_circle( xt_y, yt_y, AFF_SIZE/16., white, 1 );
-// }
+   double orientation = -atan(vit.at(1)/vit.at(0));
+
+   int x = creatureToDraw.getX();
+   int y = creatureToDraw.getY();
+
+   double nx = sin(orientation)*AFF_SIZE/2;
+   double ny = cos(orientation)*AFF_SIZE/2;
+   
+   double         xo1 = x - nx;
+   double         yo1 = y - ny;
+   
+   double         xo2 = x + nx;
+   double         yo2 = y + ny;
+
+
+   support.draw_circle(xo1,yo1,AFF_SIZE/4,black);
+   support.draw_circle(xo2,yo2,AFF_SIZE/4,black);
+
+}

@@ -12,8 +12,8 @@
 class CarapaceDecorator : public AccessoireDecorator{
 
     protected:
-        static const double PROTEC_DEATH_MAX;
-        static const double DECREASE_VITESSE_MAX;
+        static const double PROTEC_DEATH_MAX; /*!< seuil de protection max */
+        static const double DECREASE_VITESSE_MAX; /*!< facteur réducteur de la vitesse max */
 
     private:
         double protection_death; /*!< facteur qui réduit la probabilité de mourir de la créature */
@@ -26,6 +26,13 @@ class CarapaceDecorator : public AccessoireDecorator{
          * @param ic créature à emballer
          */
         CarapaceDecorator(ICreature* ic);
+
+        /**
+         * @brief Copie une créature avec une carapace
+         * 
+         * @return ICreature* 
+         */
+        ICreature* clone(void) override;
         
         /**
          * @brief Destructeur de CarapaceDecorator
@@ -54,6 +61,18 @@ class CarapaceDecorator : public AccessoireDecorator{
          * @return double 
          */
         double getProbDeath(void) const override;
+
+        
+        /**
+         * @brief Déssine une créature avec une carapace.
+         * 
+         * Représentée par un rond noir au milieu de la queue
+         * 
+         * @param support 
+         * @param monMilieu 
+         * @param creatureToDraw 
+         */
+        void draw(UImg & support, Milieu& monMilieu, ICreature& creatureToDraw) override;
 
 };
 

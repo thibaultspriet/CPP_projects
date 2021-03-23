@@ -28,7 +28,7 @@ int main()
    Configuration* configuration = ecosysteme.getMilieu().getConfig();
 
 
-   //ajoute les bestioles à la simulation
+   // ajoute les bestioles à la simulation
    for(int i = 1 ; i <= configuration->getKamik() ; ++i ){
       ecosysteme.getMilieu().addMember(bestioleCreator.create(new ComportementKamikaze()));   
    };
@@ -44,9 +44,10 @@ int main()
    for(int i = 1 ; i <= configuration->getPrev() ; ++i ){
       ecosysteme.getMilieu().addMember(bestioleCreator.create(new ComportementPrevoyante()));   
    };
-   // for(int i = 1 ; i<=20 ; ++i){
-   //    ecosysteme.getMilieu().addMember(bestioleCreator.create(new ComportementPrevoyante()));
-   // }  
+   
+
+   //ecosysteme.getMilieu().addMember(bestioleCreator.create(new ComportementPeureuse()));
+
    ecosysteme.run(); // lance la simulation
 
 

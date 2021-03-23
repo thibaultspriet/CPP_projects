@@ -1,4 +1,4 @@
-#idndef _CLONE_H_
+#ifndef _CLONE_H_
 #define _CLONE_H_
 
 #include "Bestiole.h"

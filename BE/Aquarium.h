@@ -50,7 +50,7 @@ public :
     * 
     * @return référence au milieu
     */
-   Milieu & getMilieu( void ) { return *flotte; }
+   Milieu & getMilieu( void ) const { return *flotte; }
 
 
    /**

@@ -45,17 +45,33 @@ class IComportement {
 		IComportement() {};
 
 		/**
+		 * @brief Constructeur par copie de IComportement
+		 * 
+		 * @param comportement 
+		 */
+		IComportement(const IComportement& comportement){}
+
+		/**
+		 * @brief Méthode virtuelle pure
+		 * 
+		 * Grâce au polymorphisme on peut obtenir un nouvel objet IComportement qui implémente un comportement particulier
+		 * 
+		 * @return IComportement* 
+		 */
+		virtual IComportement* clone() = 0;
+
+		/**
 		 * @brief Destructeur IComportement
 		 * 
 		 */
-		virtual ~IComportement() {};
+		virtual ~IComportement() {cout << "dest IComportement" << endl;};
 		
 		/**
-		 * @brief  fonction virtuelle permettant de r�cup�rer le type de comportement de l'�num�ration ci-dessus
+		 * @brief  fonction virtuelle pure permettant de r�cup�rer le type de comportement de l'�num�ration ci-dessus
 		 * 
 		 * @return ComportType 
 		 */
-		virtual ComportType getComportementType() {return KAMIK;};
+		virtual ComportType getComportementType() = 0;
 };
 
 

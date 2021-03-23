@@ -20,6 +20,15 @@ class ComportementGregaire : public IComportement {
 	ComportementGregaire();
 
 	/**
+	 * @brief Réimplémentation de la méthode clone
+	 * 
+	 * Renvoie la copie d'un objet comportement gregaire
+	 * 
+	 * @return IComportement* 
+	 */
+	IComportement* clone() override {cout << "clonnage gregaire" << endl; return new ComportementGregaire(*this);};
+
+	/**
 	 * @brief Destructeur de ComportementGregaire
 	 * 
 	 */
@@ -32,14 +41,14 @@ class ComportementGregaire : public IComportement {
 	 * @param creatureAssociee la créature emballée
 	 * @return pair<vector<double>, double> vecteur directeur de la vitesse, multiplicateur de la norme de la vitesse 
 	 */
-	pair<vector<double>, double> calculDirection(vector<ICreature*> voisins, ICreature& creatureAssociee);
+	pair<vector<double>, double> calculDirection(vector<ICreature*> voisins, ICreature& creatureAssociee) override;
 
 	/**
 	 * @brief Retourne le comportement
 	 * 
 	 * @return ComportType 
 	 */
-	ComportType getComportementType() { return GREG; };
+	ComportType getComportementType() override { return GREG; };
 };
 
 #endif

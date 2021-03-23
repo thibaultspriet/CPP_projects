@@ -12,16 +12,25 @@
  * 
  */
 class ComportementKamikaze : public IComportement {
-	private :
-	// coefficient multiplicateur de la vitesse pour attaquer une bestiole
-		
+	private :		
 		static const int m_coefAttaque; /*!< coefficient multiplicateur de la vitesse */
+
 	public:
 		/**
 		 * @brief Constructeur de ComportementKamikaze
 		 * 
 		 */
 		ComportementKamikaze();
+
+		/**
+		 * @brief Réimplémentation de la méthode clone
+		 * 
+		 * Renvoie la copie d'un objet comportement kamikaze
+		 * 
+		 * @return IComportement* 
+		 */
+		IComportement* clone() override {cout << "clonnage kamikaze" << endl;return new ComportementKamikaze(*this);};
+
 
 		/**
 		 * @brief Destructeur de ComportementKamikaze
@@ -36,14 +45,14 @@ class ComportementKamikaze : public IComportement {
 		 * @param creatureAssociee la créature emballée
 		 * @return pair<vector<double>, double> vecteur directeur de la vitesse, multiplicateur de la norme de la vitesse 
 		 */
-		pair<vector<double>, double> calculDirection(vector<ICreature*> voisins, ICreature& creatureAssociee);
+		pair<vector<double>, double> calculDirection(vector<ICreature*> voisins, ICreature& creatureAssociee) override;
 
 		/**
 		 * @brief Retourne le comportement
 		 * 
 		 * @return ComportType 
 		 */
-		ComportType getComportementType() { return KAMIK; };
+		ComportType getComportementType() override { return KAMIK; };
 };
 
 // ajout d'une fonction pour calculer la distance entre deux points

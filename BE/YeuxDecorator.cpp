@@ -6,17 +6,19 @@
 
 using namespace std;
 
-const double YeuxDecorator::ALPHA_MIN = M_PI / 6;
+const double YeuxDecorator::ALPHA_MIN = M_PI / 6.0;
 const double YeuxDecorator::ALPHA_MAX = M_PI;
 
 const double YeuxDecorator::DIST_MIN = ICreature::LIMITE_VUE;
-const double YeuxDecorator::DIST_MAX = ICreature::LIMITE_VUE * 2;
+const double YeuxDecorator::DIST_MAX = ICreature::LIMITE_VUE * 2.0;
 
-const double YeuxDecorator::DETECTION_MIN = 0;
-const double YeuxDecorator::DETECTION_MAX = 1;
+const double YeuxDecorator::DETECTION_MIN = 0.0;
+const double YeuxDecorator::DETECTION_MAX = 1.0;
 
 
 YeuxDecorator::YeuxDecorator(ICreature* ic) : CapteurDecorator(ic) {
+
+    cout << "const Yeux decorator" << endl ;
 
     std::default_random_engine re;
     
@@ -27,6 +29,13 @@ YeuxDecorator::YeuxDecorator(ICreature* ic) : CapteurDecorator(ic) {
     champVision = alpha_range(re);
     distance = dist_range(re);
     detection = detection_range(re);
+}
+
+ICreature* YeuxDecorator::clone(){
+    cout << "clonage Yeux decorator" << endl;
+    YeuxDecorator* creature_clone = new YeuxDecorator(*this);
+    creature_clone->creature = this->creature->clone();
+    return creature_clone;
 }
 
 bool YeuxDecorator::jeTeVois(const ICreature& ic) const{
@@ -42,3 +51,28 @@ bool YeuxDecorator::jeTeVois(const ICreature& ic) const{
     }
 }
 
+
+void YeuxDecorator::draw( UImg & support, Milieu& monMilieu, ICreature& creatureToDraw )
+{
+   creature->draw(support,monMilieu,creatureToDraw);
+
+   T black[] = {(T) 0, (T) 0, (T) 0};
+
+   vector<double> vit = creatureToDraw.getComportementVitesseMultiple(monMilieu);
+
+   double orientation = -atan(vit.at(1)/vit.at(0));
+
+   double dx = cos( orientation )*AFF_SIZE/2.1;
+   double dy = -sin( orientation )*AFF_SIZE/2.1;
+
+   int x = creatureToDraw.getX();
+   int y = creatureToDraw.getY();
+   
+   double         xy = vit.at(0) > 0 ? x + dx*2 : x - dx*2;
+   double         yy = vit.at(0) > 0 ? y + dy*2 : y - dy*2;
+
+   support.draw_circle(xy,yy,AFF_SIZE/3.5, black);
+
+
+
+}

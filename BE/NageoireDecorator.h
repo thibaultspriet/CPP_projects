@@ -13,7 +13,7 @@
 class NageoireDecorator : public AccessoireDecorator{
 
     protected:
-        static const double MULTIPLE_VITESSE_MAX;
+        static const double MULTIPLE_VITESSE_MAX; /*!< multiple de la vitesse initiale max */
 
     private:
         double multiple_vitesse; /*!< facteur multiplicateur de la vitesse */
@@ -25,6 +25,14 @@ class NageoireDecorator : public AccessoireDecorator{
          * @param ic créature à emballée.
          */
         NageoireDecorator(ICreature* ic);
+
+        
+        /**
+         * @brief Copie une créature avec des nageoires
+         * 
+         * @return ICreature* 
+         */
+        ICreature* clone(void) override;
         
         /**
          * @brief Destructeur de NageoireDecorator
@@ -46,6 +54,18 @@ class NageoireDecorator : public AccessoireDecorator{
          * @param vy vitesse verticale
          */
         void setVitesse(double vx, double vy) override;
+
+
+        /**
+         * @brief Déssine une créature avec des nageoires.
+         * 
+         * Représentées par deux lingnes de part et d'autre de la tête.
+         * 
+         * @param support 
+         * @param monMilieu 
+         * @param creatureToDraw 
+         */
+        void draw(UImg & support, Milieu& monMilieu, ICreature& creatureToDraw) override;
 
 };
 

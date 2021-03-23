@@ -26,7 +26,7 @@ private :
    int                     width, height; /*!< largeur et hauteur du milieu */
    std::vector<ICreature*> listeCreatures; /*!< vecteur de pointeurs vers les créatures de l'environnement */
 
-   Configuration* config; /*!< objet configuration qui contient le pourcentage de chaque comportement */
+   Configuration* config; /*!< objet configuration qui contient le pourcentage de chaque comportement et le nombre de créatures souhaitées */
 
    
 
@@ -39,6 +39,16 @@ public :
     */
    Milieu( int _width, int _height );
 
+   
+   /**
+    * @brief Constructeur d'un objet Milieu
+    * 
+    * Prend en argument une configuration particulière.
+    * 
+    * @param _width 
+    * @param _height 
+    * @param config 
+    */
    Milieu( int _width, int _height, Configuration* config);
 
    /**
@@ -78,7 +88,16 @@ public :
     */
    void addMember(  ICreature* ic ) { listeCreatures.push_back(ic); listeCreatures.back()->initCoords(width, height); }
 
-   void randomNaissance(std::map<ComportType,int>);
+   
+   /**
+    * @brief Fait naître des bestioles aléatoirement
+    * 
+    * A chaque pas de la simulation, une créature de chacun des comportements présents peut naître.
+    * Par exemple si la répartition de créatures kamikazes était de 20%, alors à chaque tour une créature kamikaze a 20% de chance de naître.
+    * 
+    * @param config map des comportements et de leur pourcentage associé.
+    */
+   void randomNaissance(std::map<ComportType,int> config);
    
    /**
     * @brief supprime une créature de la simulation
@@ -104,7 +123,7 @@ public :
     * @param ic référence d'une créature
     * @return int 
     */
-   int nbVoisins( const ICreature & ic );
+   int nbVoisins( const ICreature & ic ) ;
 
    /**
     * @brief renvoie un pointeur des créatures que la créature passée en argument détecte

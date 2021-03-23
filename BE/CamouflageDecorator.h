@@ -13,8 +13,8 @@
 class CamouflageDecorator : public AccessoireDecorator{
 
     protected:
-        static const double CAMOUF_MIN;
-        static const double CAMOUF_MAX;
+        static const double CAMOUF_MIN; /*!< valeur de camouflage min */
+        static const double CAMOUF_MAX; /*!< valeur de camouflage max */
 
     private:
         double camouflage; /*!< valeur du camouflage de la créature */
@@ -26,6 +26,13 @@ class CamouflageDecorator : public AccessoireDecorator{
          * @param ic créature à emballer
          */
         CamouflageDecorator(ICreature* ic);
+
+        /**
+         * @brief Copie une créature avec un camouflage
+         * 
+         * @return ICreature* 
+         */
+        ICreature* clone(void) override;
         
         /**
          * @brief Destructeur de CamouflageDecorator
@@ -39,6 +46,17 @@ class CamouflageDecorator : public AccessoireDecorator{
          * @return double 
          */
         double getCamouflage(void) const override final;
+
+        /**
+         * @brief Déssine une créature camouflée
+         * 
+         * La queue a une opacité réduite.
+         * 
+         * @param support 
+         * @param monMilieu 
+         * @param creatureToDraw 
+         */
+        void draw(UImg & support, Milieu& monMilieu, ICreature& creatureToDraw) override;
 
 };
 

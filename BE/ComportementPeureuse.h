@@ -13,7 +13,6 @@
  */
 class ComportementPeureuse : public IComportement {
 	private:
-	// nb de voisins � partir duquel la bestiole change de direction et vitesse
 		int m_seuil; /*!< nombre de créature à partir duquel la créature décide de fuir */
 
 public:
@@ -26,7 +25,17 @@ public:
 	ComportementPeureuse(int seuil);
 
 	/**
-	 * @brief Constructeur de ComportementPeureuse
+	 * @brief Réimplémentation de la méthode clone
+	 * 
+	 * Renvoie la copie d'un objet comportement peureuse
+	 * 
+	 * @return IComportement* 
+	 */
+	IComportement* clone() override {cout << "clonnage peureuse" << endl;return new ComportementPeureuse(*this);};
+
+
+	/**
+	 * @brief Constructeur de ComportementPeureuse par défaut
 	 * 
 	 */
 	ComportementPeureuse();
@@ -44,14 +53,14 @@ public:
 	 * @param creatureAssociee la créature emballée
 	 * @return pair<vector<double>, double> vecteur directeur de la vitesse, multiplicateur de la norme de la vitesse 
 	 */
-	pair<vector<double>, double> calculDirection(vector<ICreature*> voisins, ICreature& creatureAssociee);
+	pair<vector<double>, double> calculDirection(vector<ICreature*> voisins, ICreature& creatureAssociee) override;
 
 	/**
 	 * @brief Retourne le comportement
 	 * 
 	 * @return ComportType 
 	 */	
-	ComportType getComportementType() { return PEUR; };
+	ComportType getComportementType() override { return PEUR; };
 	int getSeuil();
 };
 
