@@ -53,6 +53,19 @@ public :
    Milieu( int _width, int _height, Configuration* config);
 
    /**
+    * @brief Constructeur de milieu. Créer une configuration depuis le main
+    * 
+    * @param _width 
+    * @param _height 
+    * @param nbCreatures 
+    * @param kamik pourcentage kamikaze
+    * @param greg pourcentage gregaire
+    * @param peur pourcentage peureuse
+    * @param prev pourcentage prevoyante
+    */
+   Milieu(int _width, int _height, int nbCreatures, int kamik, int greg, int peur, int prev);
+
+   /**
     * @brief Destructeur de l'objet milieu
     * 
     */

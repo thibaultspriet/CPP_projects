@@ -31,16 +31,30 @@ Milieu::Milieu( int _width, int _height ) : UImg( _width, _height, 1, 3 ), width
 
 Milieu::Milieu(int _width, int _heigh, Configuration* _config) : UImg( _width, _height, 1, 3 ), width(_width), height(_height), config(_config)
 {
-
    cout << "const Milieu" << endl;
    std::srand( time(NULL) );  
+}
 
+Milieu::Milieu(int _width, int _height, int nbCreatures, int kamik, int greg, int peur, int prev) : UImg(_width, _height, 1, 3), width(_width), height(_height)
+{
+   cout << "const Milieu" << endl;
+
+   std::map<ComportType,int> conf;
+   conf[KAMIK] = kamik;
+   conf[GREG] = greg;
+   conf[PEUR] = peur;
+   conf[PREV] = prev;
+
+   config = new Configuration(nbCreatures,conf);
+
+   std::srand( time(NULL) );  
 }
 
 
 Milieu::~Milieu( void )
 {
    cout << "dest Milieu" << endl;
+   delete config;
 }
 
 

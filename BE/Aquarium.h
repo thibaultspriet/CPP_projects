@@ -30,6 +30,13 @@ private :
    int            delay; /*!< période d'actualisation */
 
 public :
+
+   /**
+    * @brief Constructeur par défaut
+    * 
+    */
+   Aquarium(){};
+
    /**
     * @brief Construit un nouvel objet Aquarium
     * 
@@ -38,6 +45,20 @@ public :
     * @param _delay période d'actualisation
     */
    Aquarium( int width, int height, int _delay );
+
+   /**
+    * @brief Constructeur Aquarium avec une configuration particulière
+    * 
+    * @param width 
+    * @param height 
+    * @param _delay 
+    * @param nbCreatures 
+    * @param kamik 
+    * @param greg 
+    * @param peur 
+    * @param prev 
+    */
+   Aquarium(int width, int height, int _delay, int nbCreatures, int kamik, int greg, int peur, int prev);
 
    /**
     * @brief Détruit l'objet Aquarium
