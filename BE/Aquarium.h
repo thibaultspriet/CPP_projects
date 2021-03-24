@@ -56,9 +56,11 @@ public :
    /**
     * @brief Lance la simulation
     * 
+    * @param pathFileSim chemin vers le fichier pour enregistrer les données de la simulation
+    * 
     * Arrête la simulation lorsque l'utilisateur appuit sur "esc".
     */
-   void run( void );
+   void run( const char* pathFileSim );
 
 };
 

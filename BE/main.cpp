@@ -16,12 +16,24 @@
 #include "ComportementPrevoyante.h"
 
 #include <iostream>
+#include <fstream>
+
 
 using namespace std;
 
 
-int main()
+// Premier argument passsé : nom du fichier de simulation
+int main(int argc, char *argv[])
 {
+
+   if(argc >= 2){
+      ofstream file;
+      file.open(argv[1],std::ios::app);
+      file << "KAMIK,GREG,PEUR,PREV,\n";
+      file.close();
+   }
+
+
 
    Aquarium       ecosysteme( 640, 480, 30); // Construit l'aquarium de la simulation
    ConcreteCreatorBestiole bestioleCreator;
@@ -48,7 +60,7 @@ int main()
 
    //ecosysteme.getMilieu().addMember(bestioleCreator.create(new ComportementPeureuse()));
 
-   ecosysteme.run(); // lance la simulation
+   ecosysteme.run(argc >= 2 ? argv[1] : ""); // lance la simulation
 
 
 

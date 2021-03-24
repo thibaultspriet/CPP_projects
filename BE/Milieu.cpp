@@ -12,6 +12,8 @@
 #include <ctime>
 #include <vector>
 
+#include <fstream>
+
 using namespace std;
 
 const T    Milieu::white[] = { (T)255, (T)255, (T)255 };
@@ -42,17 +44,15 @@ Milieu::~Milieu( void )
 }
 
 
-void Milieu::step( void )
+void Milieu::step( const char* pathFileSim )
 {
 
+   if(!strcmp("",pathFileSim)) writeHowManyCreature(pathFileSim);
    std::vector<ICreature*> toRemoveCreatures; // objet temporaire qui stocke les creatures à supprimer à la fin du pas de simulation
    std::vector<ICreature*> toAppendCreatures; // objet temporaire qui stocke les creatures à ajouter à la fin du pas de simulation
    cimg_forXY( *this, x, y ) fillC( x, y, 0, white[0], white[1], white[2] );
    for (auto it = listeCreatures.begin() ; it != listeCreatures.end() ; ++it ) // appelle l'action et déssinne chaque créature
    {
-      // cout << "PRINT CREATURE" << endl;
-      // (*it)->printCreature();
-      // cout << "END PRINT CREATURE" << endl;
       (*it)->action( *this, toRemoveCreatures, toAppendCreatures);
       if((*it)->getDureeVie() == 0){
          if(find(toRemoveCreatures.begin(),toRemoveCreatures.end(),*it) == toRemoveCreatures.end()){
@@ -70,6 +70,9 @@ void Milieu::step( void )
       }
    }
    randomNaissance(config->getConfig());
+
+   
+
 }
 
 
@@ -142,4 +145,27 @@ vector<ICreature*> Milieu::getVoisins(const ICreature& ic)
             voisins.push_back(*it);
         }
     return voisins;
+}
+
+
+int Milieu::howManyCreature(ComportType comportementName) {
+      int counter = 0;
+      for (auto it = listeCreatures.begin() ; it != listeCreatures.end() ; ++it){
+         if((**it).getComportement()->getComportementType() == comportementName){
+            ++counter;
+         }
+      }
+      return counter;
+}
+
+
+void Milieu::writeHowManyCreature(std::string path){
+   ofstream file;
+   file.open(path,std::ios::app);
+   int kamik = howManyCreature(KAMIK);
+   int greg = howManyCreature(GREG);
+   int peur = howManyCreature(PEUR);
+   int prev = howManyCreature(PREV);
+   file << kamik << "," << greg << "," << peur << "," << prev << "," << endl;
+   file.close();
 }

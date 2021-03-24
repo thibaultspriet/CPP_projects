@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -76,8 +77,10 @@ public :
     * @brief appelé à chaque intervalle de temps de la simulation
     * 
     * Parcours la liste des créatures présentes et invoque leur comportement.
+    * 
+    * @param pathFileSim nom du fichier où écrire les résultats de simulation
     */
-   void step( void );
+   void step( const char* pathFileSim );
 
    /**
     * @brief ajoute une créature à la simulation
@@ -147,6 +150,16 @@ public :
     * @return Configuration* 
     */
    Configuration* getConfig(void){return config;};
+
+   /**
+    * @brief return the number of creatures with a given comportement that are presents in the simulation
+    * 
+    * @param comportementName 
+    * @return int 
+    */
+   int howManyCreature(ComportType comportementName);
+
+   void writeHowManyCreature(std::string path);
 
 };
 

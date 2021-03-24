@@ -36,7 +36,7 @@ class IComportement {
 		 * @param creatureAssociee 
 		 * @return std::pair<std::vector<double>, double> 
 		 */
-		virtual std::pair<std::vector<double>, double> calculDirection(std::vector<ICreature*> voisins, ICreature& creatureAssociee) {return make_pair(std::vector<double> (2),0.0);};
+		virtual std::pair<std::vector<double>, double> calculDirection(std::vector<ICreature*> voisins, ICreature& creatureAssociee) = 0;
 		
 		/**
 		 * @brief Constructeur IComportement

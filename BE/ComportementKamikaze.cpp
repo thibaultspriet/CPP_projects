@@ -29,15 +29,26 @@ pair<vector<double>, double> ComportementKamikaze::calculDirection(vector<ICreat
 		int argmin = -1;
 		for (int i = 0; i < voisins.size(); i++) {
 			double distanceVoisins = calculDistance(voisins.at(i)->getX(), voisins.at(i)->getY(), positionBestiole_x, positionBestiole_y);
-			if (distanceVoisins < min) {
+			if (distanceVoisins < min && distanceVoisins > 0) {
 				min = distanceVoisins;
 				argmin = i;
 			}
 		}
-		vector<double> vecteur_creatures = vecteurEntreDeuxPoints(positionBestiole_x, positionBestiole_y,voisins.at(argmin)->getX(),voisins.at(argmin)->getY());
-		vecteur_creatures.at(0) /= min;
-		vecteur_creatures.at(1) /= min;
-		return make_pair(vecteur_creatures, m_coefAttaque);
+		if(argmin == -1){
+			return make_pair(creatureAssociee.getDirection(), 1);
+		}
+		else{
+			// cout << "===== BEGIN ====" << endl;
+			// cout << "position kamikaze : " << positionBestiole_x << " " << positionBestiole_y << endl;
+			// cout << "position voisin le plus proche : " << voisins.at(argmin)->getX() << " " << voisins.at(argmin)->getY() <<endl;
+			vector<double> vecteur_creatures = vecteurEntreDeuxPoints(positionBestiole_x, positionBestiole_y,voisins.at(argmin)->getX(),voisins.at(argmin)->getY());
+			// cout << "vecteur créatures : " << vecteur_creatures.at(0) << " " << vecteur_creatures.at(1) << endl;
+			vecteur_creatures.at(0) /= min;
+			vecteur_creatures.at(1) /= min;
+			// cout << "norme : " << min << "vecteur : " <<vecteur_creatures.at(0) << " " << vecteur_creatures.at(1) << endl;
+			// cout << "==== END ====" << endl;
+			return make_pair(vecteur_creatures, m_coefAttaque);
+		} 
 	}
 }
 

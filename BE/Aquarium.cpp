@@ -29,10 +29,11 @@ Aquarium::~Aquarium( void )
 }
 
 
-void Aquarium::run( void )
+void Aquarium::run( const char* pathFileSim )
 {
 
    cout << "running Aquarium" << endl;
+   int iteration = 0;
 
    while ( ! is_closed() )
    {
@@ -45,10 +46,16 @@ void Aquarium::run( void )
          if ( is_keyESC() ) close();
       }
 
-      flotte->step();
+      if(iteration == 1000 ) close();
+
+
+      flotte->step(pathFileSim);
       display( *flotte );
 
+      ++iteration;
+
       wait( delay );
+
 
    } // while
 
