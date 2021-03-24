@@ -31,7 +31,7 @@ public:
 	 * 
 	 * @return IComportement* 
 	 */
-	IComportement* clone() override {cout << "clonnage peureuse" << endl;return new ComportementPeureuse(*this);};
+	IComportement* clone() override {/* cout << "clonnage peureuse" << endl; */return new ComportementPeureuse(*this);};
 
 
 	/**

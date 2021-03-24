@@ -15,7 +15,7 @@ CarapaceDecorator::CarapaceDecorator(ICreature* ic) : AccessoireDecorator(ic) {
 };
 
 ICreature* CarapaceDecorator::clone(){
-    cout << "clonage Carapace decorator" << endl;
+    //cout << "clonage Carapace decorator" << endl;
     CarapaceDecorator* creature_clone = new CarapaceDecorator(*this);
     creature_clone->creature = this->creature->clone();
     return creature_clone;
@@ -37,7 +37,7 @@ void CarapaceDecorator::setVitesse(double vx, double vy){
 }
 
 double CarapaceDecorator::getProbDeath() const {
-    cout << "J'ai une chance de mourir initiale de : " << AccessoireDecorator::getProbDeath() << " et avec ma protection : " << AccessoireDecorator::getProbDeath() / protection_death << endl;
+    //cout << "J'ai une chance de mourir initiale de : " << AccessoireDecorator::getProbDeath() << " et avec ma protection : " << AccessoireDecorator::getProbDeath() / protection_death << endl;
     return AccessoireDecorator::getProbDeath() / protection_death;
 }
 

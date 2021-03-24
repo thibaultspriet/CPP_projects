@@ -31,7 +31,7 @@ class Bestiole : public ICreature
        * 
        * @param b 
        */
-      Bestiole(const Bestiole& b) : ICreature(b) {cout << "constructeur par copie de bestiole" << endl;};
+      Bestiole(const Bestiole& b) : ICreature(b) {/* cout << "constructeur par copie de bestiole" << endl; */};
 
       
       /**
@@ -41,13 +41,13 @@ class Bestiole : public ICreature
        * 
        * @return ICreature* 
        */
-      ICreature* clone(void) override {cout << "clonage bestiole" << endl ; return ICreature::clone();};
+      ICreature* clone(void) override {/* cout << "clonage bestiole" << endl ; */ return ICreature::clone();};
 
       /**
        * @brief destructeur de bestiole
        * 
        */
-      ~Bestiole(void) { cout << "dest bestiole" << identite << endl;};
+      ~Bestiole(void) { /* cout << "dest bestiole" << identite << endl; */};
 
 };
 

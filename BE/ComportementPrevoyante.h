@@ -24,7 +24,7 @@ class ComportementPrevoyante : public IComportement {
 		 * 
 		 * @return IComportement* 
 		 */
-		IComportement* clone() override {cout << "clonnage prevoyante" << endl;return new ComportementPrevoyante(*this);};
+		IComportement* clone() override {/* cout << "clonnage prevoyante" << endl; */return new ComportementPrevoyante(*this);};
 
 
 		/**

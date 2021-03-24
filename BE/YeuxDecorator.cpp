@@ -18,7 +18,7 @@ const double YeuxDecorator::DETECTION_MAX = 1.0;
 
 YeuxDecorator::YeuxDecorator(ICreature* ic) : CapteurDecorator(ic) {
 
-    cout << "const Yeux decorator" << endl ;
+    // cout << "const Yeux decorator" << endl ;
 
     std::default_random_engine re;
     
@@ -32,7 +32,7 @@ YeuxDecorator::YeuxDecorator(ICreature* ic) : CapteurDecorator(ic) {
 }
 
 ICreature* YeuxDecorator::clone(){
-    cout << "clonage Yeux decorator" << endl;
+    // cout << "clonage Yeux decorator" << endl;
     YeuxDecorator* creature_clone = new YeuxDecorator(*this);
     creature_clone->creature = this->creature->clone();
     return creature_clone;

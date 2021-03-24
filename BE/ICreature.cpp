@@ -33,25 +33,24 @@ void ICreature::initCreature(){
    couleur[ 1 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
    couleur[ 2 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
 
-   probDeath = (rand() % 101)/100.0 ;// valeur entre 0 et 1
+   probDeath = ((rand() % 101))/100.0 ;// valeur entre 0 et 1
    camouflage = 0.0;
    dureeVie = rand() % 100 + 300;
    cloneRate = 1.0 / 1000.0; // une créature peut avoir un taux de clonnage compris entre 0 et 3%
-   cout << cloneRate << endl;
 }
 
 ICreature::ICreature( void )
 {
    initCreature();
    comportement = new ComportementKamikaze();
-   cout << "const creature (" << identite << ") par defaut" << endl;
+   // cout << "const creature (" << identite << ") par defaut" << endl;
 }
 
 
-ICreature::ICreature( const ICreature & ic ) :  identite(++next), x(ic.x), y(ic.y), cumulX(ic.cumulX), cumulY(ic.cumulY), vitesse(ic.vitesse), dureeVie(ic.dureeVie), cloneRate(ic.cloneRate)
+ICreature::ICreature( const ICreature & ic ) :  identite(++next), x(ic.x), y(ic.y), cumulX(ic.cumulX), cumulY(ic.cumulY), vitesse(ic.vitesse), dureeVie(ic.dureeVie), cloneRate(ic.cloneRate), probDeath(ic.probDeath), camouflage(ic.camouflage)
 {
 
-   cout << "const creature (" << identite << ") par copie" << endl;
+   // cout << "const creature (" << identite << ") par copie" << endl;
    couleur = new T[ 3 ];
    memcpy( couleur, ic.couleur, 3*sizeof(T) );
    comportement = (ic.comportement)->clone();
@@ -76,12 +75,12 @@ ICreature::ICreature(IComportement* comportement) : comportement(comportement){
       setColor(0,0,230);
       break;
    }
-   cout << "const creature (" << identite << ") comportement" << endl;
+   // cout << "const creature (" << identite << ") comportement" << endl;
 }
 
 ICreature* ICreature::clone(){
    ICreature* creature_clone = new ICreature(*this);
-   cout << "clonage ICreature" << endl;
+   // cout << "clonage ICreature" << endl;
    return creature_clone;
 } 
 
@@ -92,7 +91,7 @@ ICreature::~ICreature( void )
    delete[] couleur;
    delete comportement;
 
-   cout << "dest creature " << identite << endl;
+   // cout << "dest creature " << identite << endl;
 
 }
 
@@ -161,9 +160,9 @@ void ICreature::collide(Milieu & monMilieu, std::vector<ICreature*> & toRemoveCr
          if(dist <= ICreature::AFF_SIZE){ // si collision, tirage aléatoire pour savoir si la bestiole doit mourir
             double survive = (rand() % 101)/100.0;
             double death = this->getProbDeath();
-            cout << "death : " << death <<  " survive : " << survive << endl;
+            // cout << "death : " << death <<  " survive : " << survive << endl;
             if(death > survive && !alreadyCollide){
-               cout << "Creature " << identite << " va mourir" << endl;
+               // cout << "Creature " << identite << " va mourir" << endl;
                toRemoveCreatures.push_back(this);
             }
             if(!alreadyCollide){ // inversr le sens du vecteur vitesse à la première collision
@@ -186,7 +185,7 @@ void ICreature::action( Milieu & monMilieu, std::vector<ICreature*> & toRemoveCr
    if( clonnage <= cloneRate){
       ICreature* creature_clone = clone();
       toAppendCreatures.push_back(creature_clone);
-      cout << "clonnage rate : " << cloneRate << " ; random : " << clonnage << endl;
+      // cout << "clonnage rate : " << cloneRate << " ; random : " << clonnage << endl;
    }
    bouge( monMilieu );
    collide(monMilieu, toRemoveCreatures);

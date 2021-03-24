@@ -6,11 +6,11 @@
 using namespace std;
 
 ComportementGregaire::ComportementGregaire() : IComportement() {
-	cout << "construct comp GREG" << endl;
+	//cout << "construct comp GREG" << endl;
 }
 
 ComportementGregaire::~ComportementGregaire() {
-	cout << "destruct Comportement GREG" << endl;
+	//cout << "destruct Comportement GREG" << endl;
 }
 
 pair<vector<double>, double> ComportementGregaire::calculDirection(vector<ICreature*> voisins, ICreature& creatureAssociee) {

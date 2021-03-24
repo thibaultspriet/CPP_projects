@@ -50,6 +50,9 @@ void Milieu::step( void )
    cimg_forXY( *this, x, y ) fillC( x, y, 0, white[0], white[1], white[2] );
    for (auto it = listeCreatures.begin() ; it != listeCreatures.end() ; ++it ) // appelle l'action et déssinne chaque créature
    {
+      // cout << "PRINT CREATURE" << endl;
+      // (*it)->printCreature();
+      // cout << "END PRINT CREATURE" << endl;
       (*it)->action( *this, toRemoveCreatures, toAppendCreatures);
       if((*it)->getDureeVie() == 0){
          if(find(toRemoveCreatures.begin(),toRemoveCreatures.end(),*it) == toRemoveCreatures.end()){

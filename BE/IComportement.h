@@ -64,7 +64,7 @@ class IComportement {
 		 * @brief Destructeur IComportement
 		 * 
 		 */
-		virtual ~IComportement() {cout << "dest IComportement" << endl;};
+		virtual ~IComportement() {/* cout << "dest IComportement" << endl; */};
 		
 		/**
 		 * @brief  fonction virtuelle pure permettant de r�cup�rer le type de comportement de l'�num�ration ci-dessus

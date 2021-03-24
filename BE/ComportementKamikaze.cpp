@@ -8,11 +8,11 @@ using namespace std;
 const int ComportementKamikaze::m_coefAttaque = rand() % 3 + 1;
 
 ComportementKamikaze::ComportementKamikaze() : IComportement() {
-	cout << "construct Comportement KAMIK" << endl;
+	// cout << "construct Comportement KAMIK" << endl;
 }
 
 ComportementKamikaze::~ComportementKamikaze() {
-	cout << "destruct Comportement KAMIK" << endl;
+	// cout << "destruct Comportement KAMIK" << endl;
 }
 
 pair<vector<double>, double> ComportementKamikaze::calculDirection(vector<ICreature*> voisins, ICreature& creatureAssociee) {

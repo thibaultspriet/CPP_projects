@@ -29,7 +29,7 @@ class ComportementKamikaze : public IComportement {
 		 * 
 		 * @return IComportement* 
 		 */
-		IComportement* clone() override {cout << "clonnage kamikaze" << endl;return new ComportementKamikaze(*this);};
+		IComportement* clone() override {/* cout << "clonnage kamikaze" << endl; */return new ComportementKamikaze(*this);};
 
 
 		/**

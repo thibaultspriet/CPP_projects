@@ -58,6 +58,15 @@ class CamouflageDecorator : public AccessoireDecorator{
          */
         void draw(UImg & support, Milieu& monMilieu, ICreature& creatureToDraw) override;
 
+      // ===================== BEGIN Fonctions de  DEBUG =====================
+      virtual void printCreature(void) override {
+      cout << "====== BEGIN PRINT CAMOUFLAGE ======" << endl;
+      cout << "créature " << identite << endl;
+      cout << "camouflage : " << getCamouflage() << endl;
+      cout << "====== END PRINT CAMOUFLAGE ======" << endl;
+      };
+      // ===================== END Fonctions de  DEBUG =====================
+
 };
 
 #endif

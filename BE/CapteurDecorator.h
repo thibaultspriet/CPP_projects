@@ -28,7 +28,7 @@ class CapteurDecorator : public CreatureDecorator{
          * 
          * @param ic 
          */
-        CapteurDecorator(ICreature* ic) : CreatureDecorator(ic){cout << "const capteur decorator call" << endl;};
+        CapteurDecorator(ICreature* ic) : CreatureDecorator(ic){/* cout << "const capteur decorator call" << endl; */};
 
     
 

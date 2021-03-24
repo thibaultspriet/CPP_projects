@@ -22,7 +22,7 @@ OreilleDecorator::OreilleDecorator(ICreature* ic) : CapteurDecorator(ic){
 }
 
 ICreature* OreilleDecorator::clone(){
-    cout << "clonage Oreille decorator" << endl;
+    // << "clonage Oreille decorator" << endl;
     OreilleDecorator* creature_clone = new OreilleDecorator(*this);
     creature_clone->creature = this->creature->clone();
     return creature_clone;

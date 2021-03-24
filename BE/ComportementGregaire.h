@@ -26,7 +26,7 @@ class ComportementGregaire : public IComportement {
 	 * 
 	 * @return IComportement* 
 	 */
-	IComportement* clone() override {cout << "clonnage gregaire" << endl; return new ComportementGregaire(*this);};
+	IComportement* clone() override {/* cout << "clonnage gregaire" << endl; */ return new ComportementGregaire(*this);};
 
 	/**
 	 * @brief Destructeur de ComportementGregaire

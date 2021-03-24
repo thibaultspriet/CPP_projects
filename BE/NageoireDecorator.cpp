@@ -16,7 +16,7 @@ NageoireDecorator::NageoireDecorator(ICreature* ic) : AccessoireDecorator(ic){
 };
 
 ICreature* NageoireDecorator::clone(){
-    cout << "clonage Nageoire decorator" << endl;
+    // cout << "clonage Nageoire decorator" << endl;
     NageoireDecorator* creature_clone = new NageoireDecorator(*this);
     creature_clone->creature = this->creature->clone();
     return creature_clone;

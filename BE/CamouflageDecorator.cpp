@@ -13,7 +13,7 @@ CamouflageDecorator::CamouflageDecorator(ICreature* ic) : AccessoireDecorator(ic
 };
 
 ICreature* CamouflageDecorator::clone(){
-    cout << "clonage Camouflage decorator" << endl;
+    //cout << "clonage Camouflage decorator" << endl;
     CamouflageDecorator* creature_clone = new CamouflageDecorator(*this);
     creature_clone->creature = this->creature->clone();
     return creature_clone;

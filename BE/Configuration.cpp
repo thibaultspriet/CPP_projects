@@ -3,10 +3,10 @@
 Configuration::Configuration(){
    // Configuration par défaut
    std::map<ComportType,int> conf;
-   conf[KAMIK] = 25;
-   conf[GREG] = 25;
-   conf[PREV] = 25;
-   conf[PEUR] = 25;
+   conf[KAMIK] = 100;
+//    conf[GREG] = 25;
+//    conf[PREV] = 25;
+//    conf[PEUR] = 25;
 
    int nbCreature = 20;
 

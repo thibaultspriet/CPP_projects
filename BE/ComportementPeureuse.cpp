@@ -7,7 +7,7 @@ using namespace std;
 
 ComportementPeureuse::ComportementPeureuse(int seuil) : IComportement() {
 	m_seuil = seuil;
-	cout << "construct comp PEUR" << endl;
+	// cout << "construct comp PEUR" << endl;
 }
 
 ComportementPeureuse::ComportementPeureuse() :IComportement()
@@ -15,12 +15,12 @@ ComportementPeureuse::ComportementPeureuse() :IComportement()
 	// on initialise al�atoirement le seuil si le client ne l'indique pas dans le constructeur
 	//m_seuil = rand() % 4 + 1;
 	m_seuil = 6;
-	cout << "construct comp PEUR" << endl;
+	// cout << "construct comp PEUR" << endl;
 }
 
 ComportementPeureuse::~ComportementPeureuse()
 {
-	cout << "destruct Comportement PEUR" << endl;
+	// cout << "destruct Comportement PEUR" << endl;
 }
 
 pair<vector<double>, double> ComportementPeureuse::calculDirection(vector<ICreature*> voisins, ICreature& creatureAssociee) {

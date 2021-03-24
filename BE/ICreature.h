@@ -274,13 +274,12 @@ public :
 
 
    // ===================== BEGIN Fonctions de  DEBUG =====================
-   void printCreature(void){
+   virtual void printCreature(void){
       cout << "====== BEGIN PRINT CREATURE ======" << endl;
       cout << "créature " << identite << endl;
-      cout << "position : (" << x << "," << y << ")" << endl;
-      cout << "vitesse : (" << vitesse.at(0) << "," << vitesse.at(1) << ")" << endl;
-      //cout << "comportement : " << getComportement()->getComportementType() << endl;
+      cout << "probDeath : " << probDeath << endl << "camouflage : " << camouflage << endl << "dureeVie : " << dureeVie << endl;
       cout << "====== END PRINT CREATURE ======" << endl;
+      
    };
    // ===================== END Fonctions de  DEBUG =====================
 

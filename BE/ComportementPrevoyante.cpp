@@ -5,11 +5,11 @@
 using namespace std;
 
 ComportementPrevoyante::ComportementPrevoyante() : IComportement() {
-    cout << "construct comp PREV" << endl;
+    // cout << "construct comp PREV" << endl;
 }
 
 ComportementPrevoyante::~ComportementPrevoyante() {
-    cout << "destruct Comportement PREV" << endl;
+    // cout << "destruct Comportement PREV" << endl;
 }
 
 pair<vector<double>, double> ComportementPrevoyante::calculDirection(vector<ICreature*> voisins, ICreature& creatureAssociee)
