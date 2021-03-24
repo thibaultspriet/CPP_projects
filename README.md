@@ -57,3 +57,7 @@ Si la compilation a fonctionné pour vous, il est temps de lancer la simulation.
 * ```./main``` pas d'arguments passés au programme, la simulation est lancée avec 20 bestioles au départ et les 4 comportements sont équireprésentés.
 * ```./main <nombre créature> <pourcentage kamikaze> <pourcentage grégaire> <pourcentage peureuse> <pourcentage prévoyante>``` dans ce cas on passe 5 arguments au programme. Le premier est le nombre de bestioles que l'on souhaite à l'initialisation. Les 4 arguments suivants correspondent au pourcentage souhaité d'un certain comportement. A noter que ces arguments de pourcentage sont des entiers compris entre 0 et 100.
 * ```./main <nombre créature> <pourcentage kamikaze> <pourcentage grégaire> <pourcentage peureuse> <pourcentage prévoyante> <chemin fichier>``` ce dernier cas est identique au précédent avec en plus l'évolution de la population qui est enregistrée dans un fichier .csv
+
+## Documentation
+
+Enfin, une documentation du code source est disponible. Ainsi chaque classe a sa propre documentation. Celle-ci a été généré avec doxygen et le format html se trouve [ici](BE/documentation/html). En ouvrant [index.html](BE/documentation/html/index.html) sur votre localhost, vous pourrez visionner l'ensemble de la documentation.
