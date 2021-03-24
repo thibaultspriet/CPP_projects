@@ -26,13 +26,13 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 
+
    if(argc >= 2){
       ofstream file;
       file.open(argv[1],std::ios::app);
       file << "KAMIK,GREG,PEUR,PREV,\n";
       file.close();
    }
-
 
 
    Aquarium       ecosysteme( 640, 480, 30); // Construit l'aquarium de la simulation
@@ -58,9 +58,9 @@ int main(int argc, char *argv[])
    };
    
 
-   //ecosysteme.getMilieu().addMember(bestioleCreator.create(new ComportementPeureuse()));
 
-   ecosysteme.run(argc >= 2 ? argv[1] : ""); // lance la simulation
+   const char* pathFile = (argc >= 2) ? argv[1] : "";
+   ecosysteme.run(pathFile); // lance la simulation
 
 
 

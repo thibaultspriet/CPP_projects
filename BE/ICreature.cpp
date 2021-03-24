@@ -47,7 +47,7 @@ ICreature::ICreature( void )
 }
 
 
-ICreature::ICreature( const ICreature & ic ) :  identite(++next), x(ic.x), y(ic.y), cumulX(ic.cumulX), cumulY(ic.cumulY), vitesse(ic.vitesse), dureeVie(ic.dureeVie), cloneRate(ic.cloneRate), probDeath(ic.probDeath), camouflage(ic.camouflage)
+ICreature::ICreature( const ICreature & ic ) :  identite(++next), x(ic.x), y(ic.y), cumulX(ic.cumulX), cumulY(ic.cumulY), vitesse(ic.vitesse),  probDeath(ic.probDeath), camouflage(ic.camouflage), dureeVie(ic.dureeVie), cloneRate(ic.cloneRate)
 {
 
    // cout << "const creature (" << identite << ") par copie" << endl;

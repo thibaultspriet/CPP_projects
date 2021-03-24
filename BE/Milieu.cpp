@@ -46,8 +46,9 @@ Milieu::~Milieu( void )
 
 void Milieu::step( const char* pathFileSim )
 {
-
-   if(!strcmp("",pathFileSim)) writeHowManyCreature(pathFileSim);
+   if(strcmp("",pathFileSim) != 0) {
+      writeHowManyCreature(pathFileSim);
+   };
    std::vector<ICreature*> toRemoveCreatures; // objet temporaire qui stocke les creatures à supprimer à la fin du pas de simulation
    std::vector<ICreature*> toAppendCreatures; // objet temporaire qui stocke les creatures à ajouter à la fin du pas de simulation
    cimg_forXY( *this, x, y ) fillC( x, y, 0, white[0], white[1], white[2] );

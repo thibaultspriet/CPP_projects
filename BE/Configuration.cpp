@@ -5,8 +5,8 @@ Configuration::Configuration(){
    std::map<ComportType,int> conf;
    conf[KAMIK] = 25;
    conf[GREG] = 25;
-   conf[PREV] = 25;
    conf[PEUR] = 25;
+   conf[PREV] = 25;
 
    int nbCreature = 20;
 
