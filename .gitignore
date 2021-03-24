@@ -1,5 +1,11 @@
 .vscode
 .DS_Store
+__pycache__
+.vs
+
+figures
+simulations
+analyse.py
 
 # Prerequisites
 *.d
@@ -36,3 +42,4 @@
 
 Makefile
 main
+test_*.cpp

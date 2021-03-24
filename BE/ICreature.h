@@ -275,9 +275,11 @@ public :
 
    // ===================== BEGIN Fonctions de  DEBUG =====================
    virtual void printCreature(void){
+      vector<double> vit = getVitesse();
       cout << "====== BEGIN PRINT CREATURE ======" << endl;
       cout << "créature " << identite << endl;
-      cout << "probDeath : " << probDeath << endl << "camouflage : " << camouflage << endl << "dureeVie : " << dureeVie << endl;
+      cout << "probDeath : " << probDeath << endl << "camouflage : " << camouflage << endl << "dureeVie : " << dureeVie << endl << "cloneRate : " << cloneRate << endl;
+      cout << "position : (" << getX() << " ; " << getY() << ")" << endl << "vitesse : (" << vit.at(0) << " ; " << vit.at(1) << ")" << endl;
       cout << "====== END PRINT CREATURE ======" << endl;
       
    };

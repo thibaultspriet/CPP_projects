@@ -12,6 +12,10 @@ CarapaceDecorator::CarapaceDecorator(ICreature* ic) : AccessoireDecorator(ic) {
 
     protection_death = protection_range(re);
     decrease_vitesse = vitesse_range(re);
+
+    // cout << "====== BEGIN CARAPACE DECORATOR CONST ======= " << endl;
+    // cout << "protection death : " << protection_death << endl << "decrease vitesse : " << decrease_vitesse << endl;
+    // cout << "====== END CARAPACE DECORATOR CONST ======= " << endl;
 };
 
 ICreature* CarapaceDecorator::clone(){
@@ -22,13 +26,17 @@ ICreature* CarapaceDecorator::clone(){
 };
 
 std::vector<double> CarapaceDecorator::getVitesse(){
+    // cout << "====== BEGIN NAGEOIRE DECORATOR GET VITESSE ======= " << endl;
     std::vector<double> vitesse = CreatureDecorator::getVitesse();
+    // cout << "vitesse sans nageoires : (" << vitesse.at(0) << " ; " << vitesse.at(1) << ")" << endl;
     std::transform(
         vitesse.begin(),
         vitesse.end(),
         vitesse.begin(),
         [this](double v){return v / decrease_vitesse;}
     );
+    // cout << "vitesse avec nageoires : (" << vitesse.at(0) << " ; " << vitesse.at(1) << ")" << endl;
+    // cout << "====== END NAGEOIRE DECORATOR GET VITESSE ======= " << endl;
     return vitesse;
 }
 
@@ -37,7 +45,7 @@ void CarapaceDecorator::setVitesse(double vx, double vy){
 }
 
 double CarapaceDecorator::getProbDeath() const {
-    //cout << "J'ai une chance de mourir initiale de : " << AccessoireDecorator::getProbDeath() << " et avec ma protection : " << AccessoireDecorator::getProbDeath() / protection_death << endl;
+    // cout << "J'ai une chance de mourir initiale de : " << AccessoireDecorator::getProbDeath() << " et avec ma protection : " << AccessoireDecorator::getProbDeath() / protection_death << endl;
     return AccessoireDecorator::getProbDeath() / protection_death;
 }
 

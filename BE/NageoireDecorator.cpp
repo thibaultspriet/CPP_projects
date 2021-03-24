@@ -13,6 +13,10 @@ NageoireDecorator::NageoireDecorator(ICreature* ic) : AccessoireDecorator(ic){
     std::uniform_real_distribution<double> vitesse_range(1,MULTIPLE_VITESSE_MAX);
 
     multiple_vitesse = vitesse_range(re);
+
+    /* cout << "====== BEGIN NAGEOIRE DECORATOR CONST ======= " << endl;
+    cout << "multiple vitesse : " << multiple_vitesse << endl;
+    cout << "====== END NAGEOIRE DECORATOR CONST ======= " << endl; */
 };
 
 ICreature* NageoireDecorator::clone(){
@@ -24,12 +28,16 @@ ICreature* NageoireDecorator::clone(){
 
 std::vector<double> NageoireDecorator::getVitesse() {
     std::vector<double> vitesse = AccessoireDecorator::getVitesse();
+    // cout << "====== BEGIN NAGEOIRE DECORATOR GET VITESSE ======= " << endl;
+    // cout << "vitesse sans nageoires : (" << vitesse.at(0) << " ; " << vitesse.at(1) << ")" << endl;
     std::transform(
         vitesse.begin(),
         vitesse.end(),
         vitesse.begin(),
         [this](double v){return multiple_vitesse*v;}
     );
+    // cout << "vitesse avec nageoires : (" << vitesse.at(0) << " ; " << vitesse.at(1) << ")" << endl;
+    // cout << "====== END NAGEOIRE DECORATOR GET VITESSE ======= " << endl;
     return vitesse;
 }
 

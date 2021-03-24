@@ -19,6 +19,10 @@ OreilleDecorator::OreilleDecorator(ICreature* ic) : CapteurDecorator(ic){
 
     distance = distance_range(re);
     detection = detection_range(re);
+
+    // cout << "====== BEGIN OREILLE DECORATOR CONST ======= " << endl;
+    // cout << "distance de détection : " << distance << endl << "coéfficient de détection : " << detection << endl;
+    // cout << "====== END OREILLE DECORATOR CONST ======= " << endl;
 }
 
 ICreature* OreilleDecorator::clone(){

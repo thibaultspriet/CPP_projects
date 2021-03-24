@@ -22,7 +22,6 @@
 using namespace std;
 
 
-// Premier argument passsé : nom du fichier de simulation
 int main(int argc, char *argv[])
 {
 

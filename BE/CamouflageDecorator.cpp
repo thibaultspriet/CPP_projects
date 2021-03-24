@@ -10,6 +10,10 @@ CamouflageDecorator::CamouflageDecorator(ICreature* ic) : AccessoireDecorator(ic
     std::uniform_real_distribution<double> camouf_range(CAMOUF_MIN,CAMOUF_MAX);
 
     camouflage = camouf_range(re);
+
+    // cout << "====== BEGIN CAMOUFLAGE DECORATOR CONST ======= " << endl;
+    // cout << "camouflage : " << camouflage << endl;
+    // cout << "====== END CAMOUFLAGE DECORATOR CONST ======= " << endl;
 };
 
 ICreature* CamouflageDecorator::clone(){

@@ -75,7 +75,7 @@ class CarapaceDecorator : public AccessoireDecorator{
         void draw(UImg & support, Milieu& monMilieu, ICreature& creatureToDraw) override;
 
       // ===================== BEGIN Fonctions de  DEBUG =====================
-      virtual void printCreature(void) override {
+      virtual void printCreature(void) override {    
       cout << "====== BEGIN PRINT CARAPACE ======" << endl;
       cout << "créature " << identite << endl;
       cout << "vitesse : (" << getVitesse().at(0) << " ; " << getVitesse().at(1) << ")" << endl << "prob death : " << getProbDeath() << endl;

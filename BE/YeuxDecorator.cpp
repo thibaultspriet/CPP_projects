@@ -29,6 +29,10 @@ YeuxDecorator::YeuxDecorator(ICreature* ic) : CapteurDecorator(ic) {
     champVision = alpha_range(re);
     distance = dist_range(re);
     detection = detection_range(re);
+
+    /* cout << "====== BEGIN YEUX DECORATOR CONST ======= " << endl;
+    cout << "champ de vision : " << champVision << endl << "distance de détection : " << distance << endl << "coéfficient de détection : " << detection << endl;
+    cout << "====== END YEUX DECORATOR CONST ======= " << endl; */
 }
 
 ICreature* YeuxDecorator::clone(){
