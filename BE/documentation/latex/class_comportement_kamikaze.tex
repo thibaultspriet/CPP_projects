@@ -1,0 +1,102 @@
+\hypertarget{class_comportement_kamikaze}{}\doxysection{Comportement\+Kamikaze Class Reference}
+\label{class_comportement_kamikaze}\index{ComportementKamikaze@{ComportementKamikaze}}
+
+
+Implémentation du comportement Kamikaze.  
+
+
+
+
+{\ttfamily \#include $<$Comportement\+Kamikaze.\+h$>$}
+
+Inheritance diagram for Comportement\+Kamikaze\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_comportement_kamikaze}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_comportement_kamikaze_afabf5bc217159e6bebba039408bdd282}\label{class_comportement_kamikaze_afabf5bc217159e6bebba039408bdd282}} 
+\mbox{\hyperlink{class_comportement_kamikaze_afabf5bc217159e6bebba039408bdd282}{Comportement\+Kamikaze}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{class_comportement_kamikaze}{Comportement\+Kamikaze}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_comportement}{IComportement}} $\ast$ \mbox{\hyperlink{class_comportement_kamikaze_a5a634da6d8de4b2459623c2f46a2135b}{clone}} () override
+\begin{DoxyCompactList}\small\item\em Réimplémentation de la méthode clone. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_comportement_kamikaze_a15faf64687c142276545524628404186}\label{class_comportement_kamikaze_a15faf64687c142276545524628404186}} 
+\mbox{\hyperlink{class_comportement_kamikaze_a15faf64687c142276545524628404186}{$\sim$\+Comportement\+Kamikaze}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_comportement_kamikaze}{Comportement\+Kamikaze}}. \end{DoxyCompactList}\item 
+pair$<$ vector$<$ double $>$, double $>$ \mbox{\hyperlink{class_comportement_kamikaze_a86d417c21d2fd9d8e4d54f2701af3d5a}{calcul\+Direction}} (vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$ voisins, \mbox{\hyperlink{class_i_creature}{ICreature}} \&creature\+Associee) override
+\begin{DoxyCompactList}\small\item\em calcule la direction de la créature \end{DoxyCompactList}\item 
+Comport\+Type \mbox{\hyperlink{class_comportement_kamikaze_af99d0027e9ebe7f3e80340c512e4ffcb}{get\+Comportement\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Retourne le comportement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implémentation du comportement Kamikaze. 
+
+Une créature dotée de ce comportement, essaye d\textquotesingle{}attaquer la créature la plus proche d\textquotesingle{}elle. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_comportement_kamikaze_a86d417c21d2fd9d8e4d54f2701af3d5a}\label{class_comportement_kamikaze_a86d417c21d2fd9d8e4d54f2701af3d5a}} 
+\index{ComportementKamikaze@{ComportementKamikaze}!calculDirection@{calculDirection}}
+\index{calculDirection@{calculDirection}!ComportementKamikaze@{ComportementKamikaze}}
+\doxysubsubsection{\texorpdfstring{calculDirection()}{calculDirection()}}
+{\footnotesize\ttfamily pair$<$ vector$<$ double $>$, double $>$ Comportement\+Kamikaze\+::calcul\+Direction (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$}]{voisins,  }\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{creature\+Associee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+calcule la direction de la créature 
+
+
+\begin{DoxyParams}{Parameters}
+{\em voisins} & les créatures voisines que la créature associée peut détecter \\
+\hline
+{\em creature\+Associee} & la créature emballée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair$<$vector$<$double$>$, double$>$ vecteur directeur de la vitesse, multiplicateur de la norme de la vitesse 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_comportement_kamikaze_a5a634da6d8de4b2459623c2f46a2135b}\label{class_comportement_kamikaze_a5a634da6d8de4b2459623c2f46a2135b}} 
+\index{ComportementKamikaze@{ComportementKamikaze}!clone@{clone}}
+\index{clone@{clone}!ComportementKamikaze@{ComportementKamikaze}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_comportement}{IComportement}}$\ast$ Comportement\+Kamikaze\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Réimplémentation de la méthode clone. 
+
+Renvoie la copie d\textquotesingle{}un objet comportement kamikaze
+
+\begin{DoxyReturn}{Returns}
+IComportement$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_comportement_aff83f9dd5b384e0f03f206a326ac2c80}{IComportement}}.
+
+\mbox{\Hypertarget{class_comportement_kamikaze_af99d0027e9ebe7f3e80340c512e4ffcb}\label{class_comportement_kamikaze_af99d0027e9ebe7f3e80340c512e4ffcb}} 
+\index{ComportementKamikaze@{ComportementKamikaze}!getComportementType@{getComportementType}}
+\index{getComportementType@{getComportementType}!ComportementKamikaze@{ComportementKamikaze}}
+\doxysubsubsection{\texorpdfstring{getComportementType()}{getComportementType()}}
+{\footnotesize\ttfamily Comport\+Type Comportement\+Kamikaze\+::get\+Comportement\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retourne le comportement. 
+
+\begin{DoxyReturn}{Returns}
+Comport\+Type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_comportement_a10412456a249c6652c712fd84261d242}{IComportement}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Comportement\+Kamikaze.\+h\item 
+Comportement\+Kamikaze.\+cpp\end{DoxyCompactItemize}

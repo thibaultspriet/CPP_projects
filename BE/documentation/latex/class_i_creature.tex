@@ -1,0 +1,604 @@
+\hypertarget{class_i_creature}{}\doxysection{ICreature Class Reference}
+\label{class_i_creature}\index{ICreature@{ICreature}}
+
+
+Class \mbox{\hyperlink{class_i_creature}{ICreature}}, définit les attributs et méthodes des créatures.  
+
+
+
+
+{\ttfamily \#include $<$ICreature.\+h$>$}
+
+Inheritance diagram for ICreature\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.111111cm]{class_i_creature}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_creature_af1ae0237b3fd0cc2a31a8a37df8228ae}{ICreature}} (void)
+\begin{DoxyCompactList}\small\item\em Constructeur d\textquotesingle{}un objet créature. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_creature_a8daa18dc30294889336c30ee3469ef5c}{ICreature}} (\mbox{\hyperlink{class_i_comportement}{IComportement}} $\ast$\mbox{\hyperlink{class_i_creature_af3837dfab448ec1aadc271e97773c468}{comportement}})
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{class_i_creature}{ICreature}} avec un comportement donné. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_creature_a7027119e7db2e1f9420772f2bc58256d}{ICreature}} (const \mbox{\hyperlink{class_i_creature}{ICreature}} \&ic)
+\begin{DoxyCompactList}\small\item\em Constructeur par copie d\textquotesingle{}une créature. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_i_creature_a1b75eed4e1e9168c870d786df3e0baf9}\label{class_i_creature_a1b75eed4e1e9168c870d786df3e0baf9}} 
+virtual \mbox{\hyperlink{class_i_creature_a1b75eed4e1e9168c870d786df3e0baf9}{$\sim$\+ICreature}} (void)
+\begin{DoxyCompactList}\small\item\em Destructeur d\textquotesingle{}un objet créature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_i_creature_ac07cfde42d14afc42c5f3752fc042800}{action}} (\mbox{\hyperlink{class_milieu}{Milieu}} \&mon\+Milieu, std\+::vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$ \&to\+Remove\+Creatures, std\+::vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$ \&to\+Append\+Creatures)
+\begin{DoxyCompactList}\small\item\em méthode appelée sur la créature à chaque pas de simulation \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ \mbox{\hyperlink{class_i_creature_ad7f81521c7c24242c084fd2142243432}{clone}} ()
+\begin{DoxyCompactList}\small\item\em méthode virtuelle qui permet de cloner une créature \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_creature_a116a6ca264ff8d82dada6b6c3510db59}{draw}} (UImg \&support, \mbox{\hyperlink{class_milieu}{Milieu}} \&mon\+Milieu, \mbox{\hyperlink{class_i_creature}{ICreature}} \&creature\+To\+Draw)
+\begin{DoxyCompactList}\small\item\em Affichage d\textquotesingle{}une créature. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_creature_a9b5e7de90103ec3daa74d98d6d509244}{je\+Te\+Vois}} (const \mbox{\hyperlink{class_i_creature}{ICreature}} \&ic) const
+\begin{DoxyCompactList}\small\item\em détermine si la créature détecte la créature passée en argument \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_i_creature_a123c53228807cf3b90e64584759a7de7}{get\+Prob\+Death}} (void) const
+\begin{DoxyCompactList}\small\item\em retourne l\textquotesingle{}attribut prob\+Death \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_i_creature_a96af7e6e612a8d3a0e7b418a50f39503}{get\+Camouflage}} (void) const
+\begin{DoxyCompactList}\small\item\em retourne l\textquotesingle{}attribut camouflage \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_i_creature_a887e88aaa2752a24b5622bf19dead03b}{getX}} () const
+\begin{DoxyCompactList}\small\item\em retourne la position horizontale de la créature \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_i_creature_a99fe23c6acb7c98d1a78f86a1a6d6357}{getY}} () const
+\begin{DoxyCompactList}\small\item\em retourne la position verticale de la créature \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ double $>$ \mbox{\hyperlink{class_i_creature_a71ef0c49f4766b2d1b3b225b28606617}{get\+Vitesse}} (void)
+\begin{DoxyCompactList}\small\item\em retourne le vecteur vitesse de la créature. En position 0 \+: vitesse horizontale ; en position 1 \+: vitesse verticale \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_i_creature_a20e72c6c578d47b155298c21591b6bfa}{get\+Norme\+Vitesse}} (std\+::vector$<$ double $>$)
+\begin{DoxyCompactList}\small\item\em Retourne la norme du vecteur vitesse. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_i_creature_a8b0446554f929f59b7277408f9e7a9ac}{get\+Direction}} (void)
+\begin{DoxyCompactList}\small\item\em Renvoie le vecteur directeur de déplacement de la bestiole. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_i_creature_a651efb075f439989ee47ed15d2ade720}{get\+Comportement\+Vitesse}} (\mbox{\hyperlink{class_milieu}{Milieu}} \&mon\+Milieu)
+\begin{DoxyCompactList}\small\item\em Retourne le vecteur vitesse de la créature en fonction de son comportement. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_i_creature_a06c88303b964f79bf3446cf94d206bf4}{get\+Comportement\+Vitesse\+Multiple}} (\mbox{\hyperlink{class_milieu}{Milieu}} \&mon\+Milieu)
+\begin{DoxyCompactList}\small\item\em Retourne le vecteur vitesse de la créature, multiplié par un facteur en fonction de son comportement. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_creature_a774233a541c1c470abb24b245cafede2}{set\+Vitesse}} (double vx, double vy)
+\begin{DoxyCompactList}\small\item\em attribut une nouvelle valeur au vecteur vitesse de la créature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_i_creature_aa31ecae1f8d4ee5b54a648c9b4a0a56c}{init\+Coords}} (int x\+Lim, int y\+Lim)
+\begin{DoxyCompactList}\small\item\em Place la créature de manière aléatoire à sa naissance. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_i_creature_a258d844c843eea49fb0ea2ca54791193}{get\+Identite}} (void)
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}identifiant de la créature. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_comportement}{IComportement}} $\ast$ \mbox{\hyperlink{class_i_creature_ab4332bb82327258d559cc73aacdcb4a3}{get\+Comportement}} (void)
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}objet \mbox{\hyperlink{class_i_comportement}{IComportement}} agrégé \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_i_creature_af12643f51d7dcf4e38d6bc2aad1e066f}{get\+Duree\+Vie}} (void)
+\begin{DoxyCompactList}\small\item\em Retourne la durée de vie de la créature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_i_creature_abc5b9efc7618c67a2bc56c78663d8e70}{set\+Color}} (int r, int g, int b)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}attribuer une couleur à la créature. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_i_creature_a958ac4101a94faf5de62fc646c0a3f1a}\label{class_i_creature_a958ac4101a94faf5de62fc646c0a3f1a}} 
+virtual void {\bfseries print\+Creature} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_i_creature_a1e16300219f8e61dfbda60bb85c29b22}{identite}}
+\item 
+\mbox{\Hypertarget{class_i_creature_a1cf8e598c59689554f4471af45349252}\label{class_i_creature_a1cf8e598c59689554f4471af45349252}} 
+int {\bfseries x}
+\item 
+int \mbox{\hyperlink{class_i_creature_ac7959f0d0bd37b448b94408e95d986fe}{y}}
+\item 
+\mbox{\Hypertarget{class_i_creature_ab7add4febb3bcf7f5985e8995daa7af0}\label{class_i_creature_ab7add4febb3bcf7f5985e8995daa7af0}} 
+double {\bfseries cumulX}
+\item 
+double \mbox{\hyperlink{class_i_creature_abd6cea3b66a459fc0204cf42d5dc84b5}{cumulY}}
+\item 
+double \mbox{\hyperlink{class_i_creature_af458c4c81c719e8016669c1bf4cd7fc9}{prob\+Death}}
+\item 
+double \mbox{\hyperlink{class_i_creature_a802b66f95ab9731582aa01e8255e978a}{camouflage}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_i_creature_a0f8133b0a5fdc2cacb3d7b22878679bd}{vitesse}}
+\item 
+T $\ast$ \mbox{\hyperlink{class_i_creature_a6e4524122439f68a80317c3c46d99eee}{couleur}}
+\item 
+\mbox{\hyperlink{class_i_comportement}{IComportement}} $\ast$ \mbox{\hyperlink{class_i_creature_af3837dfab448ec1aadc271e97773c468}{comportement}}
+\item 
+int \mbox{\hyperlink{class_i_creature_abfec919f1ecab2ef7fd17db7d2c8dc94}{duree\+Vie}}
+\item 
+double \mbox{\hyperlink{class_i_creature_ab6a730eb0e0dcd7c9b1a51e5498c8825}{clone\+Rate}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{class_i_creature_a876c17043791e0e0f570d0db9c8be406}{AFF\+\_\+\+SIZE}} = 8.\+0
+\item 
+static const double \mbox{\hyperlink{class_i_creature_a161c6655c00da04e4e01d2cf8b57c490}{MAX\+\_\+\+VITESSE}} = 10.\+0
+\item 
+static const double \mbox{\hyperlink{class_i_creature_af27e5d832adce41cf97ce91c35d77641}{LIMITE\+\_\+\+VUE}} = 30.\+0
+\item 
+static int \mbox{\hyperlink{class_i_creature_a5bf872bfec52abcf5dfc250a30ba19b7}{next}} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_i_creature_adb3d6a47f7bf513f228cc509fab81457}{operator==}} (const \mbox{\hyperlink{class_i_creature}{ICreature}} \&ic1, const \mbox{\hyperlink{class_i_creature}{ICreature}} \&ic2)
+\begin{DoxyCompactList}\small\item\em Redéfinition de l\textquotesingle{}opérateur ==. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{class_i_creature}{ICreature}}, définit les attributs et méthodes des créatures. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_creature_af1ae0237b3fd0cc2a31a8a37df8228ae}\label{class_i_creature_af1ae0237b3fd0cc2a31a8a37df8228ae}} 
+\index{ICreature@{ICreature}!ICreature@{ICreature}}
+\index{ICreature@{ICreature}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{ICreature()}{ICreature()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily ICreature\+::\+ICreature (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur d\textquotesingle{}un objet créature. 
+
+Attribut le comportement Kamikaze par défaut. En pratique ce constructeur n\textquotesingle{}est pas utilisé. \mbox{\Hypertarget{class_i_creature_a8daa18dc30294889336c30ee3469ef5c}\label{class_i_creature_a8daa18dc30294889336c30ee3469ef5c}} 
+\index{ICreature@{ICreature}!ICreature@{ICreature}}
+\index{ICreature@{ICreature}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{ICreature()}{ICreature()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily ICreature\+::\+ICreature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_comportement}{IComportement}} $\ast$}]{comportement }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \mbox{\hyperlink{class_i_creature}{ICreature}} avec un comportement donné. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comportement} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_creature_a7027119e7db2e1f9420772f2bc58256d}\label{class_i_creature_a7027119e7db2e1f9420772f2bc58256d}} 
+\index{ICreature@{ICreature}!ICreature@{ICreature}}
+\index{ICreature@{ICreature}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{ICreature()}{ICreature()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily ICreature\+::\+ICreature (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{ic }\end{DoxyParamCaption})}
+
+
+
+Constructeur par copie d\textquotesingle{}une créature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_creature_ac07cfde42d14afc42c5f3752fc042800}\label{class_i_creature_ac07cfde42d14afc42c5f3752fc042800}} 
+\index{ICreature@{ICreature}!action@{action}}
+\index{action@{action}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily void ICreature\+::action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_milieu}{Milieu}} \&}]{mon\+Milieu,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$ \&}]{to\+Remove\+Creatures,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$ \&}]{to\+Append\+Creatures }\end{DoxyParamCaption})}
+
+
+
+méthode appelée sur la créature à chaque pas de simulation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mon\+Milieu} & référence du milieu \\
+\hline
+{\em to\+Remove\+Creatures} & paramètre intermédiaire qui permet de stocker les créatures à supprimer à la fin d\textquotesingle{}une \char`\"{}step\char`\"{} \\
+\hline
+{\em to\+Append\+Creatures} & paramètre intermédiaire qui permet de stocker les créatures à ajouter à la fin d\textquotesingle{}une \char`\"{}step\char`\"{} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_creature_ad7f81521c7c24242c084fd2142243432}\label{class_i_creature_ad7f81521c7c24242c084fd2142243432}} 
+\index{ICreature@{ICreature}!clone@{clone}}
+\index{clone@{clone}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ ICreature\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+méthode virtuelle qui permet de cloner une créature 
+
+Cette méthode permet de mettre en place le design pattern Prototype
+
+\begin{DoxyReturn}{Returns}
+ICreature$\ast$ 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_creature_decorator_a76aa412554e38583daad9baedf4538aa}{Creature\+Decorator}}, \mbox{\hyperlink{class_capteur_decorator_a15353e12ec4a382a10ec2d70cc5091e2}{Capteur\+Decorator}}, \mbox{\hyperlink{class_accessoire_decorator_a1a844769482e80de1d2e495595213ac1}{Accessoire\+Decorator}}, \mbox{\hyperlink{class_yeux_decorator_ab93fda4076f177d4d18f92f07610b6ae}{Yeux\+Decorator}}, \mbox{\hyperlink{class_oreille_decorator_a25bdb91f48433b7fd828ab151bedfdba}{Oreille\+Decorator}}, \mbox{\hyperlink{class_nageoire_decorator_aad5bf22948ad9077e49ca0a07184aa1f}{Nageoire\+Decorator}}, \mbox{\hyperlink{class_carapace_decorator_abae4de3b70d9ce2573f374649052a630}{Carapace\+Decorator}}, \mbox{\hyperlink{class_camouflage_decorator_af835f381df4f604b5976d61202c5f2a0}{Camouflage\+Decorator}}, and \mbox{\hyperlink{class_bestiole_a7774405041776bcc9bcbfd1385632b73}{Bestiole}}.
+
+\mbox{\Hypertarget{class_i_creature_a116a6ca264ff8d82dada6b6c3510db59}\label{class_i_creature_a116a6ca264ff8d82dada6b6c3510db59}} 
+\index{ICreature@{ICreature}!draw@{draw}}
+\index{draw@{draw}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void ICreature\+::draw (\begin{DoxyParamCaption}\item[{UImg \&}]{support,  }\item[{\mbox{\hyperlink{class_milieu}{Milieu}} \&}]{mon\+Milieu,  }\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{creature\+To\+Draw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Affichage d\textquotesingle{}une créature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em support} & \\
+\hline
+{\em mon\+Milieu} & \\
+\hline
+{\em creature\+To\+Draw} & référence vers la créature à dessiner. Cela permet d\textquotesingle{}afficher les différents décorateurs \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_creature_decorator_a3f29de62b2c23293cdcd03dfc853ebfa}{Creature\+Decorator}}, \mbox{\hyperlink{class_capteur_decorator_a2a0d8194473e07b091ba540d6f73a8f2}{Capteur\+Decorator}}, \mbox{\hyperlink{class_accessoire_decorator_a3efa8047f1dbaef6d698d9e50b986ec5}{Accessoire\+Decorator}}, \mbox{\hyperlink{class_yeux_decorator_a28c11ffd6639253604046471138c0812}{Yeux\+Decorator}}, \mbox{\hyperlink{class_oreille_decorator_a8b05d9f7f8765cc6fda845bd2be6d4c8}{Oreille\+Decorator}}, \mbox{\hyperlink{class_nageoire_decorator_a275bf48670acc3013fe3c9afeeec053a}{Nageoire\+Decorator}}, \mbox{\hyperlink{class_carapace_decorator_a9904128eeea7b34090b5a673ee332bbf}{Carapace\+Decorator}}, and \mbox{\hyperlink{class_camouflage_decorator_adbc57b124077015387e7b3c954bf15b6}{Camouflage\+Decorator}}.
+
+\mbox{\Hypertarget{class_i_creature_a96af7e6e612a8d3a0e7b418a50f39503}\label{class_i_creature_a96af7e6e612a8d3a0e7b418a50f39503}} 
+\index{ICreature@{ICreature}!getCamouflage@{getCamouflage}}
+\index{getCamouflage@{getCamouflage}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{getCamouflage()}{getCamouflage()}}
+{\footnotesize\ttfamily double ICreature\+::get\+Camouflage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+retourne l\textquotesingle{}attribut camouflage 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_camouflage_decorator_ac3044d42750dcea16310280f157be760}{Camouflage\+Decorator}}, \mbox{\hyperlink{class_creature_decorator_ad81c6a0f936cf2448d220f7ed92015fe}{Creature\+Decorator}}, and \mbox{\hyperlink{class_accessoire_decorator_ac38adfb5d53bde31a1ff9ab8fbc34ebd}{Accessoire\+Decorator}}.
+
+\mbox{\Hypertarget{class_i_creature_ab4332bb82327258d559cc73aacdcb4a3}\label{class_i_creature_ab4332bb82327258d559cc73aacdcb4a3}} 
+\index{ICreature@{ICreature}!getComportement@{getComportement}}
+\index{getComportement@{getComportement}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{getComportement()}{getComportement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_comportement}{IComportement}}$\ast$ ICreature\+::get\+Comportement (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne l\textquotesingle{}objet \mbox{\hyperlink{class_i_comportement}{IComportement}} agrégé 
+
+\begin{DoxyReturn}{Returns}
+IComportement$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_creature_a651efb075f439989ee47ed15d2ade720}\label{class_i_creature_a651efb075f439989ee47ed15d2ade720}} 
+\index{ICreature@{ICreature}!getComportementVitesse@{getComportementVitesse}}
+\index{getComportementVitesse@{getComportementVitesse}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{getComportementVitesse()}{getComportementVitesse()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ ICreature\+::get\+Comportement\+Vitesse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_milieu}{Milieu}} \&}]{mon\+Milieu }\end{DoxyParamCaption})}
+
+
+
+Retourne le vecteur vitesse de la créature en fonction de son comportement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mon\+Milieu} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_creature_a06c88303b964f79bf3446cf94d206bf4}\label{class_i_creature_a06c88303b964f79bf3446cf94d206bf4}} 
+\index{ICreature@{ICreature}!getComportementVitesseMultiple@{getComportementVitesseMultiple}}
+\index{getComportementVitesseMultiple@{getComportementVitesseMultiple}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{getComportementVitesseMultiple()}{getComportementVitesseMultiple()}}
+{\footnotesize\ttfamily vector$<$ double $>$ ICreature\+::get\+Comportement\+Vitesse\+Multiple (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_milieu}{Milieu}} \&}]{mon\+Milieu }\end{DoxyParamCaption})}
+
+
+
+Retourne le vecteur vitesse de la créature, multiplié par un facteur en fonction de son comportement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mon\+Milieu} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_creature_a8b0446554f929f59b7277408f9e7a9ac}\label{class_i_creature_a8b0446554f929f59b7277408f9e7a9ac}} 
+\index{ICreature@{ICreature}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
+{\footnotesize\ttfamily vector$<$ double $>$ ICreature\+::get\+Direction (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie le vecteur directeur de déplacement de la bestiole. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_creature_af12643f51d7dcf4e38d6bc2aad1e066f}\label{class_i_creature_af12643f51d7dcf4e38d6bc2aad1e066f}} 
+\index{ICreature@{ICreature}!getDureeVie@{getDureeVie}}
+\index{getDureeVie@{getDureeVie}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{getDureeVie()}{getDureeVie()}}
+{\footnotesize\ttfamily int ICreature\+::get\+Duree\+Vie (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la durée de vie de la créature. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_creature_a258d844c843eea49fb0ea2ca54791193}\label{class_i_creature_a258d844c843eea49fb0ea2ca54791193}} 
+\index{ICreature@{ICreature}!getIdentite@{getIdentite}}
+\index{getIdentite@{getIdentite}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{getIdentite()}{getIdentite()}}
+{\footnotesize\ttfamily int ICreature\+::get\+Identite (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoie l\textquotesingle{}identifiant de la créature. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_creature_a20e72c6c578d47b155298c21591b6bfa}\label{class_i_creature_a20e72c6c578d47b155298c21591b6bfa}} 
+\index{ICreature@{ICreature}!getNormeVitesse@{getNormeVitesse}}
+\index{getNormeVitesse@{getNormeVitesse}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{getNormeVitesse()}{getNormeVitesse()}}
+{\footnotesize\ttfamily double ICreature\+::get\+Norme\+Vitesse (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{vit }\end{DoxyParamCaption})}
+
+
+
+Retourne la norme du vecteur vitesse. 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_creature_a123c53228807cf3b90e64584759a7de7}\label{class_i_creature_a123c53228807cf3b90e64584759a7de7}} 
+\index{ICreature@{ICreature}!getProbDeath@{getProbDeath}}
+\index{getProbDeath@{getProbDeath}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{getProbDeath()}{getProbDeath()}}
+{\footnotesize\ttfamily double ICreature\+::get\+Prob\+Death (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+retourne l\textquotesingle{}attribut prob\+Death 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_carapace_decorator_adc5fefa9412371dab8fdd770f3d0c455}{Carapace\+Decorator}}, \mbox{\hyperlink{class_creature_decorator_ae70830a4aedf9eda9c706b34678133fa}{Creature\+Decorator}}, and \mbox{\hyperlink{class_accessoire_decorator_acb462e2387863b9bfd350a3c6bfd6c57}{Accessoire\+Decorator}}.
+
+\mbox{\Hypertarget{class_i_creature_a71ef0c49f4766b2d1b3b225b28606617}\label{class_i_creature_a71ef0c49f4766b2d1b3b225b28606617}} 
+\index{ICreature@{ICreature}!getVitesse@{getVitesse}}
+\index{getVitesse@{getVitesse}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{getVitesse()}{getVitesse()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ ICreature\+::get\+Vitesse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+retourne le vecteur vitesse de la créature. En position 0 \+: vitesse horizontale ; en position 1 \+: vitesse verticale 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_carapace_decorator_ac517dcde9f38ff921fc55c4dd054bd1e}{Carapace\+Decorator}}, \mbox{\hyperlink{class_nageoire_decorator_af2ba833aea59e9d685cdb7e6a9fe5f2c}{Nageoire\+Decorator}}, \mbox{\hyperlink{class_creature_decorator_a7e06859f7bb530455749373b66bb4bf4}{Creature\+Decorator}}, and \mbox{\hyperlink{class_accessoire_decorator_ad6e0a599c24cc2d54c04649af6b9075d}{Accessoire\+Decorator}}.
+
+\mbox{\Hypertarget{class_i_creature_a887e88aaa2752a24b5622bf19dead03b}\label{class_i_creature_a887e88aaa2752a24b5622bf19dead03b}} 
+\index{ICreature@{ICreature}!getX@{getX}}
+\index{getX@{getX}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily int ICreature\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+retourne la position horizontale de la créature 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_creature_a99fe23c6acb7c98d1a78f86a1a6d6357}\label{class_i_creature_a99fe23c6acb7c98d1a78f86a1a6d6357}} 
+\index{ICreature@{ICreature}!getY@{getY}}
+\index{getY@{getY}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily int ICreature\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+retourne la position verticale de la créature 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_creature_aa31ecae1f8d4ee5b54a648c9b4a0a56c}\label{class_i_creature_aa31ecae1f8d4ee5b54a648c9b4a0a56c}} 
+\index{ICreature@{ICreature}!initCoords@{initCoords}}
+\index{initCoords@{initCoords}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{initCoords()}{initCoords()}}
+{\footnotesize\ttfamily void ICreature\+::init\+Coords (\begin{DoxyParamCaption}\item[{int}]{x\+Lim,  }\item[{int}]{y\+Lim }\end{DoxyParamCaption})}
+
+
+
+Place la créature de manière aléatoire à sa naissance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Lim} & limite horizontale \\
+\hline
+{\em y\+Lim} & limite verticale \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_creature_a9b5e7de90103ec3daa74d98d6d509244}\label{class_i_creature_a9b5e7de90103ec3daa74d98d6d509244}} 
+\index{ICreature@{ICreature}!jeTeVois@{jeTeVois}}
+\index{jeTeVois@{jeTeVois}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{jeTeVois()}{jeTeVois()}}
+{\footnotesize\ttfamily bool ICreature\+::je\+Te\+Vois (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{ic }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+détermine si la créature détecte la créature passée en argument 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & référence constante d\textquotesingle{}une créature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_yeux_decorator_ab11c1e7cade2cc0268fabd5b6ae712ca}{Yeux\+Decorator}}, \mbox{\hyperlink{class_oreille_decorator_a30d65fa25db4760a43bbc1bec1500d69}{Oreille\+Decorator}}, \mbox{\hyperlink{class_capteur_decorator_a24e538e4bebb8acf459c4c76c614df5d}{Capteur\+Decorator}}, and \mbox{\hyperlink{class_creature_decorator_a1ad1d70b4be5e815949f692e9676591c}{Creature\+Decorator}}.
+
+\mbox{\Hypertarget{class_i_creature_abc5b9efc7618c67a2bc56c78663d8e70}\label{class_i_creature_abc5b9efc7618c67a2bc56c78663d8e70}} 
+\index{ICreature@{ICreature}!setColor@{setColor}}
+\index{setColor@{setColor}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void ICreature\+::set\+Color (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{g,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+Permet d\textquotesingle{}attribuer une couleur à la créature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & entre 0 et 255, niveau de rouge \\
+\hline
+{\em g} & entre 0 et 255, niveau de vert \\
+\hline
+{\em b} & entre 0 et 255 niveau de bleu \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_creature_a774233a541c1c470abb24b245cafede2}\label{class_i_creature_a774233a541c1c470abb24b245cafede2}} 
+\index{ICreature@{ICreature}!setVitesse@{setVitesse}}
+\index{setVitesse@{setVitesse}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{setVitesse()}{setVitesse()}}
+{\footnotesize\ttfamily void ICreature\+::set\+Vitesse (\begin{DoxyParamCaption}\item[{double}]{vx,  }\item[{double}]{vy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+attribut une nouvelle valeur au vecteur vitesse de la créature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vx} & \\
+\hline
+{\em vy} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_nageoire_decorator_aa4db7d0f2f46269a13041596356e39b5}{Nageoire\+Decorator}}, \mbox{\hyperlink{class_carapace_decorator_a301180602fc1b9d9e0f56b97cff64ffe}{Carapace\+Decorator}}, \mbox{\hyperlink{class_creature_decorator_aef8d301db37389c88cd84a3ceaca5066}{Creature\+Decorator}}, and \mbox{\hyperlink{class_accessoire_decorator_a1fee5fe2b56af76a8eae953907c1651b}{Accessoire\+Decorator}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_i_creature_adb3d6a47f7bf513f228cc509fab81457}\label{class_i_creature_adb3d6a47f7bf513f228cc509fab81457}} 
+\index{ICreature@{ICreature}!operator==@{operator==}}
+\index{operator==@{operator==}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{ic1,  }\item[{const \mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{ic2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Redéfinition de l\textquotesingle{}opérateur ==. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b1} & première créature \\
+\hline
+{\em b2} & seconde créature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_i_creature_a876c17043791e0e0f570d0db9c8be406}\label{class_i_creature_a876c17043791e0e0f570d0db9c8be406}} 
+\index{ICreature@{ICreature}!AFF\_SIZE@{AFF\_SIZE}}
+\index{AFF\_SIZE@{AFF\_SIZE}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{AFF\_SIZE}{AFF\_SIZE}}
+{\footnotesize\ttfamily const double ICreature\+::\+AFF\+\_\+\+SIZE = 8.\+0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+diamètre des créatures ~\newline
+ \mbox{\Hypertarget{class_i_creature_a802b66f95ab9731582aa01e8255e978a}\label{class_i_creature_a802b66f95ab9731582aa01e8255e978a}} 
+\index{ICreature@{ICreature}!camouflage@{camouflage}}
+\index{camouflage@{camouflage}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{camouflage}{camouflage}}
+{\footnotesize\ttfamily double ICreature\+::camouflage\hspace{0.3cm}{\ttfamily [protected]}}
+
+coéfficient de camouflage de la bestiole. camouflage $>$ détection la créature ne sera pas vue. Par défaut cette valeur est 0 \mbox{\Hypertarget{class_i_creature_ab6a730eb0e0dcd7c9b1a51e5498c8825}\label{class_i_creature_ab6a730eb0e0dcd7c9b1a51e5498c8825}} 
+\index{ICreature@{ICreature}!cloneRate@{cloneRate}}
+\index{cloneRate@{cloneRate}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{cloneRate}{cloneRate}}
+{\footnotesize\ttfamily double ICreature\+::clone\+Rate\hspace{0.3cm}{\ttfamily [protected]}}
+
+double entre 0 et 1 qui represente le pourcentage de chance de se cloner pour la créature à chaque instant de sa vie \mbox{\Hypertarget{class_i_creature_af3837dfab448ec1aadc271e97773c468}\label{class_i_creature_af3837dfab448ec1aadc271e97773c468}} 
+\index{ICreature@{ICreature}!comportement@{comportement}}
+\index{comportement@{comportement}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{comportement}{comportement}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_comportement}{IComportement}}$\ast$ ICreature\+::comportement\hspace{0.3cm}{\ttfamily [protected]}}
+
+comportement aggrégé, permet de donner la direction des créatures. \mbox{\Hypertarget{class_i_creature_a6e4524122439f68a80317c3c46d99eee}\label{class_i_creature_a6e4524122439f68a80317c3c46d99eee}} 
+\index{ICreature@{ICreature}!couleur@{couleur}}
+\index{couleur@{couleur}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{couleur}{couleur}}
+{\footnotesize\ttfamily T$\ast$ ICreature\+::couleur\hspace{0.3cm}{\ttfamily [protected]}}
+
+couleur de la créature \mbox{\Hypertarget{class_i_creature_abd6cea3b66a459fc0204cf42d5dc84b5}\label{class_i_creature_abd6cea3b66a459fc0204cf42d5dc84b5}} 
+\index{ICreature@{ICreature}!cumulY@{cumulY}}
+\index{cumulY@{cumulY}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{cumulY}{cumulY}}
+{\footnotesize\ttfamily double ICreature\+::cumulY\hspace{0.3cm}{\ttfamily [protected]}}
+
+position réelle de la créature \mbox{\Hypertarget{class_i_creature_abfec919f1ecab2ef7fd17db7d2c8dc94}\label{class_i_creature_abfec919f1ecab2ef7fd17db7d2c8dc94}} 
+\index{ICreature@{ICreature}!dureeVie@{dureeVie}}
+\index{dureeVie@{dureeVie}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{dureeVie}{dureeVie}}
+{\footnotesize\ttfamily int ICreature\+::duree\+Vie\hspace{0.3cm}{\ttfamily [protected]}}
+
+durée de vie de la créature en nombre de pas de simulation \mbox{\Hypertarget{class_i_creature_a1e16300219f8e61dfbda60bb85c29b22}\label{class_i_creature_a1e16300219f8e61dfbda60bb85c29b22}} 
+\index{ICreature@{ICreature}!identite@{identite}}
+\index{identite@{identite}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{identite}{identite}}
+{\footnotesize\ttfamily int ICreature\+::identite\hspace{0.3cm}{\ttfamily [protected]}}
+
+identifiant unique pour chaque créature \mbox{\Hypertarget{class_i_creature_af27e5d832adce41cf97ce91c35d77641}\label{class_i_creature_af27e5d832adce41cf97ce91c35d77641}} 
+\index{ICreature@{ICreature}!LIMITE\_VUE@{LIMITE\_VUE}}
+\index{LIMITE\_VUE@{LIMITE\_VUE}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{LIMITE\_VUE}{LIMITE\_VUE}}
+{\footnotesize\ttfamily const double ICreature\+::\+LIMITE\+\_\+\+VUE = 30.\+0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+limite de vision des créatures \mbox{\Hypertarget{class_i_creature_a161c6655c00da04e4e01d2cf8b57c490}\label{class_i_creature_a161c6655c00da04e4e01d2cf8b57c490}} 
+\index{ICreature@{ICreature}!MAX\_VITESSE@{MAX\_VITESSE}}
+\index{MAX\_VITESSE@{MAX\_VITESSE}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{MAX\_VITESSE}{MAX\_VITESSE}}
+{\footnotesize\ttfamily const double ICreature\+::\+MAX\+\_\+\+VITESSE = 10.\+0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+vitesse maximale des créatures \mbox{\Hypertarget{class_i_creature_a5bf872bfec52abcf5dfc250a30ba19b7}\label{class_i_creature_a5bf872bfec52abcf5dfc250a30ba19b7}} 
+\index{ICreature@{ICreature}!next@{next}}
+\index{next@{next}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily int ICreature\+::next = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+permet de gérer l\textquotesingle{}attribution d\textquotesingle{}une identité à chaque créature \mbox{\Hypertarget{class_i_creature_af458c4c81c719e8016669c1bf4cd7fc9}\label{class_i_creature_af458c4c81c719e8016669c1bf4cd7fc9}} 
+\index{ICreature@{ICreature}!probDeath@{probDeath}}
+\index{probDeath@{probDeath}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{probDeath}{probDeath}}
+{\footnotesize\ttfamily double ICreature\+::prob\+Death\hspace{0.3cm}{\ttfamily [protected]}}
+
+coefficient déterminant la probabilité de décès d\textquotesingle{}une créature lors d\textquotesingle{}une collision. si 0 la créature est invincible ; si 1 elle meurt à coup sûr. ~\newline
+ \mbox{\Hypertarget{class_i_creature_a0f8133b0a5fdc2cacb3d7b22878679bd}\label{class_i_creature_a0f8133b0a5fdc2cacb3d7b22878679bd}} 
+\index{ICreature@{ICreature}!vitesse@{vitesse}}
+\index{vitesse@{vitesse}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{vitesse}{vitesse}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ ICreature\+::vitesse\hspace{0.3cm}{\ttfamily [protected]}}
+
+vecteur vitesse de la créature. vitesse\mbox{[}0\mbox{]} = vx ; vitesse\mbox{[}1\mbox{]} = vy \mbox{\Hypertarget{class_i_creature_ac7959f0d0bd37b448b94408e95d986fe}\label{class_i_creature_ac7959f0d0bd37b448b94408e95d986fe}} 
+\index{ICreature@{ICreature}!y@{y}}
+\index{y@{y}!ICreature@{ICreature}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int ICreature\+::y\hspace{0.3cm}{\ttfamily [protected]}}
+
+position graphique de la créature. Affichage sur une grille de pixel, les positions doivent être des entiers 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ICreature.\+h\item 
+ICreature.\+cpp\end{DoxyCompactItemize}

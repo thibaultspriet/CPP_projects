@@ -1,0 +1,190 @@
+\hypertarget{class_carapace_decorator}{}\doxysection{Carapace\+Decorator Class Reference}
+\label{class_carapace_decorator}\index{CarapaceDecorator@{CarapaceDecorator}}
+
+
+Classe \mbox{\hyperlink{class_carapace_decorator}{Carapace\+Decorator}}.  
+
+
+
+
+{\ttfamily \#include $<$Carapace\+Decorator.\+h$>$}
+
+Inheritance diagram for Carapace\+Decorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_carapace_decorator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_carapace_decorator_aee8243668e5b48229620ca8ae91cdbd7}{Carapace\+Decorator}} (\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ic)
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{class_carapace_decorator}{Carapace\+Decorator}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ \mbox{\hyperlink{class_carapace_decorator_abae4de3b70d9ce2573f374649052a630}{clone}} (void) override
+\begin{DoxyCompactList}\small\item\em Copie une créature avec une carapace. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_carapace_decorator_a1217563934c06003527251457e1a0ecb}\label{class_carapace_decorator_a1217563934c06003527251457e1a0ecb}} 
+\mbox{\hyperlink{class_carapace_decorator_a1217563934c06003527251457e1a0ecb}{$\sim$\+Carapace\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_carapace_decorator}{Carapace\+Decorator}}. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_carapace_decorator_ac517dcde9f38ff921fc55c4dd054bd1e}{get\+Vitesse}} (void) override
+\begin{DoxyCompactList}\small\item\em méthode get\+Vitesse \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_carapace_decorator_a301180602fc1b9d9e0f56b97cff64ffe}{set\+Vitesse}} (double vx, double vy) override
+\begin{DoxyCompactList}\small\item\em méthode set\+Vitesse \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_carapace_decorator_adc5fefa9412371dab8fdd770f3d0c455}{get\+Prob\+Death}} (void) const override
+\begin{DoxyCompactList}\small\item\em méthode get\+Prob\+Death \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_carapace_decorator_a9904128eeea7b34090b5a673ee332bbf}{draw}} (UImg \&support, \mbox{\hyperlink{class_milieu}{Milieu}} \&mon\+Milieu, \mbox{\hyperlink{class_i_creature}{ICreature}} \&creature\+To\+Draw) override
+\begin{DoxyCompactList}\small\item\em Déssine une créature avec une carapace. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_carapace_decorator_a6182c69edda945e1ffefc0dff8a2fb83}\label{class_carapace_decorator_a6182c69edda945e1ffefc0dff8a2fb83}} 
+virtual void {\bfseries print\+Creature} (void) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{class_carapace_decorator_a8e6a8f0ca68b5e46254db42685698acf}{PROTEC\+\_\+\+DEATH\+\_\+\+MAX}} = 5.\+0
+\item 
+static const double \mbox{\hyperlink{class_carapace_decorator_aa4c6a8d848638a80364270c0e05278a6}{DECREASE\+\_\+\+VITESSE\+\_\+\+MAX}} = 4.\+0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Classe \mbox{\hyperlink{class_carapace_decorator}{Carapace\+Decorator}}. 
+
+Ce decorateur permet à la bestiole d\textquotesingle{}être plus résistante lors d\textquotesingle{}une collision 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_carapace_decorator_aee8243668e5b48229620ca8ae91cdbd7}\label{class_carapace_decorator_aee8243668e5b48229620ca8ae91cdbd7}} 
+\index{CarapaceDecorator@{CarapaceDecorator}!CarapaceDecorator@{CarapaceDecorator}}
+\index{CarapaceDecorator@{CarapaceDecorator}!CarapaceDecorator@{CarapaceDecorator}}
+\doxysubsubsection{\texorpdfstring{CarapaceDecorator()}{CarapaceDecorator()}}
+{\footnotesize\ttfamily Carapace\+Decorator\+::\+Carapace\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$}]{ic }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \mbox{\hyperlink{class_carapace_decorator}{Carapace\+Decorator}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & créature à emballer \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_carapace_decorator_abae4de3b70d9ce2573f374649052a630}\label{class_carapace_decorator_abae4de3b70d9ce2573f374649052a630}} 
+\index{CarapaceDecorator@{CarapaceDecorator}!clone@{clone}}
+\index{clone@{clone}!CarapaceDecorator@{CarapaceDecorator}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ Carapace\+Decorator\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Copie une créature avec une carapace. 
+
+\begin{DoxyReturn}{Returns}
+ICreature$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_accessoire_decorator_a1a844769482e80de1d2e495595213ac1}{Accessoire\+Decorator}}.
+
+\mbox{\Hypertarget{class_carapace_decorator_a9904128eeea7b34090b5a673ee332bbf}\label{class_carapace_decorator_a9904128eeea7b34090b5a673ee332bbf}} 
+\index{CarapaceDecorator@{CarapaceDecorator}!draw@{draw}}
+\index{draw@{draw}!CarapaceDecorator@{CarapaceDecorator}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Carapace\+Decorator\+::draw (\begin{DoxyParamCaption}\item[{UImg \&}]{support,  }\item[{\mbox{\hyperlink{class_milieu}{Milieu}} \&}]{mon\+Milieu,  }\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{creature\+To\+Draw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Déssine une créature avec une carapace. 
+
+Représentée par un rond noir au milieu de la queue
+
+
+\begin{DoxyParams}{Parameters}
+{\em support} & \\
+\hline
+{\em mon\+Milieu} & \\
+\hline
+{\em creature\+To\+Draw} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_accessoire_decorator_a3efa8047f1dbaef6d698d9e50b986ec5}{Accessoire\+Decorator}}.
+
+\mbox{\Hypertarget{class_carapace_decorator_adc5fefa9412371dab8fdd770f3d0c455}\label{class_carapace_decorator_adc5fefa9412371dab8fdd770f3d0c455}} 
+\index{CarapaceDecorator@{CarapaceDecorator}!getProbDeath@{getProbDeath}}
+\index{getProbDeath@{getProbDeath}!CarapaceDecorator@{CarapaceDecorator}}
+\doxysubsubsection{\texorpdfstring{getProbDeath()}{getProbDeath()}}
+{\footnotesize\ttfamily double Carapace\+Decorator\+::get\+Prob\+Death (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+méthode get\+Prob\+Death 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_accessoire_decorator_acb462e2387863b9bfd350a3c6bfd6c57}{Accessoire\+Decorator}}.
+
+\mbox{\Hypertarget{class_carapace_decorator_ac517dcde9f38ff921fc55c4dd054bd1e}\label{class_carapace_decorator_ac517dcde9f38ff921fc55c4dd054bd1e}} 
+\index{CarapaceDecorator@{CarapaceDecorator}!getVitesse@{getVitesse}}
+\index{getVitesse@{getVitesse}!CarapaceDecorator@{CarapaceDecorator}}
+\doxysubsubsection{\texorpdfstring{getVitesse()}{getVitesse()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Carapace\+Decorator\+::get\+Vitesse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+méthode get\+Vitesse 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_accessoire_decorator_ad6e0a599c24cc2d54c04649af6b9075d}{Accessoire\+Decorator}}.
+
+\mbox{\Hypertarget{class_carapace_decorator_a301180602fc1b9d9e0f56b97cff64ffe}\label{class_carapace_decorator_a301180602fc1b9d9e0f56b97cff64ffe}} 
+\index{CarapaceDecorator@{CarapaceDecorator}!setVitesse@{setVitesse}}
+\index{setVitesse@{setVitesse}!CarapaceDecorator@{CarapaceDecorator}}
+\doxysubsubsection{\texorpdfstring{setVitesse()}{setVitesse()}}
+{\footnotesize\ttfamily void Carapace\+Decorator\+::set\+Vitesse (\begin{DoxyParamCaption}\item[{double}]{vx,  }\item[{double}]{vy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+méthode set\+Vitesse 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vx} & vitesse horizontale \\
+\hline
+{\em vy} & vitesse verticale \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_accessoire_decorator_a1fee5fe2b56af76a8eae953907c1651b}{Accessoire\+Decorator}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_carapace_decorator_aa4c6a8d848638a80364270c0e05278a6}\label{class_carapace_decorator_aa4c6a8d848638a80364270c0e05278a6}} 
+\index{CarapaceDecorator@{CarapaceDecorator}!DECREASE\_VITESSE\_MAX@{DECREASE\_VITESSE\_MAX}}
+\index{DECREASE\_VITESSE\_MAX@{DECREASE\_VITESSE\_MAX}!CarapaceDecorator@{CarapaceDecorator}}
+\doxysubsubsection{\texorpdfstring{DECREASE\_VITESSE\_MAX}{DECREASE\_VITESSE\_MAX}}
+{\footnotesize\ttfamily const double Carapace\+Decorator\+::\+DECREASE\+\_\+\+VITESSE\+\_\+\+MAX = 4.\+0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+facteur réducteur de la vitesse max \mbox{\Hypertarget{class_carapace_decorator_a8e6a8f0ca68b5e46254db42685698acf}\label{class_carapace_decorator_a8e6a8f0ca68b5e46254db42685698acf}} 
+\index{CarapaceDecorator@{CarapaceDecorator}!PROTEC\_DEATH\_MAX@{PROTEC\_DEATH\_MAX}}
+\index{PROTEC\_DEATH\_MAX@{PROTEC\_DEATH\_MAX}!CarapaceDecorator@{CarapaceDecorator}}
+\doxysubsubsection{\texorpdfstring{PROTEC\_DEATH\_MAX}{PROTEC\_DEATH\_MAX}}
+{\footnotesize\ttfamily const double Carapace\+Decorator\+::\+PROTEC\+\_\+\+DEATH\+\_\+\+MAX = 5.\+0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+seuil de protection max 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Carapace\+Decorator.\+h\item 
+Carapace\+Decorator.\+cpp\end{DoxyCompactItemize}

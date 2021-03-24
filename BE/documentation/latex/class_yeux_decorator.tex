@@ -1,0 +1,184 @@
+\hypertarget{class_yeux_decorator}{}\doxysection{Yeux\+Decorator Class Reference}
+\label{class_yeux_decorator}\index{YeuxDecorator@{YeuxDecorator}}
+
+
+Class \mbox{\hyperlink{class_yeux_decorator}{Yeux\+Decorator}}.  
+
+
+
+
+{\ttfamily \#include $<$Yeux\+Decorator.\+h$>$}
+
+Inheritance diagram for Yeux\+Decorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_yeux_decorator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_yeux_decorator_a5fa772a9c290f258acf1eabb74267642}{Yeux\+Decorator}} (\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ic)
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{class_yeux_decorator}{Yeux\+Decorator}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ \mbox{\hyperlink{class_yeux_decorator_ab93fda4076f177d4d18f92f07610b6ae}{clone}} (void) override
+\begin{DoxyCompactList}\small\item\em Copie une créature avec des yeux. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_yeux_decorator_a03d0774afd9fc588f1a279eb582d6a9b}\label{class_yeux_decorator_a03d0774afd9fc588f1a279eb582d6a9b}} 
+\mbox{\hyperlink{class_yeux_decorator_a03d0774afd9fc588f1a279eb582d6a9b}{$\sim$\+Yeux\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_yeux_decorator}{Yeux\+Decorator}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_yeux_decorator_ab11c1e7cade2cc0268fabd5b6ae712ca}{je\+Te\+Vois}} (const \mbox{\hyperlink{class_i_creature}{ICreature}} \&ic) const override final
+\begin{DoxyCompactList}\small\item\em Méthode je\+Te\+Vois. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_yeux_decorator_a28c11ffd6639253604046471138c0812}{draw}} (UImg \&support, \mbox{\hyperlink{class_milieu}{Milieu}} \&mon\+Milieu, \mbox{\hyperlink{class_i_creature}{ICreature}} \&creature\+To\+Draw) override
+\begin{DoxyCompactList}\small\item\em Dessine une créature avec ses yeux. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{class_yeux_decorator_accaf2eff252c3e05ddb0a59d34a3f683}{ALPHA\+\_\+\+MIN}} = M\+\_\+\+PI / 6.\+0
+\item 
+static const double \mbox{\hyperlink{class_yeux_decorator_a86ad2e963aebba932eeadd8825f50816}{ALPHA\+\_\+\+MAX}} = M\+\_\+\+PI
+\item 
+static const double \mbox{\hyperlink{class_yeux_decorator_a1bb992b4a42e53a91217570fc1006e4b}{DIST\+\_\+\+MIN}} = \mbox{\hyperlink{class_i_creature_af27e5d832adce41cf97ce91c35d77641}{ICreature\+::\+LIMITE\+\_\+\+VUE}}
+\item 
+static const double \mbox{\hyperlink{class_yeux_decorator_a0134c34bdde5c78b371b5ea7f98fe792}{DIST\+\_\+\+MAX}} = \mbox{\hyperlink{class_i_creature_af27e5d832adce41cf97ce91c35d77641}{ICreature\+::\+LIMITE\+\_\+\+VUE}} $\ast$ 2.\+0
+\item 
+static const double \mbox{\hyperlink{class_yeux_decorator_ab0d0f739cf35246268d7df03e59e8718}{DETECTION\+\_\+\+MIN}} = 0.\+0
+\item 
+static const double \mbox{\hyperlink{class_yeux_decorator_a18123ac2b03850a7a1736c4d59d684c3}{DETECTION\+\_\+\+MAX}} = 1.\+0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{class_yeux_decorator}{Yeux\+Decorator}}. 
+
+Cette classe permet à la créature emballée d\textquotesingle{}augmenter son champ de vision d\textquotesingle{}un certain angle sur une certaine distance. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_yeux_decorator_a5fa772a9c290f258acf1eabb74267642}\label{class_yeux_decorator_a5fa772a9c290f258acf1eabb74267642}} 
+\index{YeuxDecorator@{YeuxDecorator}!YeuxDecorator@{YeuxDecorator}}
+\index{YeuxDecorator@{YeuxDecorator}!YeuxDecorator@{YeuxDecorator}}
+\doxysubsubsection{\texorpdfstring{YeuxDecorator()}{YeuxDecorator()}}
+{\footnotesize\ttfamily Yeux\+Decorator\+::\+Yeux\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$}]{ic }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \mbox{\hyperlink{class_yeux_decorator}{Yeux\+Decorator}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_yeux_decorator_ab93fda4076f177d4d18f92f07610b6ae}\label{class_yeux_decorator_ab93fda4076f177d4d18f92f07610b6ae}} 
+\index{YeuxDecorator@{YeuxDecorator}!clone@{clone}}
+\index{clone@{clone}!YeuxDecorator@{YeuxDecorator}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ Yeux\+Decorator\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Copie une créature avec des yeux. 
+
+\begin{DoxyReturn}{Returns}
+ICreature$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_capteur_decorator_a15353e12ec4a382a10ec2d70cc5091e2}{Capteur\+Decorator}}.
+
+\mbox{\Hypertarget{class_yeux_decorator_a28c11ffd6639253604046471138c0812}\label{class_yeux_decorator_a28c11ffd6639253604046471138c0812}} 
+\index{YeuxDecorator@{YeuxDecorator}!draw@{draw}}
+\index{draw@{draw}!YeuxDecorator@{YeuxDecorator}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Yeux\+Decorator\+::draw (\begin{DoxyParamCaption}\item[{UImg \&}]{support,  }\item[{\mbox{\hyperlink{class_milieu}{Milieu}} \&}]{mon\+Milieu,  }\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{creature\+To\+Draw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Dessine une créature avec ses yeux. 
+
+Modélisé par un point noir au bout de la tête
+
+
+\begin{DoxyParams}{Parameters}
+{\em support} & \\
+\hline
+{\em mon\+Milieu} & \\
+\hline
+{\em creature\+To\+Draw} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_capteur_decorator_a2a0d8194473e07b091ba540d6f73a8f2}{Capteur\+Decorator}}.
+
+\mbox{\Hypertarget{class_yeux_decorator_ab11c1e7cade2cc0268fabd5b6ae712ca}\label{class_yeux_decorator_ab11c1e7cade2cc0268fabd5b6ae712ca}} 
+\index{YeuxDecorator@{YeuxDecorator}!jeTeVois@{jeTeVois}}
+\index{jeTeVois@{jeTeVois}!YeuxDecorator@{YeuxDecorator}}
+\doxysubsubsection{\texorpdfstring{jeTeVois()}{jeTeVois()}}
+{\footnotesize\ttfamily bool Yeux\+Decorator\+::je\+Te\+Vois (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{ic }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Méthode je\+Te\+Vois. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & créature à tester \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_capteur_decorator_a24e538e4bebb8acf459c4c76c614df5d}{Capteur\+Decorator}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_yeux_decorator_a86ad2e963aebba932eeadd8825f50816}\label{class_yeux_decorator_a86ad2e963aebba932eeadd8825f50816}} 
+\index{YeuxDecorator@{YeuxDecorator}!ALPHA\_MAX@{ALPHA\_MAX}}
+\index{ALPHA\_MAX@{ALPHA\_MAX}!YeuxDecorator@{YeuxDecorator}}
+\doxysubsubsection{\texorpdfstring{ALPHA\_MAX}{ALPHA\_MAX}}
+{\footnotesize\ttfamily const double Yeux\+Decorator\+::\+ALPHA\+\_\+\+MAX = M\+\_\+\+PI\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+champ de vision max avec des yeux \mbox{\Hypertarget{class_yeux_decorator_accaf2eff252c3e05ddb0a59d34a3f683}\label{class_yeux_decorator_accaf2eff252c3e05ddb0a59d34a3f683}} 
+\index{YeuxDecorator@{YeuxDecorator}!ALPHA\_MIN@{ALPHA\_MIN}}
+\index{ALPHA\_MIN@{ALPHA\_MIN}!YeuxDecorator@{YeuxDecorator}}
+\doxysubsubsection{\texorpdfstring{ALPHA\_MIN}{ALPHA\_MIN}}
+{\footnotesize\ttfamily const double Yeux\+Decorator\+::\+ALPHA\+\_\+\+MIN = M\+\_\+\+PI / 6.\+0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+champ de vision min avec des yeux \mbox{\Hypertarget{class_yeux_decorator_a18123ac2b03850a7a1736c4d59d684c3}\label{class_yeux_decorator_a18123ac2b03850a7a1736c4d59d684c3}} 
+\index{YeuxDecorator@{YeuxDecorator}!DETECTION\_MAX@{DETECTION\_MAX}}
+\index{DETECTION\_MAX@{DETECTION\_MAX}!YeuxDecorator@{YeuxDecorator}}
+\doxysubsubsection{\texorpdfstring{DETECTION\_MAX}{DETECTION\_MAX}}
+{\footnotesize\ttfamily const double Yeux\+Decorator\+::\+DETECTION\+\_\+\+MAX = 1.\+0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+seuil de détection max \mbox{\Hypertarget{class_yeux_decorator_ab0d0f739cf35246268d7df03e59e8718}\label{class_yeux_decorator_ab0d0f739cf35246268d7df03e59e8718}} 
+\index{YeuxDecorator@{YeuxDecorator}!DETECTION\_MIN@{DETECTION\_MIN}}
+\index{DETECTION\_MIN@{DETECTION\_MIN}!YeuxDecorator@{YeuxDecorator}}
+\doxysubsubsection{\texorpdfstring{DETECTION\_MIN}{DETECTION\_MIN}}
+{\footnotesize\ttfamily const double Yeux\+Decorator\+::\+DETECTION\+\_\+\+MIN = 0.\+0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+seuil de détection min \mbox{\Hypertarget{class_yeux_decorator_a0134c34bdde5c78b371b5ea7f98fe792}\label{class_yeux_decorator_a0134c34bdde5c78b371b5ea7f98fe792}} 
+\index{YeuxDecorator@{YeuxDecorator}!DIST\_MAX@{DIST\_MAX}}
+\index{DIST\_MAX@{DIST\_MAX}!YeuxDecorator@{YeuxDecorator}}
+\doxysubsubsection{\texorpdfstring{DIST\_MAX}{DIST\_MAX}}
+{\footnotesize\ttfamily const double Yeux\+Decorator\+::\+DIST\+\_\+\+MAX = \mbox{\hyperlink{class_i_creature_af27e5d832adce41cf97ce91c35d77641}{ICreature\+::\+LIMITE\+\_\+\+VUE}} $\ast$ 2.\+0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+distance max \mbox{\Hypertarget{class_yeux_decorator_a1bb992b4a42e53a91217570fc1006e4b}\label{class_yeux_decorator_a1bb992b4a42e53a91217570fc1006e4b}} 
+\index{YeuxDecorator@{YeuxDecorator}!DIST\_MIN@{DIST\_MIN}}
+\index{DIST\_MIN@{DIST\_MIN}!YeuxDecorator@{YeuxDecorator}}
+\doxysubsubsection{\texorpdfstring{DIST\_MIN}{DIST\_MIN}}
+{\footnotesize\ttfamily const double Yeux\+Decorator\+::\+DIST\+\_\+\+MIN = \mbox{\hyperlink{class_i_creature_af27e5d832adce41cf97ce91c35d77641}{ICreature\+::\+LIMITE\+\_\+\+VUE}}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+distance min 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Yeux\+Decorator.\+h\item 
+Yeux\+Decorator.\+cpp\end{DoxyCompactItemize}

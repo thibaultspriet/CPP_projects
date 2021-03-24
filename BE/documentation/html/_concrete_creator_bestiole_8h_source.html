@@ -69,23 +69,25 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _CONCRETE_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;IFactoryNaissance.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_concrete_creator_bestiole.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_concrete_creator_bestiole.html">ConcreteCreatorBestiole</a> : <span class="keyword">public</span> <a class="code" href="class_i_factory_naissance.html">IFactoryNaissance</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">int</span> nombreNaissance</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    ConcreteCreatorBesitole();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    IComportement* getComportementNaissance() {};</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    CapteurDecorator getCapteurNaissance() {};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    AccessoireDecorator getAccessoireNaissance() {};</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_bestiole.html">Bestiole</a> createBestiole(IComportement* comportement, CapteurDecorator capteur, AccessoireDecorator accessoire) {};</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_bestiole_html"><div class="ttname"><a href="class_bestiole.html">Bestiole</a></div><div class="ttdoc">Classe bestiole.</div><div class="ttdef"><b>Definition:</b> Bestiole.h:21</div></div>
-<div class="ttc" id="aclass_concrete_creator_bestiole_html"><div class="ttname"><a href="class_concrete_creator_bestiole.html">ConcreteCreatorBestiole</a></div><div class="ttdef"><b>Definition:</b> ConcreteCreatorBestiole.h:7</div></div>
-<div class="ttc" id="aclass_i_factory_naissance_html"><div class="ttname"><a href="class_i_factory_naissance.html">IFactoryNaissance</a></div><div class="ttdef"><b>Definition:</b> IFactoryNaissance.h:7</div></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Bestiole.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_concrete_creator_bestiole.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_concrete_creator_bestiole.html">ConcreteCreatorBestiole</a> : <span class="keyword">public</span> <a class="code" href="class_i_factory_naissance.html">IFactoryNaissance</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="class_concrete_creator_bestiole.html#ae582f35ff2e6bc06c566c6bc87336f20">ConcreteCreatorBestiole</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="class_i_creature.html">ICreature</a>* <a class="code" href="class_concrete_creator_bestiole.html#aabfbe8fb5fd8e1d00e93892c3888d00c">create</a>(<a class="code" href="class_i_comportement.html">IComportement</a>* comportement) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_concrete_creator_bestiole_html"><div class="ttname"><a href="class_concrete_creator_bestiole.html">ConcreteCreatorBestiole</a></div><div class="ttdoc">Classe ConcreteCreatorBestiole.</div><div class="ttdef"><b>Definition:</b> ConcreteCreatorBestiole.h:14</div></div>
+<div class="ttc" id="aclass_concrete_creator_bestiole_html_aabfbe8fb5fd8e1d00e93892c3888d00c"><div class="ttname"><a href="class_concrete_creator_bestiole.html#aabfbe8fb5fd8e1d00e93892c3888d00c">ConcreteCreatorBestiole::create</a></div><div class="ttdeci">ICreature * create(IComportement *comportement) override</div><div class="ttdoc">Implémentation de create. Renvoie un pointeur vers une créature.</div><div class="ttdef"><b>Definition:</b> ConcreteCreatorBestiole.cpp:24</div></div>
+<div class="ttc" id="aclass_concrete_creator_bestiole_html_ae582f35ff2e6bc06c566c6bc87336f20"><div class="ttname"><a href="class_concrete_creator_bestiole.html#ae582f35ff2e6bc06c566c6bc87336f20">ConcreteCreatorBestiole::ConcreteCreatorBestiole</a></div><div class="ttdeci">ConcreteCreatorBestiole()</div><div class="ttdoc">Constructeur de ConcreteCreatorBestiole.</div><div class="ttdef"><b>Definition:</b> ConcreteCreatorBestiole.cpp:19</div></div>
+<div class="ttc" id="aclass_i_comportement_html"><div class="ttname"><a href="class_i_comportement.html">IComportement</a></div><div class="ttdoc">Class IComportement.</div><div class="ttdef"><b>Definition:</b> IComportement.h:30</div></div>
+<div class="ttc" id="aclass_i_creature_html"><div class="ttname"><a href="class_i_creature.html">ICreature</a></div><div class="ttdoc">Class ICreature, définit les attributs et méthodes des créatures.</div><div class="ttdef"><b>Definition:</b> ICreature.h:19</div></div>
+<div class="ttc" id="aclass_i_factory_naissance_html"><div class="ttname"><a href="class_i_factory_naissance.html">IFactoryNaissance</a></div><div class="ttdoc">Interface IFactoryNaissance qui définit la méthode create.</div><div class="ttdef"><b>Definition:</b> IFactoryNaissance.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

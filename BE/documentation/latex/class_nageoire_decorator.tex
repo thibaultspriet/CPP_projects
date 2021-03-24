@@ -1,0 +1,163 @@
+\hypertarget{class_nageoire_decorator}{}\doxysection{Nageoire\+Decorator Class Reference}
+\label{class_nageoire_decorator}\index{NageoireDecorator@{NageoireDecorator}}
+
+
+Classe \mbox{\hyperlink{class_nageoire_decorator}{Nageoire\+Decorator}}.  
+
+
+
+
+{\ttfamily \#include $<$Nageoire\+Decorator.\+h$>$}
+
+Inheritance diagram for Nageoire\+Decorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_nageoire_decorator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_nageoire_decorator_a9fa63354f41d4c02eb05dfcd78272033}{Nageoire\+Decorator}} (\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ic)
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{class_nageoire_decorator}{Nageoire\+Decorator}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ \mbox{\hyperlink{class_nageoire_decorator_aad5bf22948ad9077e49ca0a07184aa1f}{clone}} (void) override
+\begin{DoxyCompactList}\small\item\em Copie une créature avec des nageoires. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_nageoire_decorator_a5898d9523d22fc8940928dbfe0a3630e}\label{class_nageoire_decorator_a5898d9523d22fc8940928dbfe0a3630e}} 
+\mbox{\hyperlink{class_nageoire_decorator_a5898d9523d22fc8940928dbfe0a3630e}{$\sim$\+Nageoire\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_nageoire_decorator}{Nageoire\+Decorator}}. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_nageoire_decorator_af2ba833aea59e9d685cdb7e6a9fe5f2c}{get\+Vitesse}} () override
+\begin{DoxyCompactList}\small\item\em méthode get\+Vitesse \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_nageoire_decorator_aa4db7d0f2f46269a13041596356e39b5}{set\+Vitesse}} (double vx, double vy) override
+\begin{DoxyCompactList}\small\item\em méthode set\+Vitesse \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_nageoire_decorator_a275bf48670acc3013fe3c9afeeec053a}{draw}} (UImg \&support, \mbox{\hyperlink{class_milieu}{Milieu}} \&mon\+Milieu, \mbox{\hyperlink{class_i_creature}{ICreature}} \&creature\+To\+Draw) override
+\begin{DoxyCompactList}\small\item\em Déssine une créature avec des nageoires. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_nageoire_decorator_af3db8e3ef04208b8c0342f3e3a63755c}\label{class_nageoire_decorator_af3db8e3ef04208b8c0342f3e3a63755c}} 
+virtual void {\bfseries print\+Creature} (void) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{class_nageoire_decorator_a8f63554f5131eebfd892f94783325746}{MULTIPLE\+\_\+\+VITESSE\+\_\+\+MAX}} = 4.\+0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Classe \mbox{\hyperlink{class_nageoire_decorator}{Nageoire\+Decorator}}. 
+
+Cette classe permet à la créature emballée de se déplacer plus vite. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_nageoire_decorator_a9fa63354f41d4c02eb05dfcd78272033}\label{class_nageoire_decorator_a9fa63354f41d4c02eb05dfcd78272033}} 
+\index{NageoireDecorator@{NageoireDecorator}!NageoireDecorator@{NageoireDecorator}}
+\index{NageoireDecorator@{NageoireDecorator}!NageoireDecorator@{NageoireDecorator}}
+\doxysubsubsection{\texorpdfstring{NageoireDecorator()}{NageoireDecorator()}}
+{\footnotesize\ttfamily Nageoire\+Decorator\+::\+Nageoire\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$}]{ic }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \mbox{\hyperlink{class_nageoire_decorator}{Nageoire\+Decorator}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & créature à emballée. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_nageoire_decorator_aad5bf22948ad9077e49ca0a07184aa1f}\label{class_nageoire_decorator_aad5bf22948ad9077e49ca0a07184aa1f}} 
+\index{NageoireDecorator@{NageoireDecorator}!clone@{clone}}
+\index{clone@{clone}!NageoireDecorator@{NageoireDecorator}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ Nageoire\+Decorator\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Copie une créature avec des nageoires. 
+
+\begin{DoxyReturn}{Returns}
+ICreature$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_accessoire_decorator_a1a844769482e80de1d2e495595213ac1}{Accessoire\+Decorator}}.
+
+\mbox{\Hypertarget{class_nageoire_decorator_a275bf48670acc3013fe3c9afeeec053a}\label{class_nageoire_decorator_a275bf48670acc3013fe3c9afeeec053a}} 
+\index{NageoireDecorator@{NageoireDecorator}!draw@{draw}}
+\index{draw@{draw}!NageoireDecorator@{NageoireDecorator}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Nageoire\+Decorator\+::draw (\begin{DoxyParamCaption}\item[{UImg \&}]{support,  }\item[{\mbox{\hyperlink{class_milieu}{Milieu}} \&}]{mon\+Milieu,  }\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{creature\+To\+Draw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Déssine une créature avec des nageoires. 
+
+Représentées par deux lingnes de part et d\textquotesingle{}autre de la tête.
+
+
+\begin{DoxyParams}{Parameters}
+{\em support} & \\
+\hline
+{\em mon\+Milieu} & \\
+\hline
+{\em creature\+To\+Draw} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_accessoire_decorator_a3efa8047f1dbaef6d698d9e50b986ec5}{Accessoire\+Decorator}}.
+
+\mbox{\Hypertarget{class_nageoire_decorator_af2ba833aea59e9d685cdb7e6a9fe5f2c}\label{class_nageoire_decorator_af2ba833aea59e9d685cdb7e6a9fe5f2c}} 
+\index{NageoireDecorator@{NageoireDecorator}!getVitesse@{getVitesse}}
+\index{getVitesse@{getVitesse}!NageoireDecorator@{NageoireDecorator}}
+\doxysubsubsection{\texorpdfstring{getVitesse()}{getVitesse()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Nageoire\+Decorator\+::get\+Vitesse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+méthode get\+Vitesse 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_accessoire_decorator_ad6e0a599c24cc2d54c04649af6b9075d}{Accessoire\+Decorator}}.
+
+\mbox{\Hypertarget{class_nageoire_decorator_aa4db7d0f2f46269a13041596356e39b5}\label{class_nageoire_decorator_aa4db7d0f2f46269a13041596356e39b5}} 
+\index{NageoireDecorator@{NageoireDecorator}!setVitesse@{setVitesse}}
+\index{setVitesse@{setVitesse}!NageoireDecorator@{NageoireDecorator}}
+\doxysubsubsection{\texorpdfstring{setVitesse()}{setVitesse()}}
+{\footnotesize\ttfamily void Nageoire\+Decorator\+::set\+Vitesse (\begin{DoxyParamCaption}\item[{double}]{vx,  }\item[{double}]{vy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+méthode set\+Vitesse 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vx} & vitesse horizontale \\
+\hline
+{\em vy} & vitesse verticale \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_accessoire_decorator_a1fee5fe2b56af76a8eae953907c1651b}{Accessoire\+Decorator}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_nageoire_decorator_a8f63554f5131eebfd892f94783325746}\label{class_nageoire_decorator_a8f63554f5131eebfd892f94783325746}} 
+\index{NageoireDecorator@{NageoireDecorator}!MULTIPLE\_VITESSE\_MAX@{MULTIPLE\_VITESSE\_MAX}}
+\index{MULTIPLE\_VITESSE\_MAX@{MULTIPLE\_VITESSE\_MAX}!NageoireDecorator@{NageoireDecorator}}
+\doxysubsubsection{\texorpdfstring{MULTIPLE\_VITESSE\_MAX}{MULTIPLE\_VITESSE\_MAX}}
+{\footnotesize\ttfamily const double Nageoire\+Decorator\+::\+MULTIPLE\+\_\+\+VITESSE\+\_\+\+MAX = 4.\+0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+multiple de la vitesse initiale max 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Nageoire\+Decorator.\+h\item 
+Nageoire\+Decorator.\+cpp\end{DoxyCompactItemize}

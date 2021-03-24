@@ -2,7 +2,7 @@
 \label{class_milieu}\index{Milieu@{Milieu}}
 
 
-Classe milieu qui contient les bestioles.  
+Classe milieu qui contient les créatures.  
 
 
 
@@ -20,6 +20,10 @@ Inheritance diagram for Milieu\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_milieu_a245aaedf9af63f220e6232f67ae37657}{Milieu}} (int \+\_\+width, int \+\_\+height)
 \begin{DoxyCompactList}\small\item\em Constructeur d\textquotesingle{}un objet \mbox{\hyperlink{class_milieu}{Milieu}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_milieu_a84a99dba1ce70db1e7a1312cd18c2fd1}{Milieu}} (int \+\_\+width, int \+\_\+height, \mbox{\hyperlink{class_configuration}{Configuration}} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Constructeur d\textquotesingle{}un objet \mbox{\hyperlink{class_milieu}{Milieu}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_milieu_a769f8c74e01dbc4d4615d7acaf8ff15e}{Milieu}} (int \+\_\+width, int \+\_\+height, int nb\+Creatures, int kamik, int greg, int peur, int prev)
+\begin{DoxyCompactList}\small\item\em Constructeur de milieu. Créer une configuration depuis le main. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_milieu_a18554084ea711dfc66c9a876a570684e}\label{class_milieu_a18554084ea711dfc66c9a876a570684e}} 
 \mbox{\hyperlink{class_milieu_a18554084ea711dfc66c9a876a570684e}{$\sim$\+Milieu}} (void)
 \begin{DoxyCompactList}\small\item\em Destructeur de l\textquotesingle{}objet milieu. \end{DoxyCompactList}\item 
@@ -27,31 +31,39 @@ int \mbox{\hyperlink{class_milieu_a7837d4dc0f96859d43008d1736fb5961}{get\+Width}
 \begin{DoxyCompactList}\small\item\em renvoie la largeur du milieu \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_milieu_a9c5575bff593db5b5920bc7c7fc9f6a8}{get\+Height}} (void) const
 \begin{DoxyCompactList}\small\item\em renvoie la hauteur du milieu \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_milieu_a8bffe1b2035ffe6cbeb4bac6889457c5}{step}} (void)
+void \mbox{\hyperlink{class_milieu_a573cc844773bb0a09050badd29811c0e}{step}} (const char $\ast$path\+File\+Sim)
 \begin{DoxyCompactList}\small\item\em appelé à chaque intervalle de temps de la simulation \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_milieu_a3e091b06d84a3341492f96b18a4d36ae}{add\+Member}} (\mbox{\hyperlink{class_bestiole}{Bestiole}} $\ast$b)
-\begin{DoxyCompactList}\small\item\em ajoute une bestiole à la simulation \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_milieu_ab08a3834351d2703621f3fcc84a6bc04}{remove\+Member}} (\mbox{\hyperlink{class_bestiole}{Bestiole}} $\ast$b)
-\begin{DoxyCompactList}\small\item\em supprime une bestiole de la simulation \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_milieu_aeeb7930db0ad74d2a88864e3c74ab837}{remove\+Member}} (std\+::vector$<$ \mbox{\hyperlink{class_bestiole}{Bestiole}} $\ast$ $>$ bestioles)
-\begin{DoxyCompactList}\small\item\em supprime plusieurs bestioles en même temps \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_milieu_aafa10f1cd1633356139ade34c1f6d73c}{nb\+Voisins}} (const \mbox{\hyperlink{class_bestiole}{Bestiole}} \&b)
-\begin{DoxyCompactList}\small\item\em renvoie le nombre de bestiole que la bestiole passée en argument détecte \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{class_bestiole}{Bestiole}} $\ast$ $>$ \& \mbox{\hyperlink{class_milieu_a3f32fcc7b1adff3b910e922198e0e06c}{get\+Bestioles}} ()
-\begin{DoxyCompactList}\small\item\em Renvoie une référence de la liste des bestioles. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_milieu_a5e764f9b199f333b4c0647d3a631f677}\label{class_milieu_a5e764f9b199f333b4c0647d3a631f677}} 
-void {\bfseries print\+Flotte} (void)
+void \mbox{\hyperlink{class_milieu_a0995d88a7849a91680637a145f4aa842}{add\+Member}} (\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ic)
+\begin{DoxyCompactList}\small\item\em ajoute une créature à la simulation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_milieu_ad37a68e950ce6c581f0d5b3053fd084c}{random\+Naissance}} (std\+::map$<$ Comport\+Type, int $>$ config)
+\begin{DoxyCompactList}\small\item\em Fait naître des bestioles aléatoirement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_milieu_ae40cbd6b1cda23e53f8814ab8715657a}{remove\+Member}} (\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ic)
+\begin{DoxyCompactList}\small\item\em supprime une créature de la simulation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_milieu_a45fba055e3fdf99af7da20d967d7ca63}{remove\+Member}} (std\+::vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$ creatures)
+\begin{DoxyCompactList}\small\item\em supprime plusieurs créatures en même temps \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_milieu_ab081b06af4f258cc8e8042cbb12804ca}{nb\+Voisins}} (const \mbox{\hyperlink{class_i_creature}{ICreature}} \&ic)
+\begin{DoxyCompactList}\small\item\em renvoie le nombre de céatures que la créature passée en argument détecte \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$ \mbox{\hyperlink{class_milieu_a67d9f26873f66cfc882af4d7c5760970}{get\+Voisins}} (const \mbox{\hyperlink{class_i_creature}{ICreature}} \&ic)
+\begin{DoxyCompactList}\small\item\em renvoie un pointeur des créatures que la créature passée en argument détecte \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$ \& \mbox{\hyperlink{class_milieu_af72be7c72850068ce5ef96b911832ab9}{get\+Creatures}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie une référence de la liste des créatures. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_configuration}{Configuration}} $\ast$ \mbox{\hyperlink{class_milieu_ac1d8b6ae806fba76163f4423583835d4}{get\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}objet configuration. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_milieu_a3b82d079ee9fdba7f5bd889d660a5cbc}{how\+Many\+Creature}} (Comport\+Type comportement\+Name)
+\begin{DoxyCompactList}\small\item\em return the number of creatures with a given comportement that are presents in the simulation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_milieu_ad5b9796792e0d067ed59fb111ff82acd}\label{class_milieu_ad5b9796792e0d067ed59fb111ff82acd}} 
+void {\bfseries write\+How\+Many\+Creature} (std\+::string path)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Classe milieu qui contient les bestioles. 
+Classe milieu qui contient les créatures. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_milieu_a245aaedf9af63f220e6232f67ae37657}\label{class_milieu_a245aaedf9af63f220e6232f67ae37657}} 
 \index{Milieu@{Milieu}!Milieu@{Milieu}}
 \index{Milieu@{Milieu}!Milieu@{Milieu}}
-\doxysubsubsection{\texorpdfstring{Milieu()}{Milieu()}}
+\doxysubsubsection{\texorpdfstring{Milieu()}{Milieu()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily Milieu\+::\+Milieu (\begin{DoxyParamCaption}\item[{int}]{\+\_\+width,  }\item[{int}]{\+\_\+height }\end{DoxyParamCaption})}
 
 
@@ -65,38 +77,99 @@ Constructeur d\textquotesingle{}un objet \mbox{\hyperlink{class_milieu}{Milieu}}
 {\em \+\_\+height} & hauteur \\
 \hline
 \end{DoxyParams}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_milieu_a3e091b06d84a3341492f96b18a4d36ae}\label{class_milieu_a3e091b06d84a3341492f96b18a4d36ae}} 
-\index{Milieu@{Milieu}!addMember@{addMember}}
-\index{addMember@{addMember}!Milieu@{Milieu}}
-\doxysubsubsection{\texorpdfstring{addMember()}{addMember()}}
-{\footnotesize\ttfamily void Milieu\+::add\+Member (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bestiole}{Bestiole}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{class_milieu_a84a99dba1ce70db1e7a1312cd18c2fd1}\label{class_milieu_a84a99dba1ce70db1e7a1312cd18c2fd1}} 
+\index{Milieu@{Milieu}!Milieu@{Milieu}}
+\index{Milieu@{Milieu}!Milieu@{Milieu}}
+\doxysubsubsection{\texorpdfstring{Milieu()}{Milieu()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Milieu\+::\+Milieu (\begin{DoxyParamCaption}\item[{int}]{\+\_\+width,  }\item[{int}]{\+\_\+height,  }\item[{\mbox{\hyperlink{class_configuration}{Configuration}} $\ast$}]{config }\end{DoxyParamCaption})}
 
 
 
-ajoute une bestiole à la simulation 
+Constructeur d\textquotesingle{}un objet \mbox{\hyperlink{class_milieu}{Milieu}}. 
 
-En plus elle donne une position aléatoire à la nouvelle bestiole.
+Prend en argument une configuration particulière.
 
 
 \begin{DoxyParams}{Parameters}
-{\em b} & pointeur sur une bestiole \\
+{\em \+\_\+width} & \\
+\hline
+{\em \+\_\+height} & \\
+\hline
+{\em config} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_milieu_a3f32fcc7b1adff3b910e922198e0e06c}\label{class_milieu_a3f32fcc7b1adff3b910e922198e0e06c}} 
-\index{Milieu@{Milieu}!getBestioles@{getBestioles}}
-\index{getBestioles@{getBestioles}!Milieu@{Milieu}}
-\doxysubsubsection{\texorpdfstring{getBestioles()}{getBestioles()}}
-{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_bestiole}{Bestiole}} $\ast$ $>$ \& Milieu\+::get\+Bestioles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_milieu_a769f8c74e01dbc4d4615d7acaf8ff15e}\label{class_milieu_a769f8c74e01dbc4d4615d7acaf8ff15e}} 
+\index{Milieu@{Milieu}!Milieu@{Milieu}}
+\index{Milieu@{Milieu}!Milieu@{Milieu}}
+\doxysubsubsection{\texorpdfstring{Milieu()}{Milieu()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Milieu\+::\+Milieu (\begin{DoxyParamCaption}\item[{int}]{\+\_\+width,  }\item[{int}]{\+\_\+height,  }\item[{int}]{nb\+Creatures,  }\item[{int}]{kamik,  }\item[{int}]{greg,  }\item[{int}]{peur,  }\item[{int}]{prev }\end{DoxyParamCaption})}
 
 
 
-Renvoie une référence de la liste des bestioles. 
+Constructeur de milieu. Créer une configuration depuis le main. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+width} & \\
+\hline
+{\em \+\_\+height} & \\
+\hline
+{\em nb\+Creatures} & \\
+\hline
+{\em kamik} & pourcentage kamikaze \\
+\hline
+{\em greg} & pourcentage gregaire \\
+\hline
+{\em peur} & pourcentage peureuse \\
+\hline
+{\em prev} & pourcentage prevoyante \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_milieu_a0995d88a7849a91680637a145f4aa842}\label{class_milieu_a0995d88a7849a91680637a145f4aa842}} 
+\index{Milieu@{Milieu}!addMember@{addMember}}
+\index{addMember@{addMember}!Milieu@{Milieu}}
+\doxysubsubsection{\texorpdfstring{addMember()}{addMember()}}
+{\footnotesize\ttfamily void Milieu\+::add\+Member (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$}]{ic }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ajoute une créature à la simulation 
+
+En plus elle donne une position aléatoire à la nouvelle créature.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & pointeur sur une créature \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_milieu_ac1d8b6ae806fba76163f4423583835d4}\label{class_milieu_ac1d8b6ae806fba76163f4423583835d4}} 
+\index{Milieu@{Milieu}!getConfig@{getConfig}}
+\index{getConfig@{getConfig}!Milieu@{Milieu}}
+\doxysubsubsection{\texorpdfstring{getConfig()}{getConfig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_configuration}{Configuration}}$\ast$ Milieu\+::get\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne l\textquotesingle{}objet configuration. 
 
 \begin{DoxyReturn}{Returns}
-std\+::vector$<$\+Bestiole$\ast$$>$\& 
+Configuration$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_milieu_af72be7c72850068ce5ef96b911832ab9}\label{class_milieu_af72be7c72850068ce5ef96b911832ab9}} 
+\index{Milieu@{Milieu}!getCreatures@{getCreatures}}
+\index{getCreatures@{getCreatures}!Milieu@{Milieu}}
+\doxysubsubsection{\texorpdfstring{getCreatures()}{getCreatures()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$ \& Milieu\+::get\+Creatures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie une référence de la liste des créatures. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+ICreature$\ast$$>$\& 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_milieu_a9c5575bff593db5b5920bc7c7fc9f6a8}\label{class_milieu_a9c5575bff593db5b5920bc7c7fc9f6a8}} 
 \index{Milieu@{Milieu}!getHeight@{getHeight}}
@@ -111,6 +184,24 @@ renvoie la hauteur du milieu
 \begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_milieu_a67d9f26873f66cfc882af4d7c5760970}\label{class_milieu_a67d9f26873f66cfc882af4d7c5760970}} 
+\index{Milieu@{Milieu}!getVoisins@{getVoisins}}
+\index{getVoisins@{getVoisins}!Milieu@{Milieu}}
+\doxysubsubsection{\texorpdfstring{getVoisins()}{getVoisins()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$ Milieu\+::get\+Voisins (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{ic }\end{DoxyParamCaption})}
+
+
+
+renvoie un pointeur des créatures que la créature passée en argument détecte 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & référence d\textquotesingle{}une bestiole \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Bestiole$\ast$$>$ 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_milieu_a7837d4dc0f96859d43008d1736fb5961}\label{class_milieu_a7837d4dc0f96859d43008d1736fb5961}} 
 \index{Milieu@{Milieu}!getWidth@{getWidth}}
 \index{getWidth@{getWidth}!Milieu@{Milieu}}
@@ -124,67 +215,109 @@ renvoie la largeur du milieu
 \begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_milieu_aafa10f1cd1633356139ade34c1f6d73c}\label{class_milieu_aafa10f1cd1633356139ade34c1f6d73c}} 
-\index{Milieu@{Milieu}!nbVoisins@{nbVoisins}}
-\index{nbVoisins@{nbVoisins}!Milieu@{Milieu}}
-\doxysubsubsection{\texorpdfstring{nbVoisins()}{nbVoisins()}}
-{\footnotesize\ttfamily int Milieu\+::nb\+Voisins (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_bestiole}{Bestiole}} \&}]{b }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_milieu_a3b82d079ee9fdba7f5bd889d660a5cbc}\label{class_milieu_a3b82d079ee9fdba7f5bd889d660a5cbc}} 
+\index{Milieu@{Milieu}!howManyCreature@{howManyCreature}}
+\index{howManyCreature@{howManyCreature}!Milieu@{Milieu}}
+\doxysubsubsection{\texorpdfstring{howManyCreature()}{howManyCreature()}}
+{\footnotesize\ttfamily int Milieu\+::how\+Many\+Creature (\begin{DoxyParamCaption}\item[{Comport\+Type}]{comportement\+Name }\end{DoxyParamCaption})}
 
 
 
-renvoie le nombre de bestiole que la bestiole passée en argument détecte 
+return the number of creatures with a given comportement that are presents in the simulation 
 
 
 \begin{DoxyParams}{Parameters}
-{\em b} & référence d\textquotesingle{}une bestiole \\
+{\em comportement\+Name} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_milieu_ab08a3834351d2703621f3fcc84a6bc04}\label{class_milieu_ab08a3834351d2703621f3fcc84a6bc04}} 
+\mbox{\Hypertarget{class_milieu_ab081b06af4f258cc8e8042cbb12804ca}\label{class_milieu_ab081b06af4f258cc8e8042cbb12804ca}} 
+\index{Milieu@{Milieu}!nbVoisins@{nbVoisins}}
+\index{nbVoisins@{nbVoisins}!Milieu@{Milieu}}
+\doxysubsubsection{\texorpdfstring{nbVoisins()}{nbVoisins()}}
+{\footnotesize\ttfamily int Milieu\+::nb\+Voisins (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{ic }\end{DoxyParamCaption})}
+
+
+
+renvoie le nombre de céatures que la créature passée en argument détecte 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & référence d\textquotesingle{}une créature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_milieu_ad37a68e950ce6c581f0d5b3053fd084c}\label{class_milieu_ad37a68e950ce6c581f0d5b3053fd084c}} 
+\index{Milieu@{Milieu}!randomNaissance@{randomNaissance}}
+\index{randomNaissance@{randomNaissance}!Milieu@{Milieu}}
+\doxysubsubsection{\texorpdfstring{randomNaissance()}{randomNaissance()}}
+{\footnotesize\ttfamily void Milieu\+::random\+Naissance (\begin{DoxyParamCaption}\item[{std\+::map$<$ Comport\+Type, int $>$}]{config }\end{DoxyParamCaption})}
+
+
+
+Fait naître des bestioles aléatoirement. 
+
+A chaque pas de la simulation, une créature de chacun des comportements présents peut naître. Par exemple si la répartition de créatures kamikazes était de 20\%, alors à chaque tour une créature kamikaze a 20\% de chance de naître.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & map des comportements et de leur pourcentage associé. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_milieu_ae40cbd6b1cda23e53f8814ab8715657a}\label{class_milieu_ae40cbd6b1cda23e53f8814ab8715657a}} 
 \index{Milieu@{Milieu}!removeMember@{removeMember}}
 \index{removeMember@{removeMember}!Milieu@{Milieu}}
 \doxysubsubsection{\texorpdfstring{removeMember()}{removeMember()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void Milieu\+::remove\+Member (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bestiole}{Bestiole}} $\ast$}]{b }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Milieu\+::remove\+Member (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$}]{ic }\end{DoxyParamCaption})}
 
 
 
-supprime une bestiole de la simulation 
+supprime une créature de la simulation 
 
-La bestiole est supprimé de la liste des bestiole, mais l\textquotesingle{}objet bestiole lui même est également supprimé
+La créature est supprimé de la liste des créatures, mais l\textquotesingle{}objet créature lui même est également supprimé
 
 
 \begin{DoxyParams}{Parameters}
-{\em b} & pointeur sur une bestiole \\
+{\em ic} & pointeur sur une créature \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_milieu_aeeb7930db0ad74d2a88864e3c74ab837}\label{class_milieu_aeeb7930db0ad74d2a88864e3c74ab837}} 
+\mbox{\Hypertarget{class_milieu_a45fba055e3fdf99af7da20d967d7ca63}\label{class_milieu_a45fba055e3fdf99af7da20d967d7ca63}} 
 \index{Milieu@{Milieu}!removeMember@{removeMember}}
 \index{removeMember@{removeMember}!Milieu@{Milieu}}
 \doxysubsubsection{\texorpdfstring{removeMember()}{removeMember()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void Milieu\+::remove\+Member (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_bestiole}{Bestiole}} $\ast$ $>$}]{bestioles }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Milieu\+::remove\+Member (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$}]{creatures }\end{DoxyParamCaption})}
 
 
 
-supprime plusieurs bestioles en même temps 
+supprime plusieurs créatures en même temps 
 
 
 \begin{DoxyParams}{Parameters}
-{\em bestioles} & vecteur de pointeur des bestioles à supprimer \\
+{\em creatures} & vecteur de pointeur des créatures à supprimer \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_milieu_a8bffe1b2035ffe6cbeb4bac6889457c5}\label{class_milieu_a8bffe1b2035ffe6cbeb4bac6889457c5}} 
+\mbox{\Hypertarget{class_milieu_a573cc844773bb0a09050badd29811c0e}\label{class_milieu_a573cc844773bb0a09050badd29811c0e}} 
 \index{Milieu@{Milieu}!step@{step}}
 \index{step@{step}!Milieu@{Milieu}}
 \doxysubsubsection{\texorpdfstring{step()}{step()}}
-{\footnotesize\ttfamily void Milieu\+::step (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Milieu\+::step (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path\+File\+Sim }\end{DoxyParamCaption})}
 
 
 
 appelé à chaque intervalle de temps de la simulation 
 
-Parcours la liste des bestioles présentes et invoque leur comportement. 
+Parcours la liste des créatures présentes et invoque leur comportement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+File\+Sim} & nom du fichier où écrire les résultats de simulation \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

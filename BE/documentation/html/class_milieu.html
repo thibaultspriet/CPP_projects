@@ -69,7 +69,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Classe milieu qui contient les bestioles.  
+<p>Classe milieu qui contient les créatures.  
  <a href="class_milieu.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_milieu_8h_source.html">Milieu.h</a>&gt;</code></p>
@@ -83,8 +83,14 @@ Inheritance diagram for Milieu:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a245aaedf9af63f220e6232f67ae37657"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#a245aaedf9af63f220e6232f67ae37657">Milieu</a> (int _width, int _height)</td></tr>
-<tr class="memdesc:a245aaedf9af63f220e6232f67ae37657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur d'un objet <a class="el" href="class_milieu.html" title="Classe milieu qui contient les bestioles.">Milieu</a>.  <a href="class_milieu.html#a245aaedf9af63f220e6232f67ae37657">More...</a><br /></td></tr>
+<tr class="memdesc:a245aaedf9af63f220e6232f67ae37657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur d'un objet <a class="el" href="class_milieu.html" title="Classe milieu qui contient les créatures.">Milieu</a>.  <a href="class_milieu.html#a245aaedf9af63f220e6232f67ae37657">More...</a><br /></td></tr>
 <tr class="separator:a245aaedf9af63f220e6232f67ae37657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84a99dba1ce70db1e7a1312cd18c2fd1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#a84a99dba1ce70db1e7a1312cd18c2fd1">Milieu</a> (int _width, int _height, <a class="el" href="class_configuration.html">Configuration</a> *config)</td></tr>
+<tr class="memdesc:a84a99dba1ce70db1e7a1312cd18c2fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur d'un objet <a class="el" href="class_milieu.html" title="Classe milieu qui contient les créatures.">Milieu</a>.  <a href="class_milieu.html#a84a99dba1ce70db1e7a1312cd18c2fd1">More...</a><br /></td></tr>
+<tr class="separator:a84a99dba1ce70db1e7a1312cd18c2fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769f8c74e01dbc4d4615d7acaf8ff15e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#a769f8c74e01dbc4d4615d7acaf8ff15e">Milieu</a> (int _width, int _height, int nbCreatures, int kamik, int greg, int peur, int prev)</td></tr>
+<tr class="memdesc:a769f8c74e01dbc4d4615d7acaf8ff15e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de milieu. Créer une configuration depuis le main.  <a href="class_milieu.html#a769f8c74e01dbc4d4615d7acaf8ff15e">More...</a><br /></td></tr>
+<tr class="separator:a769f8c74e01dbc4d4615d7acaf8ff15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18554084ea711dfc66c9a876a570684e"><td class="memItemLeft" align="right" valign="top"><a id="a18554084ea711dfc66c9a876a570684e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#a18554084ea711dfc66c9a876a570684e">~Milieu</a> (void)</td></tr>
 <tr class="memdesc:a18554084ea711dfc66c9a876a570684e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de l'objet milieu. <br /></td></tr>
@@ -95,33 +101,45 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9c5575bff593db5b5920bc7c7fc9f6a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#a9c5575bff593db5b5920bc7c7fc9f6a8">getHeight</a> (void) const</td></tr>
 <tr class="memdesc:a9c5575bff593db5b5920bc7c7fc9f6a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie la hauteur du milieu  <a href="class_milieu.html#a9c5575bff593db5b5920bc7c7fc9f6a8">More...</a><br /></td></tr>
 <tr class="separator:a9c5575bff593db5b5920bc7c7fc9f6a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bffe1b2035ffe6cbeb4bac6889457c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#a8bffe1b2035ffe6cbeb4bac6889457c5">step</a> (void)</td></tr>
-<tr class="memdesc:a8bffe1b2035ffe6cbeb4bac6889457c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">appelé à chaque intervalle de temps de la simulation  <a href="class_milieu.html#a8bffe1b2035ffe6cbeb4bac6889457c5">More...</a><br /></td></tr>
-<tr class="separator:a8bffe1b2035ffe6cbeb4bac6889457c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e091b06d84a3341492f96b18a4d36ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#a3e091b06d84a3341492f96b18a4d36ae">addMember</a> (<a class="el" href="class_bestiole.html">Bestiole</a> *b)</td></tr>
-<tr class="memdesc:a3e091b06d84a3341492f96b18a4d36ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajoute une bestiole à la simulation  <a href="class_milieu.html#a3e091b06d84a3341492f96b18a4d36ae">More...</a><br /></td></tr>
-<tr class="separator:a3e091b06d84a3341492f96b18a4d36ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab08a3834351d2703621f3fcc84a6bc04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#ab08a3834351d2703621f3fcc84a6bc04">removeMember</a> (<a class="el" href="class_bestiole.html">Bestiole</a> *b)</td></tr>
-<tr class="memdesc:ab08a3834351d2703621f3fcc84a6bc04"><td class="mdescLeft">&#160;</td><td class="mdescRight">supprime une bestiole de la simulation  <a href="class_milieu.html#ab08a3834351d2703621f3fcc84a6bc04">More...</a><br /></td></tr>
-<tr class="separator:ab08a3834351d2703621f3fcc84a6bc04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeeb7930db0ad74d2a88864e3c74ab837"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#aeeb7930db0ad74d2a88864e3c74ab837">removeMember</a> (std::vector&lt; <a class="el" href="class_bestiole.html">Bestiole</a> * &gt; bestioles)</td></tr>
-<tr class="memdesc:aeeb7930db0ad74d2a88864e3c74ab837"><td class="mdescLeft">&#160;</td><td class="mdescRight">supprime plusieurs bestioles en même temps  <a href="class_milieu.html#aeeb7930db0ad74d2a88864e3c74ab837">More...</a><br /></td></tr>
-<tr class="separator:aeeb7930db0ad74d2a88864e3c74ab837"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafa10f1cd1633356139ade34c1f6d73c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#aafa10f1cd1633356139ade34c1f6d73c">nbVoisins</a> (const <a class="el" href="class_bestiole.html">Bestiole</a> &amp;b)</td></tr>
-<tr class="memdesc:aafa10f1cd1633356139ade34c1f6d73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie le nombre de bestiole que la bestiole passée en argument détecte  <a href="class_milieu.html#aafa10f1cd1633356139ade34c1f6d73c">More...</a><br /></td></tr>
-<tr class="separator:aafa10f1cd1633356139ade34c1f6d73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f32fcc7b1adff3b910e922198e0e06c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_bestiole.html">Bestiole</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#a3f32fcc7b1adff3b910e922198e0e06c">getBestioles</a> ()</td></tr>
-<tr class="memdesc:a3f32fcc7b1adff3b910e922198e0e06c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie une référence de la liste des bestioles.  <a href="class_milieu.html#a3f32fcc7b1adff3b910e922198e0e06c">More...</a><br /></td></tr>
-<tr class="separator:a3f32fcc7b1adff3b910e922198e0e06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e764f9b199f333b4c0647d3a631f677"><td class="memItemLeft" align="right" valign="top"><a id="a5e764f9b199f333b4c0647d3a631f677"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>printFlotte</b> (void)</td></tr>
-<tr class="separator:a5e764f9b199f333b4c0647d3a631f677"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a573cc844773bb0a09050badd29811c0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#a573cc844773bb0a09050badd29811c0e">step</a> (const char *pathFileSim)</td></tr>
+<tr class="memdesc:a573cc844773bb0a09050badd29811c0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">appelé à chaque intervalle de temps de la simulation  <a href="class_milieu.html#a573cc844773bb0a09050badd29811c0e">More...</a><br /></td></tr>
+<tr class="separator:a573cc844773bb0a09050badd29811c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0995d88a7849a91680637a145f4aa842"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#a0995d88a7849a91680637a145f4aa842">addMember</a> (<a class="el" href="class_i_creature.html">ICreature</a> *ic)</td></tr>
+<tr class="memdesc:a0995d88a7849a91680637a145f4aa842"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajoute une créature à la simulation  <a href="class_milieu.html#a0995d88a7849a91680637a145f4aa842">More...</a><br /></td></tr>
+<tr class="separator:a0995d88a7849a91680637a145f4aa842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad37a68e950ce6c581f0d5b3053fd084c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#ad37a68e950ce6c581f0d5b3053fd084c">randomNaissance</a> (std::map&lt; ComportType, int &gt; config)</td></tr>
+<tr class="memdesc:ad37a68e950ce6c581f0d5b3053fd084c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fait naître des bestioles aléatoirement.  <a href="class_milieu.html#ad37a68e950ce6c581f0d5b3053fd084c">More...</a><br /></td></tr>
+<tr class="separator:ad37a68e950ce6c581f0d5b3053fd084c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae40cbd6b1cda23e53f8814ab8715657a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#ae40cbd6b1cda23e53f8814ab8715657a">removeMember</a> (<a class="el" href="class_i_creature.html">ICreature</a> *ic)</td></tr>
+<tr class="memdesc:ae40cbd6b1cda23e53f8814ab8715657a"><td class="mdescLeft">&#160;</td><td class="mdescRight">supprime une créature de la simulation  <a href="class_milieu.html#ae40cbd6b1cda23e53f8814ab8715657a">More...</a><br /></td></tr>
+<tr class="separator:ae40cbd6b1cda23e53f8814ab8715657a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45fba055e3fdf99af7da20d967d7ca63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#a45fba055e3fdf99af7da20d967d7ca63">removeMember</a> (std::vector&lt; <a class="el" href="class_i_creature.html">ICreature</a> * &gt; creatures)</td></tr>
+<tr class="memdesc:a45fba055e3fdf99af7da20d967d7ca63"><td class="mdescLeft">&#160;</td><td class="mdescRight">supprime plusieurs créatures en même temps  <a href="class_milieu.html#a45fba055e3fdf99af7da20d967d7ca63">More...</a><br /></td></tr>
+<tr class="separator:a45fba055e3fdf99af7da20d967d7ca63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab081b06af4f258cc8e8042cbb12804ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#ab081b06af4f258cc8e8042cbb12804ca">nbVoisins</a> (const <a class="el" href="class_i_creature.html">ICreature</a> &amp;ic)</td></tr>
+<tr class="memdesc:ab081b06af4f258cc8e8042cbb12804ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie le nombre de céatures que la créature passée en argument détecte  <a href="class_milieu.html#ab081b06af4f258cc8e8042cbb12804ca">More...</a><br /></td></tr>
+<tr class="separator:ab081b06af4f258cc8e8042cbb12804ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67d9f26873f66cfc882af4d7c5760970"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_i_creature.html">ICreature</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#a67d9f26873f66cfc882af4d7c5760970">getVoisins</a> (const <a class="el" href="class_i_creature.html">ICreature</a> &amp;ic)</td></tr>
+<tr class="memdesc:a67d9f26873f66cfc882af4d7c5760970"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie un pointeur des créatures que la créature passée en argument détecte  <a href="class_milieu.html#a67d9f26873f66cfc882af4d7c5760970">More...</a><br /></td></tr>
+<tr class="separator:a67d9f26873f66cfc882af4d7c5760970"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af72be7c72850068ce5ef96b911832ab9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_i_creature.html">ICreature</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#af72be7c72850068ce5ef96b911832ab9">getCreatures</a> ()</td></tr>
+<tr class="memdesc:af72be7c72850068ce5ef96b911832ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie une référence de la liste des créatures.  <a href="class_milieu.html#af72be7c72850068ce5ef96b911832ab9">More...</a><br /></td></tr>
+<tr class="separator:af72be7c72850068ce5ef96b911832ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1d8b6ae806fba76163f4423583835d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_configuration.html">Configuration</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#ac1d8b6ae806fba76163f4423583835d4">getConfig</a> (void)</td></tr>
+<tr class="memdesc:ac1d8b6ae806fba76163f4423583835d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'objet configuration.  <a href="class_milieu.html#ac1d8b6ae806fba76163f4423583835d4">More...</a><br /></td></tr>
+<tr class="separator:ac1d8b6ae806fba76163f4423583835d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b82d079ee9fdba7f5bd889d660a5cbc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milieu.html#a3b82d079ee9fdba7f5bd889d660a5cbc">howManyCreature</a> (ComportType comportementName)</td></tr>
+<tr class="memdesc:a3b82d079ee9fdba7f5bd889d660a5cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the number of creatures with a given comportement that are presents in the simulation  <a href="class_milieu.html#a3b82d079ee9fdba7f5bd889d660a5cbc">More...</a><br /></td></tr>
+<tr class="separator:a3b82d079ee9fdba7f5bd889d660a5cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5b9796792e0d067ed59fb111ff82acd"><td class="memItemLeft" align="right" valign="top"><a id="ad5b9796792e0d067ed59fb111ff82acd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>writeHowManyCreature</b> (std::string path)</td></tr>
+<tr class="separator:ad5b9796792e0d067ed59fb111ff82acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Classe milieu qui contient les bestioles. </p>
+<div class="textblock"><p>Classe milieu qui contient les créatures. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a245aaedf9af63f220e6232f67ae37657"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a245aaedf9af63f220e6232f67ae37657">&#9670;&nbsp;</a></span>Milieu()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a245aaedf9af63f220e6232f67ae37657">&#9670;&nbsp;</a></span>Milieu() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,7 +164,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>printFlotte</b> (void
       </table>
 </div><div class="memdoc">
 
-<p>Constructeur d'un objet <a class="el" href="class_milieu.html" title="Classe milieu qui contient les bestioles.">Milieu</a>. </p>
+<p>Constructeur d'un objet <a class="el" href="class_milieu.html" title="Classe milieu qui contient les créatures.">Milieu</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">_width</td><td>largeur </td></tr>
@@ -157,9 +175,126 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>printFlotte</b> (void
 
 </div>
 </div>
+<a id="a84a99dba1ce70db1e7a1312cd18c2fd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84a99dba1ce70db1e7a1312cd18c2fd1">&#9670;&nbsp;</a></span>Milieu() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Milieu::Milieu </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_configuration.html">Configuration</a> *&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur d'un objet <a class="el" href="class_milieu.html" title="Classe milieu qui contient les créatures.">Milieu</a>. </p>
+<p>Prend en argument une configuration particulière.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_width</td><td></td></tr>
+    <tr><td class="paramname">_height</td><td></td></tr>
+    <tr><td class="paramname">config</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a769f8c74e01dbc4d4615d7acaf8ff15e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a769f8c74e01dbc4d4615d7acaf8ff15e">&#9670;&nbsp;</a></span>Milieu() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Milieu::Milieu </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbCreatures</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>kamik</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>greg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>peur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prev</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur de milieu. Créer une configuration depuis le main. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_width</td><td></td></tr>
+    <tr><td class="paramname">_height</td><td></td></tr>
+    <tr><td class="paramname">nbCreatures</td><td></td></tr>
+    <tr><td class="paramname">kamik</td><td>pourcentage kamikaze </td></tr>
+    <tr><td class="paramname">greg</td><td>pourcentage gregaire </td></tr>
+    <tr><td class="paramname">peur</td><td>pourcentage peureuse </td></tr>
+    <tr><td class="paramname">prev</td><td>pourcentage prevoyante </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3e091b06d84a3341492f96b18a4d36ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e091b06d84a3341492f96b18a4d36ae">&#9670;&nbsp;</a></span>addMember()</h2>
+<a id="a0995d88a7849a91680637a145f4aa842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0995d88a7849a91680637a145f4aa842">&#9670;&nbsp;</a></span>addMember()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,8 +305,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>printFlotte</b> (void
         <tr>
           <td class="memname">void Milieu::addMember </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_bestiole.html">Bestiole</a> *&#160;</td>
-          <td class="paramname"><em>b</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_i_creature.html">ICreature</a> *&#160;</td>
+          <td class="paramname"><em>ic</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -182,25 +317,54 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>printFlotte</b> (void
 </table>
 </div><div class="memdoc">
 
-<p>ajoute une bestiole à la simulation </p>
-<p>En plus elle donne une position aléatoire à la nouvelle bestiole.</p>
+<p>ajoute une créature à la simulation </p>
+<p>En plus elle donne une position aléatoire à la nouvelle créature.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">b</td><td>pointeur sur une bestiole </td></tr>
+    <tr><td class="paramname">ic</td><td>pointeur sur une créature </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a3f32fcc7b1adff3b910e922198e0e06c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f32fcc7b1adff3b910e922198e0e06c">&#9670;&nbsp;</a></span>getBestioles()</h2>
+<a id="ac1d8b6ae806fba76163f4423583835d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1d8b6ae806fba76163f4423583835d4">&#9670;&nbsp;</a></span>getConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_configuration.html">Configuration</a>* Milieu::getConfig </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne l'objet configuration. </p>
+<dl class="section return"><dt>Returns</dt><dd>Configuration* </dd></dl>
+
+</div>
+</div>
+<a id="af72be7c72850068ce5ef96b911832ab9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af72be7c72850068ce5ef96b911832ab9">&#9670;&nbsp;</a></span>getCreatures()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="class_bestiole.html">Bestiole</a> * &gt; &amp; Milieu::getBestioles </td>
+          <td class="memname">vector&lt; <a class="el" href="class_i_creature.html">ICreature</a> * &gt; &amp; Milieu::getCreatures </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -208,8 +372,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>printFlotte</b> (void
       </table>
 </div><div class="memdoc">
 
-<p>Renvoie une référence de la liste des bestioles. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;Bestiole*&gt;&amp; </dd></dl>
+<p>Renvoie une référence de la liste des créatures. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;ICreature*&gt;&amp; </dd></dl>
 
 </div>
 </div>
@@ -242,6 +406,33 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>printFlotte</b> (void
 
 </div>
 </div>
+<a id="a67d9f26873f66cfc882af4d7c5760970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67d9f26873f66cfc882af4d7c5760970">&#9670;&nbsp;</a></span>getVoisins()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="class_i_creature.html">ICreature</a> * &gt; Milieu::getVoisins </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_i_creature.html">ICreature</a> &amp;&#160;</td>
+          <td class="paramname"><em>ic</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>renvoie un pointeur des créatures que la créature passée en argument détecte </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ic</td><td>référence d'une bestiole </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;Bestiole*&gt; </dd></dl>
+
+</div>
+</div>
 <a id="a7837d4dc0f96859d43008d1736fb5961"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7837d4dc0f96859d43008d1736fb5961">&#9670;&nbsp;</a></span>getWidth()</h2>
 
@@ -271,26 +462,26 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>printFlotte</b> (void
 
 </div>
 </div>
-<a id="aafa10f1cd1633356139ade34c1f6d73c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafa10f1cd1633356139ade34c1f6d73c">&#9670;&nbsp;</a></span>nbVoisins()</h2>
+<a id="a3b82d079ee9fdba7f5bd889d660a5cbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b82d079ee9fdba7f5bd889d660a5cbc">&#9670;&nbsp;</a></span>howManyCreature()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Milieu::nbVoisins </td>
+          <td class="memname">int Milieu::howManyCreature </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_bestiole.html">Bestiole</a> &amp;&#160;</td>
-          <td class="paramname"><em>b</em></td><td>)</td>
+          <td class="paramtype">ComportType&#160;</td>
+          <td class="paramname"><em>comportementName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>renvoie le nombre de bestiole que la bestiole passée en argument détecte </p>
+<p>return the number of creatures with a given comportement that are presents in the simulation </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">b</td><td>référence d'une bestiole </td></tr>
+    <tr><td class="paramname">comportementName</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -298,8 +489,62 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>printFlotte</b> (void
 
 </div>
 </div>
-<a id="ab08a3834351d2703621f3fcc84a6bc04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab08a3834351d2703621f3fcc84a6bc04">&#9670;&nbsp;</a></span>removeMember() <span class="overload">[1/2]</span></h2>
+<a id="ab081b06af4f258cc8e8042cbb12804ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab081b06af4f258cc8e8042cbb12804ca">&#9670;&nbsp;</a></span>nbVoisins()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Milieu::nbVoisins </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_i_creature.html">ICreature</a> &amp;&#160;</td>
+          <td class="paramname"><em>ic</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>renvoie le nombre de céatures que la créature passée en argument détecte </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ic</td><td>référence d'une créature </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a id="ad37a68e950ce6c581f0d5b3053fd084c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad37a68e950ce6c581f0d5b3053fd084c">&#9670;&nbsp;</a></span>randomNaissance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Milieu::randomNaissance </td>
+          <td>(</td>
+          <td class="paramtype">std::map&lt; ComportType, int &gt;&#160;</td>
+          <td class="paramname"><em>config</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fait naître des bestioles aléatoirement. </p>
+<p>A chaque pas de la simulation, une créature de chacun des comportements présents peut naître. Par exemple si la répartition de créatures kamikazes était de 20%, alors à chaque tour une créature kamikaze a 20% de chance de naître.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>map des comportements et de leur pourcentage associé. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae40cbd6b1cda23e53f8814ab8715657a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae40cbd6b1cda23e53f8814ab8715657a">&#9670;&nbsp;</a></span>removeMember() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,26 +552,26 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>printFlotte</b> (void
         <tr>
           <td class="memname">void Milieu::removeMember </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_bestiole.html">Bestiole</a> *&#160;</td>
-          <td class="paramname"><em>b</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_i_creature.html">ICreature</a> *&#160;</td>
+          <td class="paramname"><em>ic</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>supprime une bestiole de la simulation </p>
-<p>La bestiole est supprimé de la liste des bestiole, mais l'objet bestiole lui même est également supprimé</p>
+<p>supprime une créature de la simulation </p>
+<p>La créature est supprimé de la liste des créatures, mais l'objet créature lui même est également supprimé</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">b</td><td>pointeur sur une bestiole </td></tr>
+    <tr><td class="paramname">ic</td><td>pointeur sur une créature </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aeeb7930db0ad74d2a88864e3c74ab837"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeeb7930db0ad74d2a88864e3c74ab837">&#9670;&nbsp;</a></span>removeMember() <span class="overload">[2/2]</span></h2>
+<a id="a45fba055e3fdf99af7da20d967d7ca63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45fba055e3fdf99af7da20d967d7ca63">&#9670;&nbsp;</a></span>removeMember() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -334,25 +579,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>printFlotte</b> (void
         <tr>
           <td class="memname">void Milieu::removeMember </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="class_bestiole.html">Bestiole</a> * &gt;&#160;</td>
-          <td class="paramname"><em>bestioles</em></td><td>)</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_i_creature.html">ICreature</a> * &gt;&#160;</td>
+          <td class="paramname"><em>creatures</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>supprime plusieurs bestioles en même temps </p>
+<p>supprime plusieurs créatures en même temps </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bestioles</td><td>vecteur de pointeur des bestioles à supprimer </td></tr>
+    <tr><td class="paramname">creatures</td><td>vecteur de pointeur des créatures à supprimer </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a8bffe1b2035ffe6cbeb4bac6889457c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bffe1b2035ffe6cbeb4bac6889457c5">&#9670;&nbsp;</a></span>step()</h2>
+<a id="a573cc844773bb0a09050badd29811c0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a573cc844773bb0a09050badd29811c0e">&#9670;&nbsp;</a></span>step()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -360,15 +605,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>printFlotte</b> (void
         <tr>
           <td class="memname">void Milieu::step </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathFileSim</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>appelé à chaque intervalle de temps de la simulation </p>
-<p>Parcours la liste des bestioles présentes et invoque leur comportement. </p>
+<p>Parcours la liste des créatures présentes et invoque leur comportement.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathFileSim</td><td>nom du fichier où écrire les résultats de simulation </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

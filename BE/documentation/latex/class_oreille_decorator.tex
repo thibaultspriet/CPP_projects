@@ -1,0 +1,166 @@
+\hypertarget{class_oreille_decorator}{}\doxysection{Oreille\+Decorator Class Reference}
+\label{class_oreille_decorator}\index{OreilleDecorator@{OreilleDecorator}}
+
+
+Classe \mbox{\hyperlink{class_oreille_decorator}{Oreille\+Decorator}}.  
+
+
+
+
+{\ttfamily \#include $<$Oreille\+Decorator.\+h$>$}
+
+Inheritance diagram for Oreille\+Decorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_oreille_decorator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_oreille_decorator_a9901fb383f63383e133ab462fc7fd033}{Oreille\+Decorator}} (\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ic)
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{class_oreille_decorator}{Oreille\+Decorator}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ \mbox{\hyperlink{class_oreille_decorator_a25bdb91f48433b7fd828ab151bedfdba}{clone}} (void) override
+\begin{DoxyCompactList}\small\item\em clone une créature avec des oreilles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_oreille_decorator_a94c66cd0d84acc2d42fa5ecfc560cf74}\label{class_oreille_decorator_a94c66cd0d84acc2d42fa5ecfc560cf74}} 
+\mbox{\hyperlink{class_oreille_decorator_a94c66cd0d84acc2d42fa5ecfc560cf74}{$\sim$\+Oreille\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_oreille_decorator}{Oreille\+Decorator}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_oreille_decorator_a30d65fa25db4760a43bbc1bec1500d69}{je\+Te\+Vois}} (const \mbox{\hyperlink{class_i_creature}{ICreature}} \&ic) const override final
+\begin{DoxyCompactList}\small\item\em méthode je\+Te\+Vois \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_oreille_decorator_a8b05d9f7f8765cc6fda845bd2be6d4c8}{draw}} (UImg \&support, \mbox{\hyperlink{class_milieu}{Milieu}} \&mon\+Milieu, \mbox{\hyperlink{class_i_creature}{ICreature}} \&creature\+To\+Draw) override
+\begin{DoxyCompactList}\small\item\em dessine deux cercles au niveau de la tête pour représenter les oreilles \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{class_oreille_decorator_a87c263c9cd631caf45731044afd69660}{DIST\+\_\+\+MIN}} = \mbox{\hyperlink{class_i_creature_af27e5d832adce41cf97ce91c35d77641}{ICreature\+::\+LIMITE\+\_\+\+VUE}}
+\item 
+static const double \mbox{\hyperlink{class_oreille_decorator_ad7735f452b158378517224105621fa24}{DIST\+\_\+\+MAX}} = \mbox{\hyperlink{class_i_creature_af27e5d832adce41cf97ce91c35d77641}{ICreature\+::\+LIMITE\+\_\+\+VUE}} $\ast$ 2.\+0
+\item 
+static const double \mbox{\hyperlink{class_oreille_decorator_ad325160b2ae5bcddba2893ea522e6f1e}{DETECTION\+\_\+\+MIN}} = 0
+\item 
+static const double \mbox{\hyperlink{class_oreille_decorator_a9fbb0e35787b06584e1a77b85de2fcf2}{DETECTION\+\_\+\+MAX}} = 1
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Classe \mbox{\hyperlink{class_oreille_decorator}{Oreille\+Decorator}}. 
+
+Ce décorateur permet à la créature d\textquotesingle{}augmenter son champ de vison d\textquotesingle{}une certaine distance tout autour d\textquotesingle{}elle. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_oreille_decorator_a9901fb383f63383e133ab462fc7fd033}\label{class_oreille_decorator_a9901fb383f63383e133ab462fc7fd033}} 
+\index{OreilleDecorator@{OreilleDecorator}!OreilleDecorator@{OreilleDecorator}}
+\index{OreilleDecorator@{OreilleDecorator}!OreilleDecorator@{OreilleDecorator}}
+\doxysubsubsection{\texorpdfstring{OreilleDecorator()}{OreilleDecorator()}}
+{\footnotesize\ttfamily Oreille\+Decorator\+::\+Oreille\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$}]{ic }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \mbox{\hyperlink{class_oreille_decorator}{Oreille\+Decorator}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & créature à emballée \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_oreille_decorator_a25bdb91f48433b7fd828ab151bedfdba}\label{class_oreille_decorator_a25bdb91f48433b7fd828ab151bedfdba}} 
+\index{OreilleDecorator@{OreilleDecorator}!clone@{clone}}
+\index{clone@{clone}!OreilleDecorator@{OreilleDecorator}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ Oreille\+Decorator\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+clone une créature avec des oreilles 
+
+\begin{DoxyReturn}{Returns}
+ICreature$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_capteur_decorator_a15353e12ec4a382a10ec2d70cc5091e2}{Capteur\+Decorator}}.
+
+\mbox{\Hypertarget{class_oreille_decorator_a8b05d9f7f8765cc6fda845bd2be6d4c8}\label{class_oreille_decorator_a8b05d9f7f8765cc6fda845bd2be6d4c8}} 
+\index{OreilleDecorator@{OreilleDecorator}!draw@{draw}}
+\index{draw@{draw}!OreilleDecorator@{OreilleDecorator}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Oreille\+Decorator\+::draw (\begin{DoxyParamCaption}\item[{UImg \&}]{support,  }\item[{\mbox{\hyperlink{class_milieu}{Milieu}} \&}]{mon\+Milieu,  }\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{creature\+To\+Draw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+dessine deux cercles au niveau de la tête pour représenter les oreilles 
+
+
+\begin{DoxyParams}{Parameters}
+{\em support} & \\
+\hline
+{\em mon\+Milieu} & \\
+\hline
+{\em creature\+To\+Draw} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_capteur_decorator_a2a0d8194473e07b091ba540d6f73a8f2}{Capteur\+Decorator}}.
+
+\mbox{\Hypertarget{class_oreille_decorator_a30d65fa25db4760a43bbc1bec1500d69}\label{class_oreille_decorator_a30d65fa25db4760a43bbc1bec1500d69}} 
+\index{OreilleDecorator@{OreilleDecorator}!jeTeVois@{jeTeVois}}
+\index{jeTeVois@{jeTeVois}!OreilleDecorator@{OreilleDecorator}}
+\doxysubsubsection{\texorpdfstring{jeTeVois()}{jeTeVois()}}
+{\footnotesize\ttfamily bool Oreille\+Decorator\+::je\+Te\+Vois (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{ic }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+méthode je\+Te\+Vois 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & créature à tester. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_capteur_decorator_a24e538e4bebb8acf459c4c76c614df5d}{Capteur\+Decorator}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_oreille_decorator_a9fbb0e35787b06584e1a77b85de2fcf2}\label{class_oreille_decorator_a9fbb0e35787b06584e1a77b85de2fcf2}} 
+\index{OreilleDecorator@{OreilleDecorator}!DETECTION\_MAX@{DETECTION\_MAX}}
+\index{DETECTION\_MAX@{DETECTION\_MAX}!OreilleDecorator@{OreilleDecorator}}
+\doxysubsubsection{\texorpdfstring{DETECTION\_MAX}{DETECTION\_MAX}}
+{\footnotesize\ttfamily const double Oreille\+Decorator\+::\+DETECTION\+\_\+\+MAX = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+paramètre de détection , seuil de détection max \mbox{\Hypertarget{class_oreille_decorator_ad325160b2ae5bcddba2893ea522e6f1e}\label{class_oreille_decorator_ad325160b2ae5bcddba2893ea522e6f1e}} 
+\index{OreilleDecorator@{OreilleDecorator}!DETECTION\_MIN@{DETECTION\_MIN}}
+\index{DETECTION\_MIN@{DETECTION\_MIN}!OreilleDecorator@{OreilleDecorator}}
+\doxysubsubsection{\texorpdfstring{DETECTION\_MIN}{DETECTION\_MIN}}
+{\footnotesize\ttfamily const double Oreille\+Decorator\+::\+DETECTION\+\_\+\+MIN = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+paramètre de détection , seuil de détection min \mbox{\Hypertarget{class_oreille_decorator_ad7735f452b158378517224105621fa24}\label{class_oreille_decorator_ad7735f452b158378517224105621fa24}} 
+\index{OreilleDecorator@{OreilleDecorator}!DIST\_MAX@{DIST\_MAX}}
+\index{DIST\_MAX@{DIST\_MAX}!OreilleDecorator@{OreilleDecorator}}
+\doxysubsubsection{\texorpdfstring{DIST\_MAX}{DIST\_MAX}}
+{\footnotesize\ttfamily const double Oreille\+Decorator\+::\+DIST\+\_\+\+MAX = \mbox{\hyperlink{class_i_creature_af27e5d832adce41cf97ce91c35d77641}{ICreature\+::\+LIMITE\+\_\+\+VUE}} $\ast$ 2.\+0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+paramètre de détection , distance maximum \mbox{\Hypertarget{class_oreille_decorator_a87c263c9cd631caf45731044afd69660}\label{class_oreille_decorator_a87c263c9cd631caf45731044afd69660}} 
+\index{OreilleDecorator@{OreilleDecorator}!DIST\_MIN@{DIST\_MIN}}
+\index{DIST\_MIN@{DIST\_MIN}!OreilleDecorator@{OreilleDecorator}}
+\doxysubsubsection{\texorpdfstring{DIST\_MIN}{DIST\_MIN}}
+{\footnotesize\ttfamily const double Oreille\+Decorator\+::\+DIST\+\_\+\+MIN = \mbox{\hyperlink{class_i_creature_af27e5d832adce41cf97ce91c35d77641}{ICreature\+::\+LIMITE\+\_\+\+VUE}}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+paramètre de détection , distance minimum 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Oreille\+Decorator.\+h\item 
+Oreille\+Decorator.\+cpp\end{DoxyCompactItemize}

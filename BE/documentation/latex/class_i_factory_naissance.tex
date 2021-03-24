@@ -1,5 +1,14 @@
 \hypertarget{class_i_factory_naissance}{}\doxysection{IFactory\+Naissance Class Reference}
 \label{class_i_factory_naissance}\index{IFactoryNaissance@{IFactoryNaissance}}
+
+
+Interface \mbox{\hyperlink{class_i_factory_naissance}{IFactory\+Naissance}} qui définit la méthode create.  
+
+
+
+
+{\ttfamily \#include $<$IFactory\+Naissance.\+h$>$}
+
 Inheritance diagram for IFactory\+Naissance\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,15 +18,38 @@ Inheritance diagram for IFactory\+Naissance\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_i_factory_naissance_a45477f5943b4d0d1e2b8d25633731d2e}\label{class_i_factory_naissance_a45477f5943b4d0d1e2b8d25633731d2e}} 
-virtual IComportement $\ast$ {\bfseries get\+Comportement\+Naissance} ()
-\item 
-\mbox{\Hypertarget{class_i_factory_naissance_a2cefa4b98e26c518a3a594b1e924df65}\label{class_i_factory_naissance_a2cefa4b98e26c518a3a594b1e924df65}} 
-virtual Capteur\+Decorator {\bfseries get\+Capteur\+Naissance} ()
-\item 
-\mbox{\Hypertarget{class_i_factory_naissance_ab54a1c74e7076bffab1b9b84df4a78bd}\label{class_i_factory_naissance_ab54a1c74e7076bffab1b9b84df4a78bd}} 
-virtual Accessoire\+Decorator {\bfseries get\+Accessoire\+Naissance} ()
-\end{DoxyCompactItemize}
+virtual \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ \mbox{\hyperlink{class_i_factory_naissance_a2c5ccf7b9cc1b966fd00ffc7f9607caa}{create}} (\mbox{\hyperlink{class_i_comportement}{IComportement}} $\ast$comportement)=0
+\begin{DoxyCompactList}\small\item\em Méthode virtuelle pure qui doit être redéfinie par les classes filles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface \mbox{\hyperlink{class_i_factory_naissance}{IFactory\+Naissance}} qui définit la méthode create. 
+
+La méthode create renvoie un type de créature, dans notre cas il n\textquotesingle{}y a que des bestioles 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_factory_naissance_a2c5ccf7b9cc1b966fd00ffc7f9607caa}\label{class_i_factory_naissance_a2c5ccf7b9cc1b966fd00ffc7f9607caa}} 
+\index{IFactoryNaissance@{IFactoryNaissance}!create@{create}}
+\index{create@{create}!IFactoryNaissance@{IFactoryNaissance}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_creature}{ICreature}}$\ast$ IFactory\+Naissance\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_comportement}{IComportement}} $\ast$}]{comportement }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Méthode virtuelle pure qui doit être redéfinie par les classes filles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comportement} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ICreature$\ast$ 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_concrete_creator_bestiole_aabfbe8fb5fd8e1d00e93892c3888d00c}{Concrete\+Creator\+Bestiole}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -65,31 +65,71 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_i_factory_naissance-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">IFactoryNaissance Class Reference</div>  </div>
+<div class="title">IFactoryNaissance Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Interface <a class="el" href="class_i_factory_naissance.html" title="Interface IFactoryNaissance qui définit la méthode create.">IFactoryNaissance</a> qui définit la méthode create.  
+ <a href="class_i_factory_naissance.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_i_factory_naissance_8h_source.html">IFactoryNaissance.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for IFactoryNaissance:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_i_factory_naissance.png" usemap="#IFactoryNaissance_map" alt=""/>
   <map id="IFactoryNaissance_map" name="IFactoryNaissance_map">
-<area href="class_concrete_creator_bestiole.html" alt="ConcreteCreatorBestiole" shape="rect" coords="0,56,151,80"/>
+<area href="class_concrete_creator_bestiole.html" title="Classe ConcreteCreatorBestiole." alt="ConcreteCreatorBestiole" shape="rect" coords="0,56,151,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a45477f5943b4d0d1e2b8d25633731d2e"><td class="memItemLeft" align="right" valign="top"><a id="a45477f5943b4d0d1e2b8d25633731d2e"></a>
-virtual IComportement *&#160;</td><td class="memItemRight" valign="bottom"><b>getComportementNaissance</b> ()</td></tr>
-<tr class="separator:a45477f5943b4d0d1e2b8d25633731d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cefa4b98e26c518a3a594b1e924df65"><td class="memItemLeft" align="right" valign="top"><a id="a2cefa4b98e26c518a3a594b1e924df65"></a>
-virtual CapteurDecorator&#160;</td><td class="memItemRight" valign="bottom"><b>getCapteurNaissance</b> ()</td></tr>
-<tr class="separator:a2cefa4b98e26c518a3a594b1e924df65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab54a1c74e7076bffab1b9b84df4a78bd"><td class="memItemLeft" align="right" valign="top"><a id="ab54a1c74e7076bffab1b9b84df4a78bd"></a>
-virtual AccessoireDecorator&#160;</td><td class="memItemRight" valign="bottom"><b>getAccessoireNaissance</b> ()</td></tr>
-<tr class="separator:ab54a1c74e7076bffab1b9b84df4a78bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c5ccf7b9cc1b966fd00ffc7f9607caa"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_creature.html">ICreature</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_factory_naissance.html#a2c5ccf7b9cc1b966fd00ffc7f9607caa">create</a> (<a class="el" href="class_i_comportement.html">IComportement</a> *comportement)=0</td></tr>
+<tr class="memdesc:a2c5ccf7b9cc1b966fd00ffc7f9607caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode virtuelle pure qui doit être redéfinie par les classes filles.  <a href="class_i_factory_naissance.html#a2c5ccf7b9cc1b966fd00ffc7f9607caa">More...</a><br /></td></tr>
+<tr class="separator:a2c5ccf7b9cc1b966fd00ffc7f9607caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interface <a class="el" href="class_i_factory_naissance.html" title="Interface IFactoryNaissance qui définit la méthode create.">IFactoryNaissance</a> qui définit la méthode create. </p>
+<p>La méthode create renvoie un type de créature, dans notre cas il n'y a que des bestioles </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2c5ccf7b9cc1b966fd00ffc7f9607caa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c5ccf7b9cc1b966fd00ffc7f9607caa">&#9670;&nbsp;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_i_creature.html">ICreature</a>* IFactoryNaissance::create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_i_comportement.html">IComportement</a> *&#160;</td>
+          <td class="paramname"><em>comportement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Méthode virtuelle pure qui doit être redéfinie par les classes filles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comportement</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ICreature* </dd></dl>
+
+<p>Implemented in <a class="el" href="class_concrete_creator_bestiole.html#aabfbe8fb5fd8e1d00e93892c3888d00c">ConcreteCreatorBestiole</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="_i_factory_naissance_8h_source.html">IFactoryNaissance.h</a></li>
 </ul>

@@ -1,0 +1,158 @@
+\hypertarget{class_configuration}{}\doxysection{Configuration Class Reference}
+\label{class_configuration}\index{Configuration@{Configuration}}
+
+
+Classe configuration.  
+
+
+
+
+{\ttfamily \#include $<$Configuration.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_configuration_a779947337bf652f0e773cb29f37f14ba}{Configuration}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut de configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_configuration_abad5542088da6ac2ffdcc96daeef76e4}{Configuration}} (int nb\+\_\+creature, map$<$ Comport\+Type, int $>$ config)
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{class_configuration}{Configuration}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_configuration_a0dd0fa189e239f4c9a036303f641441e}\label{class_configuration_a0dd0fa189e239f4c9a036303f641441e}} 
+\mbox{\hyperlink{class_configuration_a0dd0fa189e239f4c9a036303f641441e}{$\sim$\+Configuration}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_configuration}{Configuration}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_configuration_a23574f1914df96a67c02581b49acc662}{get\+Nb\+Creature}} (void)
+\begin{DoxyCompactList}\small\item\em Retourne le nombre de créatures de la simulation. \end{DoxyCompactList}\item 
+map$<$ Comport\+Type, int $>$ \mbox{\hyperlink{class_configuration_a42f47a07a926c1be5917f2647cf30ca0}{get\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em Retourne le vecteur de configuration. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_configuration_a0fcb1f9be36db06d2f40cd3746515dff}{get\+Greg}} (void)
+\begin{DoxyCompactList}\small\item\em Retourne le nombre de gregaires. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_configuration_a211f77df36d70ebea420ab4771a6a542}{get\+Kamik}} (void)
+\begin{DoxyCompactList}\small\item\em Retourne le nombre de kamikazes. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_configuration_ac77d9c6dfeec9faf1c3347c5a777ad5d}{get\+Peur}} (void)
+\begin{DoxyCompactList}\small\item\em Retourne le nombre de peureuses. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_configuration_a972270e2800f13025d1d61526d6bf1c3}{get\+Prev}} (void)
+\begin{DoxyCompactList}\small\item\em Retourne le nombre de prevoyantes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_configuration_af24954d8975bc47f63bf7134e7c01f9e}\label{class_configuration_af24954d8975bc47f63bf7134e7c01f9e}} 
+void {\bfseries print\+Configuration} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe configuration. 
+
+Stocke les pourcentages de chaque comportement présent dans la simulation 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_configuration_a779947337bf652f0e773cb29f37f14ba}\label{class_configuration_a779947337bf652f0e773cb29f37f14ba}} 
+\index{Configuration@{Configuration}!Configuration@{Configuration}}
+\index{Configuration@{Configuration}!Configuration@{Configuration}}
+\doxysubsubsection{\texorpdfstring{Configuration()}{Configuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Configuration\+::\+Configuration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut de configuration. 
+
+Retourne une configuration avec 20 bestioles, et avec 25\% de chaque comportement qu\textquotesingle{}on a implémenté (pas multiple) \mbox{\Hypertarget{class_configuration_abad5542088da6ac2ffdcc96daeef76e4}\label{class_configuration_abad5542088da6ac2ffdcc96daeef76e4}} 
+\index{Configuration@{Configuration}!Configuration@{Configuration}}
+\index{Configuration@{Configuration}!Configuration@{Configuration}}
+\doxysubsubsection{\texorpdfstring{Configuration()}{Configuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Configuration\+::\+Configuration (\begin{DoxyParamCaption}\item[{int}]{nb\+\_\+creature,  }\item[{map$<$ Comport\+Type, int $>$}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructeur de \mbox{\hyperlink{class_configuration}{Configuration}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nb\+\_\+creature} & nombre de créatures que le client souhaite \\
+\hline
+{\em config} & pourcentage et comportement \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_configuration_a42f47a07a926c1be5917f2647cf30ca0}\label{class_configuration_a42f47a07a926c1be5917f2647cf30ca0}} 
+\index{Configuration@{Configuration}!getConfig@{getConfig}}
+\index{getConfig@{getConfig}!Configuration@{Configuration}}
+\doxysubsubsection{\texorpdfstring{getConfig()}{getConfig()}}
+{\footnotesize\ttfamily map$<$Comport\+Type,int$>$ Configuration\+::get\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le vecteur de configuration. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$pair$<$int,\+Comport\+Type$>$ $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_configuration_a0fcb1f9be36db06d2f40cd3746515dff}\label{class_configuration_a0fcb1f9be36db06d2f40cd3746515dff}} 
+\index{Configuration@{Configuration}!getGreg@{getGreg}}
+\index{getGreg@{getGreg}!Configuration@{Configuration}}
+\doxysubsubsection{\texorpdfstring{getGreg()}{getGreg()}}
+{\footnotesize\ttfamily int Configuration\+::get\+Greg (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Retourne le nombre de gregaires. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_configuration_a211f77df36d70ebea420ab4771a6a542}\label{class_configuration_a211f77df36d70ebea420ab4771a6a542}} 
+\index{Configuration@{Configuration}!getKamik@{getKamik}}
+\index{getKamik@{getKamik}!Configuration@{Configuration}}
+\doxysubsubsection{\texorpdfstring{getKamik()}{getKamik()}}
+{\footnotesize\ttfamily int Configuration\+::get\+Kamik (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Retourne le nombre de kamikazes. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_configuration_a23574f1914df96a67c02581b49acc662}\label{class_configuration_a23574f1914df96a67c02581b49acc662}} 
+\index{Configuration@{Configuration}!getNbCreature@{getNbCreature}}
+\index{getNbCreature@{getNbCreature}!Configuration@{Configuration}}
+\doxysubsubsection{\texorpdfstring{getNbCreature()}{getNbCreature()}}
+{\footnotesize\ttfamily int Configuration\+::get\+Nb\+Creature (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le nombre de créatures de la simulation. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_configuration_ac77d9c6dfeec9faf1c3347c5a777ad5d}\label{class_configuration_ac77d9c6dfeec9faf1c3347c5a777ad5d}} 
+\index{Configuration@{Configuration}!getPeur@{getPeur}}
+\index{getPeur@{getPeur}!Configuration@{Configuration}}
+\doxysubsubsection{\texorpdfstring{getPeur()}{getPeur()}}
+{\footnotesize\ttfamily int Configuration\+::get\+Peur (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Retourne le nombre de peureuses. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_configuration_a972270e2800f13025d1d61526d6bf1c3}\label{class_configuration_a972270e2800f13025d1d61526d6bf1c3}} 
+\index{Configuration@{Configuration}!getPrev@{getPrev}}
+\index{getPrev@{getPrev}!Configuration@{Configuration}}
+\doxysubsubsection{\texorpdfstring{getPrev()}{getPrev()}}
+{\footnotesize\ttfamily int Configuration\+::get\+Prev (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Retourne le nombre de prevoyantes. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Configuration.\+h\item 
+Configuration.\+cpp\end{DoxyCompactItemize}

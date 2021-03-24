@@ -1,0 +1,100 @@
+\hypertarget{class_comportement_prevoyante}{}\doxysection{Comportement\+Prevoyante Class Reference}
+\label{class_comportement_prevoyante}\index{ComportementPrevoyante@{ComportementPrevoyante}}
+
+
+Implémentation du comportement prévoyant des créatures.  
+
+
+
+
+{\ttfamily \#include $<$Comportement\+Prevoyante.\+h$>$}
+
+Inheritance diagram for Comportement\+Prevoyante\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_comportement_prevoyante}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_comportement_prevoyante_a3d6f8fe45ea76386870d4ed8963d6027}\label{class_comportement_prevoyante_a3d6f8fe45ea76386870d4ed8963d6027}} 
+\mbox{\hyperlink{class_comportement_prevoyante_a3d6f8fe45ea76386870d4ed8963d6027}{Comportement\+Prevoyante}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de Comportement\+PRevoyante. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_comportement}{IComportement}} $\ast$ \mbox{\hyperlink{class_comportement_prevoyante_a7a7c2f3b825686c5804c17faf1cfb170}{clone}} () override
+\begin{DoxyCompactList}\small\item\em Réimplémentation de la méthode clone. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_comportement_prevoyante_a491b990fc0ef14e25110f9657b712e64}\label{class_comportement_prevoyante_a491b990fc0ef14e25110f9657b712e64}} 
+\mbox{\hyperlink{class_comportement_prevoyante_a491b990fc0ef14e25110f9657b712e64}{$\sim$\+Comportement\+Prevoyante}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_comportement_prevoyante}{Comportement\+Prevoyante}}. \end{DoxyCompactList}\item 
+pair$<$ vector$<$ double $>$, double $>$ \mbox{\hyperlink{class_comportement_prevoyante_a77187c956777b31f4f04a9c9fbf31b19}{calcul\+Direction}} (vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$ voisins, \mbox{\hyperlink{class_i_creature}{ICreature}} \&creature\+Associee) override
+\begin{DoxyCompactList}\small\item\em calcule la direction de la créature \end{DoxyCompactList}\item 
+Comport\+Type \mbox{\hyperlink{class_comportement_prevoyante_aff02ede5c6f5e768dbceff25ff19d6a6}{get\+Comportement\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Retourne le comportement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implémentation du comportement prévoyant des créatures. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_comportement_prevoyante_a77187c956777b31f4f04a9c9fbf31b19}\label{class_comportement_prevoyante_a77187c956777b31f4f04a9c9fbf31b19}} 
+\index{ComportementPrevoyante@{ComportementPrevoyante}!calculDirection@{calculDirection}}
+\index{calculDirection@{calculDirection}!ComportementPrevoyante@{ComportementPrevoyante}}
+\doxysubsubsection{\texorpdfstring{calculDirection()}{calculDirection()}}
+{\footnotesize\ttfamily pair$<$ vector$<$ double $>$, double $>$ Comportement\+Prevoyante\+::calcul\+Direction (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$}]{voisins,  }\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{creature\+Associee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+calcule la direction de la créature 
+
+
+\begin{DoxyParams}{Parameters}
+{\em voisins} & les créatures voisines que la créature associée peut détecter \\
+\hline
+{\em creature\+Associee} & la créature emballée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair$<$vector$<$double$>$, double$>$ vecteur directeur de la vitesse, multiplicateur de la norme de la vitesse 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_comportement_prevoyante_a7a7c2f3b825686c5804c17faf1cfb170}\label{class_comportement_prevoyante_a7a7c2f3b825686c5804c17faf1cfb170}} 
+\index{ComportementPrevoyante@{ComportementPrevoyante}!clone@{clone}}
+\index{clone@{clone}!ComportementPrevoyante@{ComportementPrevoyante}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_comportement}{IComportement}}$\ast$ Comportement\+Prevoyante\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Réimplémentation de la méthode clone. 
+
+Renvoie la copie d\textquotesingle{}un objet comportement prevoyante
+
+\begin{DoxyReturn}{Returns}
+IComportement$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_comportement_aff83f9dd5b384e0f03f206a326ac2c80}{IComportement}}.
+
+\mbox{\Hypertarget{class_comportement_prevoyante_aff02ede5c6f5e768dbceff25ff19d6a6}\label{class_comportement_prevoyante_aff02ede5c6f5e768dbceff25ff19d6a6}} 
+\index{ComportementPrevoyante@{ComportementPrevoyante}!getComportementType@{getComportementType}}
+\index{getComportementType@{getComportementType}!ComportementPrevoyante@{ComportementPrevoyante}}
+\doxysubsubsection{\texorpdfstring{getComportementType()}{getComportementType()}}
+{\footnotesize\ttfamily Comport\+Type Comportement\+Prevoyante\+::get\+Comportement\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retourne le comportement. 
+
+\begin{DoxyReturn}{Returns}
+Comport\+Type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_comportement_a10412456a249c6652c712fd84261d242}{IComportement}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Comportement\+Prevoyante.\+h\item 
+Comportement\+Prevoyante.\+cpp\end{DoxyCompactItemize}

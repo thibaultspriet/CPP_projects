@@ -1,0 +1,246 @@
+\hypertarget{class_creature_decorator}{}\doxysection{Creature\+Decorator Class Reference}
+\label{class_creature_decorator}\index{CreatureDecorator@{CreatureDecorator}}
+
+
+Class \mbox{\hyperlink{class_creature_decorator}{Creature\+Decorator}}.  
+
+
+
+
+{\ttfamily \#include $<$Creature\+Decorator.\+h$>$}
+
+Inheritance diagram for Creature\+Decorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.111111cm]{class_creature_decorator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_creature_decorator_a80cb4e614f9f7173c129a64a572464a1}{Creature\+Decorator}} (\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ic)
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{class_creature_decorator}{Creature\+Decorator}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_creature_decorator_a74db3d29d06a329cef4fe374b365d802}\label{class_creature_decorator_a74db3d29d06a329cef4fe374b365d802}} 
+virtual \mbox{\hyperlink{class_creature_decorator_a74db3d29d06a329cef4fe374b365d802}{$\sim$\+Creature\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_creature_decorator}{Creature\+Decorator}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_creature_decorator_a1ad1d70b4be5e815949f692e9676591c}{je\+Te\+Vois}} (const \mbox{\hyperlink{class_i_creature}{ICreature}} \&ic) const
+\begin{DoxyCompactList}\small\item\em méthode je te vois. Redéfinie par les Capteur\+Decorators \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_creature_decorator_a7e06859f7bb530455749373b66bb4bf4}{get\+Vitesse}} ()
+\begin{DoxyCompactList}\small\item\em méthode get\+Vitesse. Rédéfini par \mbox{\hyperlink{class_nageoire_decorator}{Nageoire\+Decorator}} et \mbox{\hyperlink{class_carapace_decorator}{Carapace\+Decorator}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_creature_decorator_aef8d301db37389c88cd84a3ceaca5066}{set\+Vitesse}} (double vx, double vy)
+\begin{DoxyCompactList}\small\item\em méthode set\+Vitesse. Rédéfinir par \mbox{\hyperlink{class_nageoire_decorator}{Nageoire\+Decorator}} et \mbox{\hyperlink{class_carapace_decorator}{Carapace\+Decorator}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_creature_decorator_ad81c6a0f936cf2448d220f7ed92015fe}{get\+Camouflage}} (void) const
+\begin{DoxyCompactList}\small\item\em méthode get\+Camouflage. Rédéfini par \mbox{\hyperlink{class_camouflage_decorator}{Camouflage\+Decorator}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_creature_decorator_ae70830a4aedf9eda9c706b34678133fa}{get\+Prob\+Death}} (void) const
+\begin{DoxyCompactList}\small\item\em méthode get\+Prob\+Death. Rédéfinir par \mbox{\hyperlink{class_carapace_decorator}{Carapace\+Decorator}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_creature_decorator_a3f29de62b2c23293cdcd03dfc853ebfa}{draw}} (UImg \&support, \mbox{\hyperlink{class_milieu}{Milieu}} \&mon\+Milieu, \mbox{\hyperlink{class_i_creature}{ICreature}} \&creature\+To\+Draw)=0
+\begin{DoxyCompactList}\small\item\em Méthode virtuelle pure. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ \mbox{\hyperlink{class_creature_decorator_a76aa412554e38583daad9baedf4538aa}{clone}} (void)=0
+\begin{DoxyCompactList}\small\item\em permet de cloner une créature avec son décorateur \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ \mbox{\hyperlink{class_creature_decorator_aebefd4c87c542849e3c84c2ee4056932}{creature}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{class_creature_decorator}{Creature\+Decorator}}. 
+
+Classe abstraite de base pour le design pattern decorator. C\textquotesingle{}est cette classe qui indique qu\textquotesingle{}elles sont les méthodes à redefinir.
+
+De plus cette classe délègue dans un premier temps le comportement original à la créature emballée. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_creature_decorator_a80cb4e614f9f7173c129a64a572464a1}\label{class_creature_decorator_a80cb4e614f9f7173c129a64a572464a1}} 
+\index{CreatureDecorator@{CreatureDecorator}!CreatureDecorator@{CreatureDecorator}}
+\index{CreatureDecorator@{CreatureDecorator}!CreatureDecorator@{CreatureDecorator}}
+\doxysubsubsection{\texorpdfstring{CreatureDecorator()}{CreatureDecorator()}}
+{\footnotesize\ttfamily Creature\+Decorator\+::\+Creature\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$}]{ic }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \mbox{\hyperlink{class_creature_decorator}{Creature\+Decorator}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & créature emballée \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_creature_decorator_a76aa412554e38583daad9baedf4538aa}\label{class_creature_decorator_a76aa412554e38583daad9baedf4538aa}} 
+\index{CreatureDecorator@{CreatureDecorator}!clone@{clone}}
+\index{clone@{clone}!CreatureDecorator@{CreatureDecorator}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_creature}{ICreature}}$\ast$ Creature\+Decorator\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+permet de cloner une créature avec son décorateur 
+
+\begin{DoxyReturn}{Returns}
+ICreature$\ast$ 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_creature_ad7f81521c7c24242c084fd2142243432}{ICreature}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_capteur_decorator_a15353e12ec4a382a10ec2d70cc5091e2}{Capteur\+Decorator}}, \mbox{\hyperlink{class_accessoire_decorator_a1a844769482e80de1d2e495595213ac1}{Accessoire\+Decorator}}, \mbox{\hyperlink{class_yeux_decorator_ab93fda4076f177d4d18f92f07610b6ae}{Yeux\+Decorator}}, \mbox{\hyperlink{class_oreille_decorator_a25bdb91f48433b7fd828ab151bedfdba}{Oreille\+Decorator}}, \mbox{\hyperlink{class_nageoire_decorator_aad5bf22948ad9077e49ca0a07184aa1f}{Nageoire\+Decorator}}, \mbox{\hyperlink{class_carapace_decorator_abae4de3b70d9ce2573f374649052a630}{Carapace\+Decorator}}, and \mbox{\hyperlink{class_camouflage_decorator_af835f381df4f604b5976d61202c5f2a0}{Camouflage\+Decorator}}.
+
+\mbox{\Hypertarget{class_creature_decorator_a3f29de62b2c23293cdcd03dfc853ebfa}\label{class_creature_decorator_a3f29de62b2c23293cdcd03dfc853ebfa}} 
+\index{CreatureDecorator@{CreatureDecorator}!draw@{draw}}
+\index{draw@{draw}!CreatureDecorator@{CreatureDecorator}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void Creature\+Decorator\+::draw (\begin{DoxyParamCaption}\item[{UImg \&}]{support,  }\item[{\mbox{\hyperlink{class_milieu}{Milieu}} \&}]{mon\+Milieu,  }\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{creature\+To\+Draw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Méthode virtuelle pure. 
+
+Dans les classes filles (oreille, yeux, nageoire ..) permet de dessiner la créature avec son décorateur
+
+
+\begin{DoxyParams}{Parameters}
+{\em support} & \\
+\hline
+{\em mon\+Milieu} & \\
+\hline
+{\em creature\+To\+Draw} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_creature_a116a6ca264ff8d82dada6b6c3510db59}{ICreature}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_capteur_decorator_a2a0d8194473e07b091ba540d6f73a8f2}{Capteur\+Decorator}}, \mbox{\hyperlink{class_accessoire_decorator_a3efa8047f1dbaef6d698d9e50b986ec5}{Accessoire\+Decorator}}, \mbox{\hyperlink{class_yeux_decorator_a28c11ffd6639253604046471138c0812}{Yeux\+Decorator}}, \mbox{\hyperlink{class_oreille_decorator_a8b05d9f7f8765cc6fda845bd2be6d4c8}{Oreille\+Decorator}}, \mbox{\hyperlink{class_nageoire_decorator_a275bf48670acc3013fe3c9afeeec053a}{Nageoire\+Decorator}}, \mbox{\hyperlink{class_carapace_decorator_a9904128eeea7b34090b5a673ee332bbf}{Carapace\+Decorator}}, and \mbox{\hyperlink{class_camouflage_decorator_adbc57b124077015387e7b3c954bf15b6}{Camouflage\+Decorator}}.
+
+\mbox{\Hypertarget{class_creature_decorator_ad81c6a0f936cf2448d220f7ed92015fe}\label{class_creature_decorator_ad81c6a0f936cf2448d220f7ed92015fe}} 
+\index{CreatureDecorator@{CreatureDecorator}!getCamouflage@{getCamouflage}}
+\index{getCamouflage@{getCamouflage}!CreatureDecorator@{CreatureDecorator}}
+\doxysubsubsection{\texorpdfstring{getCamouflage()}{getCamouflage()}}
+{\footnotesize\ttfamily double Creature\+Decorator\+::get\+Camouflage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+méthode get\+Camouflage. Rédéfini par \mbox{\hyperlink{class_camouflage_decorator}{Camouflage\+Decorator}}. 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_creature_a96af7e6e612a8d3a0e7b418a50f39503}{ICreature}}.
+
+\mbox{\Hypertarget{class_creature_decorator_ae70830a4aedf9eda9c706b34678133fa}\label{class_creature_decorator_ae70830a4aedf9eda9c706b34678133fa}} 
+\index{CreatureDecorator@{CreatureDecorator}!getProbDeath@{getProbDeath}}
+\index{getProbDeath@{getProbDeath}!CreatureDecorator@{CreatureDecorator}}
+\doxysubsubsection{\texorpdfstring{getProbDeath()}{getProbDeath()}}
+{\footnotesize\ttfamily double Creature\+Decorator\+::get\+Prob\+Death (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+méthode get\+Prob\+Death. Rédéfinir par \mbox{\hyperlink{class_carapace_decorator}{Carapace\+Decorator}}. 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_creature_a123c53228807cf3b90e64584759a7de7}{ICreature}}.
+
+\mbox{\Hypertarget{class_creature_decorator_a7e06859f7bb530455749373b66bb4bf4}\label{class_creature_decorator_a7e06859f7bb530455749373b66bb4bf4}} 
+\index{CreatureDecorator@{CreatureDecorator}!getVitesse@{getVitesse}}
+\index{getVitesse@{getVitesse}!CreatureDecorator@{CreatureDecorator}}
+\doxysubsubsection{\texorpdfstring{getVitesse()}{getVitesse()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Creature\+Decorator\+::get\+Vitesse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+méthode get\+Vitesse. Rédéfini par \mbox{\hyperlink{class_nageoire_decorator}{Nageoire\+Decorator}} et \mbox{\hyperlink{class_carapace_decorator}{Carapace\+Decorator}} 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_creature_a71ef0c49f4766b2d1b3b225b28606617}{ICreature}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_nageoire_decorator_af2ba833aea59e9d685cdb7e6a9fe5f2c}{Nageoire\+Decorator}}.
+
+\mbox{\Hypertarget{class_creature_decorator_a1ad1d70b4be5e815949f692e9676591c}\label{class_creature_decorator_a1ad1d70b4be5e815949f692e9676591c}} 
+\index{CreatureDecorator@{CreatureDecorator}!jeTeVois@{jeTeVois}}
+\index{jeTeVois@{jeTeVois}!CreatureDecorator@{CreatureDecorator}}
+\doxysubsubsection{\texorpdfstring{jeTeVois()}{jeTeVois()}}
+{\footnotesize\ttfamily bool Creature\+Decorator\+::je\+Te\+Vois (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{ic }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+méthode je te vois. Redéfinie par les Capteur\+Decorators 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & créature qui est testéé pour voir si elle est dans le champ de vision de notre créature courante. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_creature_a9b5e7de90103ec3daa74d98d6d509244}{ICreature}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_yeux_decorator_ab11c1e7cade2cc0268fabd5b6ae712ca}{Yeux\+Decorator}}, and \mbox{\hyperlink{class_oreille_decorator_a30d65fa25db4760a43bbc1bec1500d69}{Oreille\+Decorator}}.
+
+\mbox{\Hypertarget{class_creature_decorator_aef8d301db37389c88cd84a3ceaca5066}\label{class_creature_decorator_aef8d301db37389c88cd84a3ceaca5066}} 
+\index{CreatureDecorator@{CreatureDecorator}!setVitesse@{setVitesse}}
+\index{setVitesse@{setVitesse}!CreatureDecorator@{CreatureDecorator}}
+\doxysubsubsection{\texorpdfstring{setVitesse()}{setVitesse()}}
+{\footnotesize\ttfamily void Creature\+Decorator\+::set\+Vitesse (\begin{DoxyParamCaption}\item[{double}]{vx,  }\item[{double}]{vy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+méthode set\+Vitesse. Rédéfinir par \mbox{\hyperlink{class_nageoire_decorator}{Nageoire\+Decorator}} et \mbox{\hyperlink{class_carapace_decorator}{Carapace\+Decorator}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vx} & vitesse horizontale \\
+\hline
+{\em vy} & vitesse verticale \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_creature_a774233a541c1c470abb24b245cafede2}{ICreature}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_nageoire_decorator_aa4db7d0f2f46269a13041596356e39b5}{Nageoire\+Decorator}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_creature_decorator_aebefd4c87c542849e3c84c2ee4056932}\label{class_creature_decorator_aebefd4c87c542849e3c84c2ee4056932}} 
+\index{CreatureDecorator@{CreatureDecorator}!creature@{creature}}
+\index{creature@{creature}!CreatureDecorator@{CreatureDecorator}}
+\doxysubsubsection{\texorpdfstring{creature}{creature}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_creature}{ICreature}}$\ast$ Creature\+Decorator\+::creature\hspace{0.3cm}{\ttfamily [protected]}}
+
+Créature emballée 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Creature\+Decorator.\+h\item 
+Creature\+Decorator.\+Cpp\end{DoxyCompactItemize}

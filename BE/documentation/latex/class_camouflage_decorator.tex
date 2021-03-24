@@ -1,0 +1,148 @@
+\hypertarget{class_camouflage_decorator}{}\doxysection{Camouflage\+Decorator Class Reference}
+\label{class_camouflage_decorator}\index{CamouflageDecorator@{CamouflageDecorator}}
+
+
+Class \mbox{\hyperlink{class_camouflage_decorator}{Camouflage\+Decorator}}.  
+
+
+
+
+{\ttfamily \#include $<$Camouflage\+Decorator.\+h$>$}
+
+Inheritance diagram for Camouflage\+Decorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_camouflage_decorator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_camouflage_decorator_a8f5e2489b9e2a60305b914d6047578a2}{Camouflage\+Decorator}} (\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ic)
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{class_camouflage_decorator}{Camouflage\+Decorator}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ \mbox{\hyperlink{class_camouflage_decorator_af835f381df4f604b5976d61202c5f2a0}{clone}} (void) override
+\begin{DoxyCompactList}\small\item\em Copie une créature avec un camouflage. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_camouflage_decorator_ae5bc76c85857dda6870ef8e31c096fb0}\label{class_camouflage_decorator_ae5bc76c85857dda6870ef8e31c096fb0}} 
+\mbox{\hyperlink{class_camouflage_decorator_ae5bc76c85857dda6870ef8e31c096fb0}{$\sim$\+Camouflage\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_camouflage_decorator}{Camouflage\+Decorator}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_camouflage_decorator_ac3044d42750dcea16310280f157be760}{get\+Camouflage}} (void) const override final
+\begin{DoxyCompactList}\small\item\em méthode get\+Camouflage \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camouflage_decorator_adbc57b124077015387e7b3c954bf15b6}{draw}} (UImg \&support, \mbox{\hyperlink{class_milieu}{Milieu}} \&mon\+Milieu, \mbox{\hyperlink{class_i_creature}{ICreature}} \&creature\+To\+Draw) override
+\begin{DoxyCompactList}\small\item\em Déssine une créature camouflée. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_camouflage_decorator_a16fe63f5a0616347cf9f539607bc3c59}\label{class_camouflage_decorator_a16fe63f5a0616347cf9f539607bc3c59}} 
+virtual void {\bfseries print\+Creature} (void) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{class_camouflage_decorator_addb3abac6739d65be96c6511abb78279}{CAMOUF\+\_\+\+MIN}} = 0.\+1
+\item 
+static const double \mbox{\hyperlink{class_camouflage_decorator_a17d19096e21d18f3a71516d46a9b89a3}{CAMOUF\+\_\+\+MAX}} = 1.\+0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{class_camouflage_decorator}{Camouflage\+Decorator}}. 
+
+Ce decorateur permet à la créature d\textquotesingle{}être moins visible par les autres. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_camouflage_decorator_a8f5e2489b9e2a60305b914d6047578a2}\label{class_camouflage_decorator_a8f5e2489b9e2a60305b914d6047578a2}} 
+\index{CamouflageDecorator@{CamouflageDecorator}!CamouflageDecorator@{CamouflageDecorator}}
+\index{CamouflageDecorator@{CamouflageDecorator}!CamouflageDecorator@{CamouflageDecorator}}
+\doxysubsubsection{\texorpdfstring{CamouflageDecorator()}{CamouflageDecorator()}}
+{\footnotesize\ttfamily Camouflage\+Decorator\+::\+Camouflage\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$}]{ic }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \mbox{\hyperlink{class_camouflage_decorator}{Camouflage\+Decorator}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & créature à emballer \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_camouflage_decorator_af835f381df4f604b5976d61202c5f2a0}\label{class_camouflage_decorator_af835f381df4f604b5976d61202c5f2a0}} 
+\index{CamouflageDecorator@{CamouflageDecorator}!clone@{clone}}
+\index{clone@{clone}!CamouflageDecorator@{CamouflageDecorator}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ Camouflage\+Decorator\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Copie une créature avec un camouflage. 
+
+\begin{DoxyReturn}{Returns}
+ICreature$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_accessoire_decorator_a1a844769482e80de1d2e495595213ac1}{Accessoire\+Decorator}}.
+
+\mbox{\Hypertarget{class_camouflage_decorator_adbc57b124077015387e7b3c954bf15b6}\label{class_camouflage_decorator_adbc57b124077015387e7b3c954bf15b6}} 
+\index{CamouflageDecorator@{CamouflageDecorator}!draw@{draw}}
+\index{draw@{draw}!CamouflageDecorator@{CamouflageDecorator}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Camouflage\+Decorator\+::draw (\begin{DoxyParamCaption}\item[{UImg \&}]{support,  }\item[{\mbox{\hyperlink{class_milieu}{Milieu}} \&}]{mon\+Milieu,  }\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{creature\+To\+Draw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Déssine une créature camouflée. 
+
+La queue a une opacité réduite.
+
+
+\begin{DoxyParams}{Parameters}
+{\em support} & \\
+\hline
+{\em mon\+Milieu} & \\
+\hline
+{\em creature\+To\+Draw} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_accessoire_decorator_a3efa8047f1dbaef6d698d9e50b986ec5}{Accessoire\+Decorator}}.
+
+\mbox{\Hypertarget{class_camouflage_decorator_ac3044d42750dcea16310280f157be760}\label{class_camouflage_decorator_ac3044d42750dcea16310280f157be760}} 
+\index{CamouflageDecorator@{CamouflageDecorator}!getCamouflage@{getCamouflage}}
+\index{getCamouflage@{getCamouflage}!CamouflageDecorator@{CamouflageDecorator}}
+\doxysubsubsection{\texorpdfstring{getCamouflage()}{getCamouflage()}}
+{\footnotesize\ttfamily double Camouflage\+Decorator\+::get\+Camouflage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+méthode get\+Camouflage 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_accessoire_decorator_ac38adfb5d53bde31a1ff9ab8fbc34ebd}{Accessoire\+Decorator}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_camouflage_decorator_a17d19096e21d18f3a71516d46a9b89a3}\label{class_camouflage_decorator_a17d19096e21d18f3a71516d46a9b89a3}} 
+\index{CamouflageDecorator@{CamouflageDecorator}!CAMOUF\_MAX@{CAMOUF\_MAX}}
+\index{CAMOUF\_MAX@{CAMOUF\_MAX}!CamouflageDecorator@{CamouflageDecorator}}
+\doxysubsubsection{\texorpdfstring{CAMOUF\_MAX}{CAMOUF\_MAX}}
+{\footnotesize\ttfamily const double Camouflage\+Decorator\+::\+CAMOUF\+\_\+\+MAX = 1.\+0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+valeur de camouflage max \mbox{\Hypertarget{class_camouflage_decorator_addb3abac6739d65be96c6511abb78279}\label{class_camouflage_decorator_addb3abac6739d65be96c6511abb78279}} 
+\index{CamouflageDecorator@{CamouflageDecorator}!CAMOUF\_MIN@{CAMOUF\_MIN}}
+\index{CAMOUF\_MIN@{CAMOUF\_MIN}!CamouflageDecorator@{CamouflageDecorator}}
+\doxysubsubsection{\texorpdfstring{CAMOUF\_MIN}{CAMOUF\_MIN}}
+{\footnotesize\ttfamily const double Camouflage\+Decorator\+::\+CAMOUF\+\_\+\+MIN = 0.\+1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+valeur de camouflage min 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Camouflage\+Decorator.\+h\item 
+Camouflage\+Decorator.\+cpp\end{DoxyCompactItemize}

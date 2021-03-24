@@ -1,0 +1,125 @@
+\hypertarget{class_comportement_peureuse}{}\doxysection{Comportement\+Peureuse Class Reference}
+\label{class_comportement_peureuse}\index{ComportementPeureuse@{ComportementPeureuse}}
+
+
+Implémentation du comportement peureux des créatures.  
+
+
+
+
+{\ttfamily \#include $<$Comportement\+Peureuse.\+h$>$}
+
+Inheritance diagram for Comportement\+Peureuse\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_comportement_peureuse}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_comportement_peureuse_a3c17b8beee6d5404e3a422460c69ac42}{Comportement\+Peureuse}} (int seuil)
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{class_comportement_peureuse}{Comportement\+Peureuse}} avec un seuil précis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_comportement}{IComportement}} $\ast$ \mbox{\hyperlink{class_comportement_peureuse_aed05e12674140a0d1b57faac629fb4ba}{clone}} () override
+\begin{DoxyCompactList}\small\item\em Réimplémentation de la méthode clone. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_comportement_peureuse_ac0b1f0ebe462dc10ce3c58ce2a69d291}\label{class_comportement_peureuse_ac0b1f0ebe462dc10ce3c58ce2a69d291}} 
+\mbox{\hyperlink{class_comportement_peureuse_ac0b1f0ebe462dc10ce3c58ce2a69d291}{Comportement\+Peureuse}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{class_comportement_peureuse}{Comportement\+Peureuse}} par défaut. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_comportement_peureuse_a3684636e4eb830e3c27a44c0396986e0}\label{class_comportement_peureuse_a3684636e4eb830e3c27a44c0396986e0}} 
+\mbox{\hyperlink{class_comportement_peureuse_a3684636e4eb830e3c27a44c0396986e0}{$\sim$\+Comportement\+Peureuse}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_comportement_peureuse}{Comportement\+Peureuse}}. \end{DoxyCompactList}\item 
+pair$<$ vector$<$ double $>$, double $>$ \mbox{\hyperlink{class_comportement_peureuse_a134e7ce4fa780ba0921a8952853dc827}{calcul\+Direction}} (vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$ voisins, \mbox{\hyperlink{class_i_creature}{ICreature}} \&creature\+Associee) override
+\begin{DoxyCompactList}\small\item\em calcule la direction de la créature \end{DoxyCompactList}\item 
+Comport\+Type \mbox{\hyperlink{class_comportement_peureuse_a267f2133d585620ba6beda77c7a727af}{get\+Comportement\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Retourne le comportement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_comportement_peureuse_ab7dc5ac04cc14f57f7d8d6d61b71bc0e}\label{class_comportement_peureuse_ab7dc5ac04cc14f57f7d8d6d61b71bc0e}} 
+int {\bfseries get\+Seuil} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implémentation du comportement peureux des créatures. 
+
+Une créature peureuse fuit lorsqu\textquotesingle{}il y a trop de créatures autour d\textquotesingle{}elle 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_comportement_peureuse_a3c17b8beee6d5404e3a422460c69ac42}\label{class_comportement_peureuse_a3c17b8beee6d5404e3a422460c69ac42}} 
+\index{ComportementPeureuse@{ComportementPeureuse}!ComportementPeureuse@{ComportementPeureuse}}
+\index{ComportementPeureuse@{ComportementPeureuse}!ComportementPeureuse@{ComportementPeureuse}}
+\doxysubsubsection{\texorpdfstring{ComportementPeureuse()}{ComportementPeureuse()}}
+{\footnotesize\ttfamily Comportement\+Peureuse\+::\+Comportement\+Peureuse (\begin{DoxyParamCaption}\item[{int}]{seuil }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \mbox{\hyperlink{class_comportement_peureuse}{Comportement\+Peureuse}} avec un seuil précis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seuil} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_comportement_peureuse_a134e7ce4fa780ba0921a8952853dc827}\label{class_comportement_peureuse_a134e7ce4fa780ba0921a8952853dc827}} 
+\index{ComportementPeureuse@{ComportementPeureuse}!calculDirection@{calculDirection}}
+\index{calculDirection@{calculDirection}!ComportementPeureuse@{ComportementPeureuse}}
+\doxysubsubsection{\texorpdfstring{calculDirection()}{calculDirection()}}
+{\footnotesize\ttfamily pair$<$ vector$<$ double $>$, double $>$ Comportement\+Peureuse\+::calcul\+Direction (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$}]{voisins,  }\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{creature\+Associee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+calcule la direction de la créature 
+
+
+\begin{DoxyParams}{Parameters}
+{\em voisins} & les créatures voisines que la créature associée peut détecter \\
+\hline
+{\em creature\+Associee} & la créature emballée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair$<$vector$<$double$>$, double$>$ vecteur directeur de la vitesse, multiplicateur de la norme de la vitesse 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_comportement_peureuse_aed05e12674140a0d1b57faac629fb4ba}\label{class_comportement_peureuse_aed05e12674140a0d1b57faac629fb4ba}} 
+\index{ComportementPeureuse@{ComportementPeureuse}!clone@{clone}}
+\index{clone@{clone}!ComportementPeureuse@{ComportementPeureuse}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_comportement}{IComportement}}$\ast$ Comportement\+Peureuse\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Réimplémentation de la méthode clone. 
+
+Renvoie la copie d\textquotesingle{}un objet comportement peureuse
+
+\begin{DoxyReturn}{Returns}
+IComportement$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_comportement_aff83f9dd5b384e0f03f206a326ac2c80}{IComportement}}.
+
+\mbox{\Hypertarget{class_comportement_peureuse_a267f2133d585620ba6beda77c7a727af}\label{class_comportement_peureuse_a267f2133d585620ba6beda77c7a727af}} 
+\index{ComportementPeureuse@{ComportementPeureuse}!getComportementType@{getComportementType}}
+\index{getComportementType@{getComportementType}!ComportementPeureuse@{ComportementPeureuse}}
+\doxysubsubsection{\texorpdfstring{getComportementType()}{getComportementType()}}
+{\footnotesize\ttfamily Comport\+Type Comportement\+Peureuse\+::get\+Comportement\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retourne le comportement. 
+
+\begin{DoxyReturn}{Returns}
+Comport\+Type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_comportement_a10412456a249c6652c712fd84261d242}{IComportement}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Comportement\+Peureuse.\+h\item 
+Comportement\+Peureuse.\+cpp\end{DoxyCompactItemize}

@@ -1,5 +1,14 @@
 \hypertarget{class_concrete_creator_bestiole}{}\doxysection{Concrete\+Creator\+Bestiole Class Reference}
 \label{class_concrete_creator_bestiole}\index{ConcreteCreatorBestiole@{ConcreteCreatorBestiole}}
+
+
+Classe \mbox{\hyperlink{class_concrete_creator_bestiole}{Concrete\+Creator\+Bestiole}}.  
+
+
+
+
+{\ttfamily \#include $<$Concrete\+Creator\+Bestiole.\+h$>$}
+
 Inheritance diagram for Concrete\+Creator\+Bestiole\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,21 +18,41 @@ Inheritance diagram for Concrete\+Creator\+Bestiole\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_concrete_creator_bestiole_a85aee9046a7ec321f684ccb1ef4739f4}\label{class_concrete_creator_bestiole_a85aee9046a7ec321f684ccb1ef4739f4}} 
-{\bfseries Concrete\+Creator\+Besitole} ()
-\item 
-\mbox{\Hypertarget{class_concrete_creator_bestiole_a22fbe5291a98888597810fd2b22521ae}\label{class_concrete_creator_bestiole_a22fbe5291a98888597810fd2b22521ae}} 
-IComportement $\ast$ {\bfseries get\+Comportement\+Naissance} ()
-\item 
-\mbox{\Hypertarget{class_concrete_creator_bestiole_ab93ba8683612306478d912644e1a610d}\label{class_concrete_creator_bestiole_ab93ba8683612306478d912644e1a610d}} 
-Capteur\+Decorator {\bfseries get\+Capteur\+Naissance} ()
-\item 
-\mbox{\Hypertarget{class_concrete_creator_bestiole_aa05a81b011a4cc78570997a01098cca5}\label{class_concrete_creator_bestiole_aa05a81b011a4cc78570997a01098cca5}} 
-Accessoire\+Decorator {\bfseries get\+Accessoire\+Naissance} ()
-\item 
-\mbox{\Hypertarget{class_concrete_creator_bestiole_a5f827c9aa45ea98a002fc3f329042c0c}\label{class_concrete_creator_bestiole_a5f827c9aa45ea98a002fc3f329042c0c}} 
-\mbox{\hyperlink{class_bestiole}{Bestiole}} {\bfseries create\+Bestiole} (IComportement $\ast$comportement, Capteur\+Decorator capteur, Accessoire\+Decorator accessoire)
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_concrete_creator_bestiole_ae582f35ff2e6bc06c566c6bc87336f20}\label{class_concrete_creator_bestiole_ae582f35ff2e6bc06c566c6bc87336f20}} 
+\mbox{\hyperlink{class_concrete_creator_bestiole_ae582f35ff2e6bc06c566c6bc87336f20}{Concrete\+Creator\+Bestiole}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{class_concrete_creator_bestiole}{Concrete\+Creator\+Bestiole}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ \mbox{\hyperlink{class_concrete_creator_bestiole_aabfbe8fb5fd8e1d00e93892c3888d00c}{create}} (\mbox{\hyperlink{class_i_comportement}{IComportement}} $\ast$comportement) override
+\begin{DoxyCompactList}\small\item\em Implémentation de create. Renvoie un pointeur vers une créature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe \mbox{\hyperlink{class_concrete_creator_bestiole}{Concrete\+Creator\+Bestiole}}. 
+
+Hérite de \mbox{\hyperlink{class_i_factory_naissance}{IFactory\+Naissance}} et implémente la création de bestioles 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_concrete_creator_bestiole_aabfbe8fb5fd8e1d00e93892c3888d00c}\label{class_concrete_creator_bestiole_aabfbe8fb5fd8e1d00e93892c3888d00c}} 
+\index{ConcreteCreatorBestiole@{ConcreteCreatorBestiole}!create@{create}}
+\index{create@{create}!ConcreteCreatorBestiole@{ConcreteCreatorBestiole}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ Concrete\+Creator\+Bestiole\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_comportement}{IComportement}} $\ast$}]{comportement }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémentation de create. Renvoie un pointeur vers une créature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comportement} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ICreature$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_factory_naissance_a2c5ccf7b9cc1b966fd00ffc7f9607caa}{IFactory\+Naissance}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

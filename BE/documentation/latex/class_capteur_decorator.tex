@@ -1,0 +1,141 @@
+\hypertarget{class_capteur_decorator}{}\doxysection{Capteur\+Decorator Class Reference}
+\label{class_capteur_decorator}\index{CapteurDecorator@{CapteurDecorator}}
+
+
+Interface \mbox{\hyperlink{class_capteur_decorator}{Capteur\+Decorator}}.  
+
+
+
+
+{\ttfamily \#include $<$Capteur\+Decorator.\+h$>$}
+
+Inheritance diagram for Capteur\+Decorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_capteur_decorator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_capteur_decorator_a24e538e4bebb8acf459c4c76c614df5d}{je\+Te\+Vois}} (const \mbox{\hyperlink{class_i_creature}{ICreature}} \&ic) const =0
+\begin{DoxyCompactList}\small\item\em Méthode je\+Te\+Vois. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_capteur_decorator_aa91020b17b4dae3f2d2734453edbaa35}{Capteur\+Decorator}} (\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ic)
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{class_capteur_decorator}{Capteur\+Decorator}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_capteur_decorator_aed19f676f0584eb476d370a9fbc0bdb0}\label{class_capteur_decorator_aed19f676f0584eb476d370a9fbc0bdb0}} 
+virtual \mbox{\hyperlink{class_capteur_decorator_aed19f676f0584eb476d370a9fbc0bdb0}{$\sim$\+Capteur\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_capteur_decorator}{Capteur\+Decorator}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_capteur_decorator_a2a0d8194473e07b091ba540d6f73a8f2}{draw}} (UImg \&support, \mbox{\hyperlink{class_milieu}{Milieu}} \&mon\+Milieu, \mbox{\hyperlink{class_i_creature}{ICreature}} \&creature\+To\+Draw)=0
+\begin{DoxyCompactList}\small\item\em Méthode virtuelle pure. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ \mbox{\hyperlink{class_capteur_decorator_a15353e12ec4a382a10ec2d70cc5091e2}{clone}} (void)=0
+\begin{DoxyCompactList}\small\item\em permet de cloner une créature avec son capteur \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Interface \mbox{\hyperlink{class_capteur_decorator}{Capteur\+Decorator}}. 
+
+Cette classe défini les méthodes qui peuvent être réimplémentées par les décorateurs capteurs. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_capteur_decorator_aa91020b17b4dae3f2d2734453edbaa35}\label{class_capteur_decorator_aa91020b17b4dae3f2d2734453edbaa35}} 
+\index{CapteurDecorator@{CapteurDecorator}!CapteurDecorator@{CapteurDecorator}}
+\index{CapteurDecorator@{CapteurDecorator}!CapteurDecorator@{CapteurDecorator}}
+\doxysubsubsection{\texorpdfstring{CapteurDecorator()}{CapteurDecorator()}}
+{\footnotesize\ttfamily Capteur\+Decorator\+::\+Capteur\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$}]{ic }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructeur de \mbox{\hyperlink{class_capteur_decorator}{Capteur\+Decorator}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_capteur_decorator_a15353e12ec4a382a10ec2d70cc5091e2}\label{class_capteur_decorator_a15353e12ec4a382a10ec2d70cc5091e2}} 
+\index{CapteurDecorator@{CapteurDecorator}!clone@{clone}}
+\index{clone@{clone}!CapteurDecorator@{CapteurDecorator}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_creature}{ICreature}}$\ast$ Capteur\+Decorator\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+permet de cloner une créature avec son capteur 
+
+\begin{DoxyReturn}{Returns}
+ICreature$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_creature_decorator_a76aa412554e38583daad9baedf4538aa}{Creature\+Decorator}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_yeux_decorator_ab93fda4076f177d4d18f92f07610b6ae}{Yeux\+Decorator}}, and \mbox{\hyperlink{class_oreille_decorator_a25bdb91f48433b7fd828ab151bedfdba}{Oreille\+Decorator}}.
+
+\mbox{\Hypertarget{class_capteur_decorator_a2a0d8194473e07b091ba540d6f73a8f2}\label{class_capteur_decorator_a2a0d8194473e07b091ba540d6f73a8f2}} 
+\index{CapteurDecorator@{CapteurDecorator}!draw@{draw}}
+\index{draw@{draw}!CapteurDecorator@{CapteurDecorator}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void Capteur\+Decorator\+::draw (\begin{DoxyParamCaption}\item[{UImg \&}]{support,  }\item[{\mbox{\hyperlink{class_milieu}{Milieu}} \&}]{mon\+Milieu,  }\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{creature\+To\+Draw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Méthode virtuelle pure. 
+
+Dans les classes filles (oreille, yeux, nageoire ..) permet de dessiner la créature avec son capteur
+
+
+\begin{DoxyParams}{Parameters}
+{\em support} & \\
+\hline
+{\em mon\+Milieu} & \\
+\hline
+{\em creature\+To\+Draw} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_creature_decorator_a3f29de62b2c23293cdcd03dfc853ebfa}{Creature\+Decorator}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_yeux_decorator_a28c11ffd6639253604046471138c0812}{Yeux\+Decorator}}, and \mbox{\hyperlink{class_oreille_decorator_a8b05d9f7f8765cc6fda845bd2be6d4c8}{Oreille\+Decorator}}.
+
+\mbox{\Hypertarget{class_capteur_decorator_a24e538e4bebb8acf459c4c76c614df5d}\label{class_capteur_decorator_a24e538e4bebb8acf459c4c76c614df5d}} 
+\index{CapteurDecorator@{CapteurDecorator}!jeTeVois@{jeTeVois}}
+\index{jeTeVois@{jeTeVois}!CapteurDecorator@{CapteurDecorator}}
+\doxysubsubsection{\texorpdfstring{jeTeVois()}{jeTeVois()}}
+{\footnotesize\ttfamily virtual bool Capteur\+Decorator\+::je\+Te\+Vois (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{ic }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Méthode je\+Te\+Vois. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ic} & créature qui doit être testée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_creature_a9b5e7de90103ec3daa74d98d6d509244}{ICreature}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_yeux_decorator_ab11c1e7cade2cc0268fabd5b6ae712ca}{Yeux\+Decorator}}, and \mbox{\hyperlink{class_oreille_decorator_a30d65fa25db4760a43bbc1bec1500d69}{Oreille\+Decorator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Capteur\+Decorator.\+h\end{DoxyCompactItemize}

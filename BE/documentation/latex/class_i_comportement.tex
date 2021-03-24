@@ -1,0 +1,121 @@
+\hypertarget{class_i_comportement}{}\doxysection{IComportement Class Reference}
+\label{class_i_comportement}\index{IComportement@{IComportement}}
+
+
+Class \mbox{\hyperlink{class_i_comportement}{IComportement}}.  
+
+
+
+
+{\ttfamily \#include $<$IComportement.\+h$>$}
+
+Inheritance diagram for IComportement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.357576cm]{class_i_comportement}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::pair$<$ std\+::vector$<$ double $>$, double $>$ \mbox{\hyperlink{class_i_comportement_a7bdc987b22733bdb3c25025af4a1b4e0}{calcul\+Direction}} (std\+::vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$ voisins, \mbox{\hyperlink{class_i_creature}{ICreature}} \&creature\+Associee)=0
+\begin{DoxyCompactList}\small\item\em fonction virtuelle permettant de r{\ucr}cup{\ucr}rer le vecteur directeur de vitesse et le coefficient multiplicateur de la valeur de la vitesse \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_i_comportement_a3dfa4c8a05026190ae17d954eefa1391}\label{class_i_comportement_a3dfa4c8a05026190ae17d954eefa1391}} 
+\mbox{\hyperlink{class_i_comportement_a3dfa4c8a05026190ae17d954eefa1391}{IComportement}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur \mbox{\hyperlink{class_i_comportement}{IComportement}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_comportement_ac432dc3df5cad42a8435ec110883e881}{IComportement}} (const \mbox{\hyperlink{class_i_comportement}{IComportement}} \&comportement)
+\begin{DoxyCompactList}\small\item\em Constructeur par copie de \mbox{\hyperlink{class_i_comportement}{IComportement}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_comportement}{IComportement}} $\ast$ \mbox{\hyperlink{class_i_comportement_aff83f9dd5b384e0f03f206a326ac2c80}{clone}} ()=0
+\begin{DoxyCompactList}\small\item\em Méthode virtuelle pure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_i_comportement_abe4916622fea4eaa81f052548a3ab11e}\label{class_i_comportement_abe4916622fea4eaa81f052548a3ab11e}} 
+virtual \mbox{\hyperlink{class_i_comportement_abe4916622fea4eaa81f052548a3ab11e}{$\sim$\+IComportement}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur \mbox{\hyperlink{class_i_comportement}{IComportement}}. \end{DoxyCompactList}\item 
+virtual Comport\+Type \mbox{\hyperlink{class_i_comportement_a10412456a249c6652c712fd84261d242}{get\+Comportement\+Type}} ()=0
+\begin{DoxyCompactList}\small\item\em fonction virtuelle pure permettant de r{\ucr}cup{\ucr}rer le type de comportement de l\textquotesingle{}{\ucr}num{\ucr}ration ci-\/dessus \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{class_i_comportement}{IComportement}}. 
+
+classe abstraite qui définit les méthodes que doivent implémenter les différents comportements. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_comportement_ac432dc3df5cad42a8435ec110883e881}\label{class_i_comportement_ac432dc3df5cad42a8435ec110883e881}} 
+\index{IComportement@{IComportement}!IComportement@{IComportement}}
+\index{IComportement@{IComportement}!IComportement@{IComportement}}
+\doxysubsubsection{\texorpdfstring{IComportement()}{IComportement()}}
+{\footnotesize\ttfamily IComportement\+::\+IComportement (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_comportement}{IComportement}} \&}]{comportement }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructeur par copie de \mbox{\hyperlink{class_i_comportement}{IComportement}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comportement} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_comportement_a7bdc987b22733bdb3c25025af4a1b4e0}\label{class_i_comportement_a7bdc987b22733bdb3c25025af4a1b4e0}} 
+\index{IComportement@{IComportement}!calculDirection@{calculDirection}}
+\index{calculDirection@{calculDirection}!IComportement@{IComportement}}
+\doxysubsubsection{\texorpdfstring{calculDirection()}{calculDirection()}}
+{\footnotesize\ttfamily virtual std\+::pair$<$std\+::vector$<$double$>$, double$>$ IComportement\+::calcul\+Direction (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_i_creature}{ICreature}} $\ast$ $>$}]{voisins,  }\item[{\mbox{\hyperlink{class_i_creature}{ICreature}} \&}]{creature\+Associee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+fonction virtuelle permettant de r{\ucr}cup{\ucr}rer le vecteur directeur de vitesse et le coefficient multiplicateur de la valeur de la vitesse 
+
+
+\begin{DoxyParams}{Parameters}
+{\em voisins} & \\
+\hline
+{\em creature\+Associee} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$std\+::vector$<$double$>$, double$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_comportement_aff83f9dd5b384e0f03f206a326ac2c80}\label{class_i_comportement_aff83f9dd5b384e0f03f206a326ac2c80}} 
+\index{IComportement@{IComportement}!clone@{clone}}
+\index{clone@{clone}!IComportement@{IComportement}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_comportement}{IComportement}}$\ast$ IComportement\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Méthode virtuelle pure. 
+
+Grâce au polymorphisme on peut obtenir un nouvel objet \mbox{\hyperlink{class_i_comportement}{IComportement}} qui implémente un comportement particulier
+
+\begin{DoxyReturn}{Returns}
+IComportement$\ast$ 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_comportement_prevoyante_a7a7c2f3b825686c5804c17faf1cfb170}{Comportement\+Prevoyante}}, \mbox{\hyperlink{class_comportement_peureuse_aed05e12674140a0d1b57faac629fb4ba}{Comportement\+Peureuse}}, \mbox{\hyperlink{class_comportement_kamikaze_a5a634da6d8de4b2459623c2f46a2135b}{Comportement\+Kamikaze}}, and \mbox{\hyperlink{class_comportement_gregaire_af1357c122b6d9bcf1bf94fccc430fe4f}{Comportement\+Gregaire}}.
+
+\mbox{\Hypertarget{class_i_comportement_a10412456a249c6652c712fd84261d242}\label{class_i_comportement_a10412456a249c6652c712fd84261d242}} 
+\index{IComportement@{IComportement}!getComportementType@{getComportementType}}
+\index{getComportementType@{getComportementType}!IComportement@{IComportement}}
+\doxysubsubsection{\texorpdfstring{getComportementType()}{getComportementType()}}
+{\footnotesize\ttfamily virtual Comport\+Type IComportement\+::get\+Comportement\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+fonction virtuelle pure permettant de r{\ucr}cup{\ucr}rer le type de comportement de l\textquotesingle{}{\ucr}num{\ucr}ration ci-\/dessus 
+
+\begin{DoxyReturn}{Returns}
+Comport\+Type 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_comportement_prevoyante_aff02ede5c6f5e768dbceff25ff19d6a6}{Comportement\+Prevoyante}}, \mbox{\hyperlink{class_comportement_peureuse_a267f2133d585620ba6beda77c7a727af}{Comportement\+Peureuse}}, \mbox{\hyperlink{class_comportement_kamikaze_af99d0027e9ebe7f3e80340c512e4ffcb}{Comportement\+Kamikaze}}, \mbox{\hyperlink{class_comportement_gregaire_a67051ce388cbde504b25697386368b56}{Comportement\+Gregaire}}, and \mbox{\hyperlink{class_comportement_multiple_a0db71b083680989bd439bf3d59a622ef}{Comportement\+Multiple}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+IComportement.\+h\end{DoxyCompactItemize}

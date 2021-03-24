@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3d_3d_1801',['operator==',['../class_bestiole.html#a35185469e558795a388b6733e3445272',1,'Bestiole']]]
+  ['operator_3d_3d_1985',['operator==',['../class_i_creature.html#adb3d6a47f7bf513f228cc509fab81457',1,'ICreature']]]
 ];
