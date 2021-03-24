@@ -34,7 +34,7 @@ et peut être augmentée grâce à des capteurs et accessoires :
 Pour finir le client peut lancer la simulation avec la configuration qu'il souhaite (nombre de bestioles et pourcentage de chaque comportement).
 
 ## Installer / Compiler le projet
-Tous les codes sources (.h et .cpp) nécessaire à la compilation sont présents sur ce repo.
+Tous les codes sources (.h et .cpp) nécessaire à la compilation sont présents sur ce repo dans [ce dossier](BE).
 
 1. Installer le projet  
 
@@ -50,6 +50,8 @@ Ainsi les principaux changements à apporter sont :
 * Au niveau de chaque tag :  -I /opt/X11/include => changer le chemin avec le chemin où se trouve X11/lib sur votre machine  
 
 Une fois les changements effectués, pour tester que cela fonctionne vous pouvez supprimer le fichier [main](BE/main) que nous vous fournissons : ```make clean``` puis vous pourrez compiler le projet : ```make```  
+
+**Attention à bien être dans le dossier BE du projet**
 
 3. Lancer la simulation
 
