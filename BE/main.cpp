@@ -25,10 +25,10 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 
-   // argv 7 = chemin pour le fichier d'enregistrement
+   // argv 6 = chemin pour le fichier d'enregistrement
    if(argc >= 7){
       ofstream file;
-      file.open(argv[7],std::ios::app);
+      file.open(argv[6],std::ios::app);
       file << "KAMIK,GREG,PEUR,PREV,\n";
       file.close();
    }
@@ -37,11 +37,11 @@ int main(int argc, char *argv[])
 
    if(argc >= 6){
       // argv :
-      // 2 = nbCreature
-      // 3 = pourcentage kamikaze
-      // 4 = pourcentage gregaire
-      // 5 = pourcentage peureuse
-      // 6 = pourcentage prévoyante
+      // 1 = nbCreature
+      // 2 = pourcentage kamikaze
+      // 3 = pourcentage gregaire
+      // 4 = pourcentage peureuse
+      // 5 = pourcentage prévoyante
       ecosysteme = new Aquarium( 640, 480, 30, atoi(argv[1]), atoi(argv[2]), atoi(argv[3]), atoi(argv[4]), atoi(argv[5])); // Construit l'aquarium de la simulation
    }
    else{
