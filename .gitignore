@@ -40,6 +40,5 @@ analyse.py
 *.out
 *.app
 
-Makefile
-main
 test_*.cpp
+Doxyfile
