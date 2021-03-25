@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
    
 
 
-   const char* pathFile = (argc >= 2) ? argv[1] : "";
+   const char* pathFile = (argc >= 7) ? argv[6] : "";
    ecosysteme->run(pathFile); // lance la simulation
 
 
