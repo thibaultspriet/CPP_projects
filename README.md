@@ -1,5 +1,7 @@
 # BE Bestioles groupe 2
 
+![preview](https://media.giphy.com/media/6c4fbXFIsbNWt7ciXy/giphy.gif)
+
 ## Membres du groupe :
 * DIOURI Yasmine
 * FERNANDES Agathe
